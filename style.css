@@ -1,0 +1,636 @@
+/* ============================================================
+   STYLE.CSS — стили портфолио Азалии Замалетдиновой
+   ============================================================
+
+   БЫСТРЫЙ ПОИСК (Ctrl+F):
+   - Цвета и шрифты    →  :root
+   - Баннер главной    →  .banner-bg
+   - Карточки проектов →  .project-card
+   - Страница проекта  →  .proj-banner
+============================================================ */
+
+
+/* ============================================================
+   ПЕРЕМЕННЫЕ — меняй здесь глобальные цвета
+============================================================ */
+:root {
+  --black:       #1a1a1a;
+  --gray:        #3d3d3d;
+  --gray-mid:    #888888;
+  --gray-light:  #e8e8e8;
+  --white:       #ffffff;
+  --accent:      #7C91FC;   /* фиолетово-синий акцент */
+  --nav-h:       60px;
+}
+
+
+/* ============================================================
+   СБРОС И БАЗА
+============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.section-title {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 48px;
+}
+
+
+
+
+/* ============================================================
+   НАВИГАЦИЯ
+   Состояние по умолчанию (вверху страницы) — полностью прозрачная.
+   При скролле (.scrolled) — стеклянная, в фиолетовом оттенке акцента.
+============================================================ */
+#main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 0 48px;
+  z-index: 9999;
+  background: transparent;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+#main-nav.scrolled {
+  background: rgba(124, 145, 252, 0.18);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#main-nav.scrolled .nav-links a {
+  color: var(--black);
+}
+
+#main-nav.scrolled .nav-back-btn {
+  color: var(--black);
+}
+
+/* Используется для проектов со светлым баннером — текст нав тёмный
+   с самого начала, даже без скролла (см. поле lightBanner в script.js) */
+#main-nav.light-banner .nav-links a,
+#main-nav.light-banner .nav-back-btn {
+  color: var(--black);
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Кнопка "Назад" — часть навигации, видна только когда открыта страница проекта */
+.nav-back-btn {
+  display: none;
+  position: absolute;
+  left: 48px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, color 0.3s;
+}
+
+.nav-back-btn:hover {
+  opacity: 0.6;
+}
+
+#main-nav.project-open .nav-back-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+
+/* ============================================================
+   БАННЕР ГЛАВНОЙ СТРАНИЦЫ
+
+   Чтобы поставить фото:
+   Замени url('') на url('images/твоё-фото.jpg')
+============================================================ */
+#banner {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 64px 48px;
+}
+
+.banner-bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent);       /* цвет фона если нет фото */
+  background-image: url('images/banner_start.png');            /* ← СЮДА путь к фото: url('images/banner.jpg') */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto 0 160px;
+}
+
+.banner-content h1 {
+  font-size: clamp(44px, 3vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.banner-content p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+
+/* ============================================================
+   О СЕБЕ
+============================================================ */
+#info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 48px 60px;
+  align-items: start;
+}
+
+.info-block h2 {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-mid);
+  margin-bottom: 24px;
+}
+
+.info-block p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.info-block ul {
+  list-style: none;
+}
+
+.info-block li {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+.info-block li span {
+  display: inline-block;
+  min-width: 120px;
+  font-size: 13px;
+  color: var(--gray-mid);
+}
+
+
+/* ============================================================
+   ОПЫТ РАБОТЫ
+============================================================ */
+#experience-section {
+  padding: 60px 0;
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+}
+
+.exp-date {
+  font-size: 13px;
+  color: var(--gray-mid);
+  padding-top: 3px;
+}
+
+.exp-role {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.exp-company {
+  font-size: 12px;
+  color: var(--gray-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.exp-desc {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+.exp-desc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-desc li {
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.exp-desc li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+}
+
+/* ============================================================
+   НАВЫКИ
+============================================================ */
+#skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 48px;
+}
+
+.skill-group h3 {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-mid);
+  margin-bottom: 12px;
+}
+
+.skill-group p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   ПРОЕКТЫ — горизонтальный скролл (колесом мыши, см. script.js)
+============================================================ */
+#projects-wrapper {
+  position: relative;
+}
+
+.projects-header {
+  padding-top: 60px;
+  padding-bottom: 32px;
+}
+
+.projects-track-wrapper {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  padding: 0 48px 60px;
+}
+
+.projects-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  transition: transform 0.06s linear;
+}
+
+
+/* ============================================================
+   КАРТОЧКА ПРОЕКТА
+
+   Размер карточки: width и height
+   Скругление: border-radius
+============================================================ */
+.project-card {
+  width: 340px;
+  height: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(74, 25, 160, 0.12);
+}
+
+/* Фоновое изображение / цвет карточки.
+   Путь к фото задаётся прямо в HTML через style="background-image: url(...)" */
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease;
+}
+
+.card-overlay {
+  display: none;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   КОНТАКТЫ
+============================================================ */
+#contact {
+  padding: 80px 0;
+}
+
+.contact-links {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  font-size: 15px;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-mid);
+  padding-bottom: 2px;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.contact-link:hover {
+  border-color: var(--black);
+  opacity: 1;
+}
+
+
+/* ============================================================
+   ФУТЕР
+============================================================ */
+footer {
+  padding: 32px 48px;
+  font-size: 12px;
+  color: var(--gray-mid);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* ============================================================
+   СТРАНИЦА ПРОЕКТА (открывается поверх)
+
+   Баннер проекта: цвет и фото задаются в script.js
+   в объекте projects[] → bannerColor и bannerImg
+============================================================ */
+#project-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--white);
+  z-index: 9998;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#project-overlay.open {
+  transform: translateY(0);
+}
+
+.proj-banner {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  min-height: 320px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 48px;
+}
+
+.proj-banner-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.proj-banner-overlay {
+  display: none;
+}
+
+.proj-banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.proj-banner-content h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--white);
+}
+
+/* Тело страницы проекта */
+.proj-body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 48px 120px;
+}
+
+.proj-section {
+  margin-bottom: 56px;
+}
+
+.proj-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-mid);
+  margin-bottom: 16px;
+}
+
+.proj-section h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+
+.proj-section p {
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+/* Картинки внутри страницы проекта */
+.proj-media {
+  width: 100%;
+  overflow: hidden;
+  margin: 32px 0;
+  background: var(--gray-light);
+}
+
+.proj-media img,
+.proj-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Теги */
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 6px 14px;
+  background: #f0f0ee;
+  border-radius: 100px;
+  color: var(--gray);
+}
+
+
+/* ============================================================
+   АДАПТИВ (мобильные)
+============================================================ */
+@media (max-width: 768px) {
+  #main-nav             { padding: 0 24px; }
+  #banner               { padding: 48px 24px; }
+  #info                 { padding: 48px 24px; grid-template-columns: 1fr; gap: 40px; }
+  #experience-section   { padding: 40px 0; }
+  .container            { padding: 0 24px; }
+  .exp-item             { grid-template-columns: 1fr; gap: 6px; }
+  #skills               { padding: 40px 24px; }
+  .projects-header      { padding: 40px 24px 24px; }
+  .projects-track-wrapper { padding: 0 24px 48px; }
+  .project-card         { width: 280px; height: 280px; }
+  #contact              { padding: 60px 0; }
+  footer                { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+  .proj-body            { padding: 40px 24px 80px; }
+  .proj-banner          { padding: 48px 24px; }
+}
+
+/* RESEARCH BLOCK */
+.research-block {
+  margin-bottom: 20px;
+}
+
+.research-block h4 {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.research-block ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.research-block li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}

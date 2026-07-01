@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Азалия Замалетдинова — Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+    НАВИГАЦИЯ
+    Поменяй ссылки href и текст пунктов меню здесь
+  ============================================================ -->
+  <nav id="main-nav">
+    <button class="nav-back-btn" onclick="closeProject()" aria-label="Назад">← Назад</button>
+    <ul class="nav-links">
+      <li><a href="#info">Обо мне</a></li>
+      <li><a href="#experience-section">Опыт</a></li>
+      <li><a href="#projects-wrapper">Проекты</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ============================================================
+    БАННЕР ГЛАВНОЙ СТРАНИЦЫ
+    Чтобы поставить своё фото:
+      1. Положи файл в папку images/
+      2. В style.css найди селектор .banner-bg
+         и замени background-image: url('') на url('images/твоё-фото.jpg')
+    Если фото нет — будет жёлтый фон.
+  ============================================================ -->
+  <section id="banner">
+
+    <div class="banner-bg">
+      <spline-viewer url="https://prod.spline.design/LlP8rFOctCauRMAz/scene.splinecode"></spline-viewer>
+    </div>
+
+    <div class="banner-overlay"></div>
+
+    <div class="banner-content">
+      <!-- твой текст -->
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+    О СЕБЕ
+  ============================================================ -->
+  <section id="info">
+    <div class="info-block">
+      <h2>О себе</h2>
+
+      <p>Привет! Меня зовут Азалия, я продуктовый дизайнер, проектирую мобильные и веб-интерфейсы с фокусом на UX, визуальную систему и продуктовую логику.</p>
+
+      <p>Работаю с пользовательскими сценариями, исследованием проблем и созданием интерфейсов от идеи до готовых макетов для разработки.</p>
+
+      <p>Также работаю с Claude Code и MCP (Model Context Protocol): интеграция AI-ассистента с дизайн-инструментами, включая Figma, для генерации и переноса UI-решений.</p>
+    </div>
+    <div class="info-block">
+      <h2>Детали</h2>
+      <ul>
+        <li><span>Образование</span>   Bang Bang Education, 2025</li>
+        <li><span>Специальность</span> UX/UI и продуктовый дизайн</li>
+        <li><span>Языки</span>         Русский, Английский B1</li>
+        <li><span>Интересы</span>      Нейросети, современное искусство</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ============================================================
+    ОПЫТ РАБОТЫ
+    Чтобы добавить новую строку — скопируй один блок .exp-item
+  ============================================================ -->
+  <section id="experience-section">
+    <div class="container">
+      <h2 class="section-title">Опыт работы</h2>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-date">2023 — 2026</div>
+          <div class="exp-body">
+            <div class="exp-role">Product Designer</div>
+            <div class="exp-company">ООО «СЗ «Доброград»</div>
+            <div class="exp-desc">
+              <ul>
+                <li>Поддержание отдельных страниц сайта курортного проекта "Доброград", переработка информационной архитектуры, структуры и визуальной системы под новые бизнес-задачи.</li>
+                <li>Проектирование и оптимизация сценариев привлечения пользователей через таргетированные механики на сайте, с фокусом на повышение конверсии в целевые действия.</li>
+                <li>Разработка бренд-айдентики и дизайн-систем для проектов разного масштаба — от коммерческих пространств до спортивных мероприятий, включая: "Доброград Панорама Лаундж", "Доброград: Первенство по вейкбордингу", "Чемпионат России по вейкборду-электротяга".</li>
+                <li>Создание визуальной концепции и коммуникационной системы бренда с адаптацией под digital- и офлайн-каналы (социальные сети, афиши, промо-материалы, event-брендинг).</li>
+                <li>Интеграция AI-инструментов в рабочий процесс (GPT, Claude, Gemini, Midjourney, ComfyUI) для ускорения этапов исследования, генерации идей, прототипирования и визуальной разработки.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">2025 — 2026</div>
+          <div class="exp-body">
+            <div class="exp-role">Product Designer (AI-enabled)</div>
+            <div class="exp-company">NEFIS GROUP</div>
+            <div class="exp-desc">
+              <ul>
+                <li>Проектирование и оптимизация маркетинговых сценариев привлечения пользователей через Telegram-каналы и др. соц.сетей, фокусируясь на росте конверсии в подписку и вовлечённость в продукт.</li>
+                <li>Создание и масштабирование креативных систем, где каждый визуал выступал как элемент продуктовой воронки и обеспечивал в среднем 2–3 тыс. новых пользователей в Telegram.</li>
+                <li>Проектирование AI-ассистированных дизайн-процессов с использованием Midjourney, Stable Diffusion и DALL·E, ускоряя итерации визуальных решений.</li>
+                <li>Оптимизация производства креативов с помощью генеративных AI-инструментов (Generative Fill, upscaling, enhancement models), что сократило время производства примерно в 3 раза.</li>
+                <li>Внедрение AI-инструментов в продуктовый процесс генерации и тестирования контента, сократив цикл от идеи до запуска креатива.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">2021 — 2025</div>
+          <div class="exp-body">
+            <div class="exp-role">Product Designer (E-commerce)</div>
+            <div class="exp-company">Askona</div>
+            <div class="exp-desc">
+              <ul>
+                <li>Проектирование и оптимизация e-commerce сценариев: веб-интерфейсы, лендинги и пользовательские пути, направленные на повышение конверсии в покупку.</li>
+                <li>Обеспечение дизайн-сопровождения маркетинговых запусков и акций (лендинги, промо-материалы); средний рост конверсии по кампаниям — около 2%.</li>
+                <li>Участие в разработке и масштабировании дизайн-системы для новых продуктов компании.</li>
+                <li>Проектирование UX- и визуальных концепций продуктовых запусков и кампаний, связывая дизайн-решения с бизнес- и конверсионными метриками.</li>
+                <li>Работа с пользовательскими сценариями, состояниями интерфейсов и edge cases в кросс-функциональной продуктовой команде.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">2020 — 2021</div>
+          <div class="exp-body">
+            <div class="exp-role">Digital Designer</div>
+            <div class="exp-company">Natural Health</div>
+            <div class="exp-desc">
+              <ul>
+                <li>Поддержание и обновление корпоративного сайта в период трансформации компании из сетевого маркетинга в розничную модель.</li>
+                <li>Разработка маркетинговых материалов и digital-коммуникаций для онлайн- и офлайн-каналов.</li>
+                <li>Создание контента для социальных сетей и маркетинговых кампаний, в среднем 4–5 тыс. просмотров на единицу контента.</li>
+                <li>Разработка брендбука компании и системы визуальных правил для поддержания целостного брендинга.</li>
+                <li>Внедрение дизайн-системы в продуктовую линейку и коммуникационные материалы компании.</li>
+                <li>Подготовка визуального оформления для участия компании в форуме Исламский мир 2021.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ============================================================
+    НАВЫКИ
+  ============================================================ -->
+  <section id="skills">
+    <div class="skill-group">
+      <h3>Инструменты</h3>
+      <p>Figma, Adobe Photoshop, After Effects, Miro</p>
+    </div>
+    <div class="skill-group">
+      <h3>Нейросети</h3>
+      <p>GPT, Gemini, Grok, Claude, Midjourney, Comfy UI</p>
+    </div>
+    <div class="skill-group">
+      <h3>Процесс</h3>
+      <p>UX-исследования, прототипирование, IA, User Flow, HCD, CJM</p>
+    </div>
+    <div class="skill-group">
+      <h3>Метрики</h3>
+      <p>Яндекс.Метрика, AppMetrica</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ============================================================
+    ПРОЕКТЫ — горизонтальный скролл колесом мыши
+
+    КАК ДОБАВИТЬ ФОТО НА КАРТОЧКУ:
+      1. Положи файл в папку images/
+      2. В теге div class="card-bg" пропиши style:
+         style="background-image: url('images/имя-файла.jpg')"
+
+    КАК ДОБАВИТЬ НОВУЮ КАРТОЧКУ:
+      1. Скопируй один блок КАРТОЧКА
+      2. Увеличь data-id на 1 (0, 1, 2, 3 ...)
+      3. Добавь объект в projects[] в script.js с таким же id
+  ============================================================ -->
+  <div id="projects-wrapper">
+    <div class="projects-header container">
+      <h2 class="section-title">Проекты</h2>
+    </div>
+    <div class="projects-track-wrapper">
+      <div class="projects-track" id="projects-track">
+
+
+        <!-- КАРТОЧКА 0 — FINCORP -->
+        <div class="project-card" data-id="0" onclick="openProject(0)">
+          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/FinCorp_Image.png');"></div>
+          <div class="card-overlay">
+            <div class="card-title">FINCORP</div>
+            <div class="card-desc">Банковская экосистема нового поколения с ИИ-советником</div>
+          </div>
+        </div>
+
+
+        <!-- КАРТОЧКА 1 — Core Treasury -->
+        <div class="project-card" data-id="1" onclick="openProject(1)">
+          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Core.png');"></div>
+          <div class="card-overlay">
+            <div class="card-title">Core Treasury</div>
+            <div class="card-desc">Корпоративная treasury-платформа для средних и крупных компаний</div>
+          </div>
+        </div>
+
+
+        <!-- КАРТОЧКА 2 — AI PM ассистент -->
+        <div class="project-card" data-id="2" onclick="openProject(2)">
+          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/AI PM Assistant.png');"></div>
+          <div class="card-overlay">
+            <div class="card-title">Внутренний AI PM ассистент</div>
+            <div class="card-desc">AI-ассистент внутри корпоративной платформы с доступом к проектным данным</div>
+          </div>
+        </div>
+
+        <!-- КАРТОЧКА 3 — СКРЫТА -->
+        <!--
+        <div class="project-card" data-id="3" onclick="openProject(3)">
+          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Панорама.png');"></div>
+          <div class="card-overlay">
+            <div class="card-title">Электронное меню</div>
+            <div class="card-desc">Электронное меню Панорама Лаундж</div>
+          </div>
+        </div>
+        -->
+
+
+        <!-- КАРТОЧКА 4 — DroneDrop -->
+        <div class="project-card" data-id="4" onclick="openProject(4)">
+          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Drone.png');"></div>
+          <div class="card-overlay">
+            <div class="card-title">DroneDrop</div>
+            <div class="card-desc">Беспилотная доставка дронами</div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="scroll-hint"></div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ============================================================
+    КОНТАКТЫ
+  ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Контакты</h2>
+      <div class="contact-links">
+        <a class="contact-link" href="https://www.behance.net/azalevskih" target="_blank">Behance</a>
+        <a class="contact-link" href="https://t.me/Azalevskih" target="_blank">Telegram</a>
+        <a class="contact-link" href="mailto:a-zamaletdinova@inbox.ru">a-zamaletdinova@inbox.ru</a>
+        <a class="contact-link" href="tel:+79673640839">+7 967 364 08 39</a>
+        <a class="contact-link" href="https://power-vise-3e2.notion.site/31d358404622839a872481e12cfa7542?source=copy_link" target="_blank">
+          Notion
+        </a>
+        <a class="contact-link"
+           href="https://www.linkedin.com/in/%D0%B0%D0%B7%D0%B0%D0%BB%D0%B8%D1%8F-%D0%B7%D0%B0%D0%BC%D0%B0%D0%BB%D0%B5%D1%82%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2%D0%B0-67a936218/"
+           target="_blank">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Азалия Замалетдинова</span>
+    <span>Product Designer</span>
+  </footer>
+
+
+  <!-- ============================================================
+    СТРАНИЦА ПРОЕКТА (открывается при клике на карточку)
+    Не редактируй этот блок — всё содержимое задаётся в script.js
+  ============================================================ -->
+  <div id="project-overlay">
+    <div class="proj-banner" id="proj-banner">
+      <div class="proj-banner-bg" id="proj-banner-bg"></div>
+      <div class="proj-banner-overlay"></div>
+      <div class="proj-banner-content">
+        <h1 id="proj-title"></h1>
+      </div>
+    </div>
+    <div class="proj-body" id="proj-body"></div>
+  </div>
+
+
+  <script src="script.js"></script>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
+</body>
+</html>
