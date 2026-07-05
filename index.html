@@ -189,14 +189,19 @@
     ПРОЕКТЫ — горизонтальный скролл колесом мыши
 
     КАК ДОБАВИТЬ ФОТО НА КАРТОЧКУ:
-      1. Положи файл в папку images/
+      1. Положи файл в папку images/ или assets/
       2. В теге div class="card-bg" пропиши style:
-         style="background-image: url('images/имя-файла.jpg')"
+         style="background-image: url('assets/имя-файла.png')"
 
     КАК ДОБАВИТЬ НОВУЮ КАРТОЧКУ:
       1. Скопируй один блок КАРТОЧКА
       2. Увеличь data-id на 1 (0, 1, 2, 3 ...)
       3. Добавь объект в projects[] в script.js с таким же id
+
+    ПОРЯДОК КАРТОЧЕК:
+      Порядок отображения = порядок блоков ниже (сверху вниз = слева направо).
+      data-id при этом остаётся ссылкой на конкретный проект в script.js
+      и не обязан совпадать с порядковым номером карточки.
   ============================================================ -->
   <div id="projects-wrapper">
     <div class="projects-header container">
@@ -206,7 +211,7 @@
       <div class="projects-track" id="projects-track">
 
 
-        <!-- КАРТОЧКА 0 — FINCORP -->
+        <!-- КАРТОЧКА 1 — FINCORP -->
         <div class="project-card" data-id="0" onclick="openProject(0)">
           <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/FinCorp_Image.png');"></div>
           <div class="card-overlay">
@@ -216,7 +221,27 @@
         </div>
 
 
-        <!-- КАРТОЧКА 1 — Core Treasury -->
+        <!-- КАРТОЧКА 2 — Электронное меню «Панорама Лаундж» -->
+        <div class="project-card" data-id="5" onclick="openProject(5)">
+          <div class="card-bg" style="background-color: #efe0d0; background-image: url('assets/Панорама.png');"></div>
+          <div class="card-overlay">
+            <div class="card-title">Электронное меню «Панорама Лаундж»</div>
+            <div class="card-desc">Цифровое меню ресторана по QR-коду с админ-панелью и аналитикой</div>
+          </div>
+        </div>
+
+
+        <!-- КАРТОЧКА 3 — Разбуди Деда Мороза (Beyosa) -->
+        <div class="project-card" data-id="6" onclick="openProject(6)">
+          <div class="card-bg" style="background-color: #f3dede; background-image: url('assets/Beyosa.ru.png');"></div>
+          <div class="card-overlay">
+            <div class="card-title">Разбуди Деда Мороза</div>
+            <div class="card-desc">Gamified e-commerce лендинг с live-прогрессом и социальным доказательством</div>
+          </div>
+        </div>
+
+
+        <!-- КАРТОЧКА 4 — Core Treasury -->
         <div class="project-card" data-id="1" onclick="openProject(1)">
           <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Core.png');"></div>
           <div class="card-overlay">
@@ -226,7 +251,17 @@
         </div>
 
 
-        <!-- КАРТОЧКА 2 — AI PM ассистент -->
+        <!-- КАРТОЧКА 5 — Доброград: платформа ипотеки -->
+        <div class="project-card" data-id="7" onclick="openProject(7)">
+          <div class="card-bg" style="background-color: #dbe6ea; background-image: url('assets/Dobrograd.png');"></div>
+          <div class="card-overlay">
+            <div class="card-title">Доброград: платформа ипотеки</div>
+            <div class="card-desc">Прозрачный выбор ипотеки и жилья через ежемесячный платёж</div>
+          </div>
+        </div>
+
+
+        <!-- КАРТОЧКА 6 — AI PM ассистент -->
         <div class="project-card" data-id="2" onclick="openProject(2)">
           <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/AI PM Assistant.png');"></div>
           <div class="card-overlay">
@@ -235,19 +270,8 @@
           </div>
         </div>
 
-        <!-- КАРТОЧКА 3 — СКРЫТА -->
-        <!--
-        <div class="project-card" data-id="3" onclick="openProject(3)">
-          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Панорама.png');"></div>
-          <div class="card-overlay">
-            <div class="card-title">Электронное меню</div>
-            <div class="card-desc">Электронное меню Панорама Лаундж</div>
-          </div>
-        </div>
-        -->
 
-
-        <!-- КАРТОЧКА 4 — DroneDrop -->
+        <!-- КАРТОЧКА 7 — DroneDrop -->
         <div class="project-card" data-id="4" onclick="openProject(4)">
           <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Drone.png');"></div>
           <div class="card-overlay">
@@ -255,6 +279,18 @@
             <div class="card-desc">Беспилотная доставка дронами</div>
           </div>
         </div>
+
+
+        <!-- КАРТОЧКА 8 — AI Design Workflow (временно скрыта) -->
+<!--
+<div class="project-card" data-id="3" onclick="openProject(3)">
+  <div class="card-bg" style="background-color: #dbe7f2; background-image: url('assets/AI_Workflow.png');"></div>
+  <div class="card-overlay">
+    <div class="card-title">AI Design Workflow</div>
+    <div class="card-desc">Интеграция Claude Code и MCP с Figma в продуктовый дизайн-процесс</div>
+  </div>
+</div>
+-->
 
 
       </div>
