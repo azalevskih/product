@@ -818,6 +818,7 @@ function openProject(id) {
   const navEl = document.getElementById("main-nav");
   navEl.classList.add("project-open");
   navEl.classList.remove("scrolled");
+  navEl.classList.remove("home-page");
   navEl.classList.toggle("light-banner", !!p.lightBanner);
 }
 
@@ -829,5 +830,6 @@ function closeProject() {
   const navEl = document.getElementById("main-nav");
   navEl.classList.remove("project-open");
   navEl.classList.remove("light-banner");
+  navEl.classList.add("home-page");
   navEl.classList.toggle("scrolled", window.scrollY > 10);
 }
