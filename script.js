@@ -224,6 +224,7 @@ const PROJECTS = [
         'Контекст проекта часто держится в голове одного человека'
       ]
     },
+    researchLink: 'https://www.figma.com/design/mmPUfztaSjEcBFTs0EXhcY/AI-PM-Assistant?node-id=10002-1884&t=tzdVtiuN3fzFs89G-1',
 
     jtbd: 'Пользователь хочет быстро понимать состояние проекта и получать ответы без постоянного поиска информации и участия PM.',
 
@@ -237,14 +238,17 @@ const PROJECTS = [
         description: 'Автоматизация отчетности, контроль рисков и снижение нагрузки'
       }
     ],
+    frameworksLink: 'https://www.figma.com/design/mmPUfztaSjEcBFTs0EXhcY/AI-PM-Assistant?node-id=10002-1885&t=tzdVtiuN3fzFs89G-1',
 
     cjm: 'Переход от ручного поиска информации к единому AI-интерфейсу, который агрегирует проектный контекст и снижает коммуникационную нагрузку.',
 
     userFlow: 'Вопрос → AI поиск → агрегация данных → ответ в контексте проекта → обновление статуса',
 
     designSystem: 'AI-first интерфейс с акцентом на контекст, статусность и автоматические подсказки',
+    designSystemLink: 'https://www.figma.com/design/mmPUfztaSjEcBFTs0EXhcY/AI-PM-Assistant?node-id=10002-1886&t=tzdVtiuN3fzFs89G-1',
 
     prototype: 'Прототип показывает сценарии: запрос статуса, выявление блокеров, автоматические уведомления и отчёты.',
+    prototypeLink: 'https://www.figma.com/design/mmPUfztaSjEcBFTs0EXhcY/AI-PM-Assistant?node-id=8076-2943&t=QIUHChasraIJLAG3-1',
 
     results: '−40% время поиска информации\n×1.8 ускорение работы команды\n−40% обращений к PM\n+50% скорость обновления статусов',
 
