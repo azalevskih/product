@@ -48,6 +48,8 @@ const PROJECTS = [
         'Контекст важнее функций: ценность продукта определяется не набором инструментов, а способностью поддерживать пользователя в конкретной жизненной ситуации.',
       ],
     },
+    researchLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6011-9524&t=iCq6m8JjojlXfDCq-1',
+    frameworksLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6472-6322&t=Dfme0MPLEWMfzThW-1',
 
     jtbd: 'Поскольку FINCORP ориентирован на широкую аудиторию, сегментация по возрасту или социально-демографическим признакам была недостаточно информативна. Поэтому для исследования пользователей использовался подход Jobs To Be Done (JTBD), который позволяет выявить реальные задачи, мотивы и контекст принятия финансовых решений. Общей чертой всех профилей является потребность в обучении в рамках приложения, чтобы помочь им преодолеть разрыв между их текущей ситуацией и финансовыми целями.',
     jtbdImage: '',
@@ -67,12 +69,15 @@ const PROJECTS = [
 
     userFlow: 'Путь пользователя: регистрация → онбординг с эмоциональным триггером → верификация → постановка целей на основе ИИ-диагностики → персональный план → ежедневный поведенческий цикл → долгосрочное удержание через ИИ-инсайты, повторные цели и финансовый уровень.',
     userflowImage: '',
+    userFlowLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6472-6322&t=Dfme0MPLEWMfzThW-1',
 
     designSystem: 'Cyber-Minimalism с акцентом на игривый, дружелюбный ИИ-контекст.',
     uikitImage: '',
+    designSystemLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6472-6329&t=iCq6m8JjojlXfDCq-1',
 
     prototype: 'Прототип проведён через сценарий первого знакомства пользователя с приложением: от выбора цели до распределения бюджета — с поддержкой ИИ-помощника на каждом шаге.',
     prototypeImage: '',
+    prototypeLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6288-11759&t=Dfme0MPLEWMfzThW-1',
 
     results:  'Gamification и progress feedback реально влияют на savings behavior. Визуализация целей улучшает финансовое здоровье и удовлетворённость пользователей. По результатам, основанным на исследовании аналогичных банковских приложений в других странах: вовлечённость +35%, достижение целей +28%, отток (churn) −22%, рост активов под управлением (AUM) +15%.',
 
@@ -691,11 +696,17 @@ function openProject(id) {
     `;
   }
 
-  function section(title, text) {
+  function section(title, text, link) {
     if (!text) return "";
+    const linkHtml = link
+      ? `<a class="figma-link" href="${link}" target="_blank" rel="noopener">Смотреть в Figma →</a>`
+      : "";
     return `
       <div class="proj-section">
-        <h3>${title}</h3>
+        <div class="proj-section-head">
+          <h3>${title}</h3>
+          ${linkHtml}
+        </div>
         <p>${text}</p>
       </div>
     `;
@@ -712,7 +723,10 @@ function openProject(id) {
   if (p.research) {
   html += `
     <div class="proj-section">
-      <h3>Исследование и инсайты</h3>
+      <div class="proj-section-head">
+        <h3>Исследование и инсайты</h3>
+        ${p.researchLink ? `<a class="figma-link" href="${p.researchLink}" target="_blank" rel="noopener">Смотреть в Figma →</a>` : ""}
+      </div>
 
       <div class="research-block">
         <h4>Проблемы</h4>
@@ -751,7 +765,10 @@ function openProject(id) {
   if (p.jtbdGroups) {
     html += `
       <div class="proj-section">
-        <h3>Основные группы пользователей</h3>
+        <div class="proj-section-head">
+          <h3>Основные группы пользователей</h3>
+          ${p.frameworksLink ? `<a class="figma-link" href="${p.frameworksLink}" target="_blank" rel="noopener">Смотреть в Figma →</a>` : ""}
+        </div>
 
         ${p.jtbdGroups.map(group => `
           <div style="margin-bottom:30px">
@@ -767,13 +784,13 @@ function openProject(id) {
   html += section("Customer Journey Map", p.cjm);
   html += image(p.cjmImage);
 
-  html += section("User Flow", p.userFlow);
+  html += section("User Flow", p.userFlow, p.userFlowLink);
   html += image(p.userflowImage);
 
-  html += section("Design System", p.designSystem);
+  html += section("Design System", p.designSystem, p.designSystemLink);
   html += image(p.uikitImage);
 
-  html += section("Прототип", p.prototype);
+  html += section("Прототип", p.prototype, p.prototypeLink);
   html += image(p.prototypeImage);
 
   if (p.images) {
