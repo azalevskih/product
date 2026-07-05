@@ -113,6 +113,7 @@ const PROJECTS = [
     context: 'Core Treasury — корпоративная treasury-платформа для средних и крупных компаний, которые управляют ликвидностью через множество банков, валют и юридических лиц. Продукт решает проблему отсутствия единого, актуального и доверенного источника данных о деньгах компании.',
 
     problem: 'Казначейские подразделения управляют ликвидностью через десятки несвязанных источников: ERP, банки, Excel и ручную отчётность. Данные фрагментированы, прогнозы не совпадают с реальностью, кассовые разрывы выявляются постфактум, а решения принимаются в кризис.',
+    problemImage: 'assets/CORE_problem.png',
 
     solution: 'Core Treasury объединяет мониторинг ликвидности, прогнозирование и сценарное моделирование в единый операционный контур, превращая treasury из отчётной функции в центр управления ликвидностью.',
 
@@ -161,11 +162,16 @@ const PROJECTS = [
         description: 'Контроль прозрачности и регуляторный аудит'
       }
     ],
+    jtbdGroupsImage: 'assets/CORE_users.png',
     frameworksLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=8610-2768&t=HGMOQk31tZlekgnU-1',
 
     cjm: 'Переход от реактивного контроля к превентивному управлению ликвидностью через единый источник данных и сценарное моделирование.',
 
     userFlow: 'Регистрация → подключение банков → консолидация данных → мониторинг ликвидности → сценарное моделирование → принятие решений',
+
+    purchaseScenarioTitle: 'Пользовательский сценарий',
+    purchaseScenario: 'Система обнаруживает потенциальный кассовый разрыв через 14 дней и формирует алёрт. CFO открывает детали и разбирается в причинах риска, тестирует сценарии в песочнице, выбирает лучшее действие с рекомендацией ИИ, отправляет решение на согласование и исполняет его — риск закрыт, прогноз ликвидности обновлён.',
+    purchaseScenarioImage: 'assets/CORE_user_scenario.png',
 
     designSystem: 'High-density financial UI system с акцентом на скорость считывания и семантику рисков',
     designSystemLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=8611-2799&t=HGMOQk31tZlekgnU-1',
@@ -245,13 +251,16 @@ const PROJECTS = [
         description: 'Автоматизация отчетности, контроль рисков и снижение нагрузки'
       }
     ],
+    jtbdGroupsImage: 'assets/AIPM_users.png',
     frameworksLink: 'https://www.figma.com/design/mmPUfztaSjEcBFTs0EXhcY/AI-PM-Assistant?node-id=10002-1885&t=tzdVtiuN3fzFs89G-1',
 
     cjm: 'Переход от ручного поиска информации к единому AI-интерфейсу, который агрегирует проектный контекст и снижает коммуникационную нагрузку.',
 
     userFlow: 'Вопрос → AI поиск → агрегация данных → ответ в контексте проекта → обновление статуса',
+    userflowImage: 'assets/AIPM_userflow.png',
 
     designSystem: 'AI-first интерфейс с акцентом на контекст, статусность и автоматические подсказки',
+    uikitImage: 'assets/AIPM_design.png',
     designSystemLink: 'https://www.figma.com/design/mmPUfztaSjEcBFTs0EXhcY/AI-PM-Assistant?node-id=10002-1886&t=tzdVtiuN3fzFs89G-1',
 
     prototype: 'Прототип показывает сценарии: запрос статуса, выявление блокеров, автоматические уведомления и отчёты.',
@@ -732,6 +741,7 @@ function openProject(id) {
 
   html += section("Контекст", p.context);
   html += section("Проблема", p.problem);
+  html += image(p.problemImage);
   html += section("Решение", p.solution);
   html += section("Анализ конкурентов", p.competitorAnalysis, p.competitorLink);
   html += image(p.competitorImage);
@@ -796,6 +806,7 @@ function openProject(id) {
       </div>
     `;
   }
+  html += image(p.jtbdGroupsImage);
 
   html += section("Customer Journey Map", p.cjm);
   html += image(p.cjmImage);
@@ -806,7 +817,7 @@ function openProject(id) {
   html += section("User Flow", p.userFlow, p.userFlowLink);
   html += image(p.userflowImage);
 
-  html += section("Сценарий: Пользователь планирует дорогую покупку", p.purchaseScenario);
+  html += section(p.purchaseScenarioTitle || "Сценарий: Пользователь планирует дорогую покупку", p.purchaseScenario);
   html += image(p.purchaseScenarioImage);
 
   html += section("Design System", p.designSystem, p.designSystemLink);
