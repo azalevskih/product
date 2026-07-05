@@ -19,7 +19,7 @@
   --gray-mid:    #888888;
   --gray-light:  #e8e8e8;
   --white:       #ffffff;
-  --accent:      #ffffff;   /* фиолетово-синий акцент */
+  --accent:      #7C91FC;   /* фиолетово-синий акцент */
   --nav-h:       60px;
 }
 
@@ -254,13 +254,13 @@ body {
 }
 
 .info-block--about {
-  max-width: 800px;
+  max-width: none;
 }
 
 .info-block--about p {
-  font-size: 17px;
-  line-height: 1.85;
-  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 14px;
 }
 
 .info-block--about p:last-child {
