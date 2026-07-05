@@ -110,6 +110,7 @@ const PROJECTS = [
     solution: 'Core Treasury объединяет мониторинг ликвидности, прогнозирование и сценарное моделирование в единый операционный контур, превращая treasury из отчётной функции в центр управления ликвидностью.',
 
     competitorAnalysis: 'Kyriba — лидер рынка, но перегруженный UX\nGTreasury — сильное прогнозирование, высокий порог входа\nSAP Treasury — мощная интеграция, слабый UX\nTIS — хорошая visibility, сложная настройка',
+    competitorLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=6004-9381&t=HGMOQk31tZlekgnU-1',
 
     competitorImage: '',
 
@@ -135,6 +136,7 @@ const PROJECTS = [
         'Переход ценности — от отчетности к прогнозированию и контролю'
       ]
     },
+    researchLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=6004-9381&t=HGMOQk31tZlekgnU-1',
 
     jtbd: 'Пользователи нанимают продукт для контроля ликвидности, предотвращения кассовых разрывов и получения единого источника финансовой правды в реальном времени.',
 
@@ -152,14 +154,17 @@ const PROJECTS = [
         description: 'Контроль прозрачности и регуляторный аудит'
       }
     ],
+    frameworksLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=8610-2768&t=HGMOQk31tZlekgnU-1',
 
     cjm: 'Переход от реактивного контроля к превентивному управлению ликвидностью через единый источник данных и сценарное моделирование.',
 
     userFlow: 'Регистрация → подключение банков → консолидация данных → мониторинг ликвидности → сценарное моделирование → принятие решений',
 
     designSystem: 'High-density financial UI system с акцентом на скорость считывания и семантику рисков',
+    designSystemLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=8611-2799&t=HGMOQk31tZlekgnU-1',
 
     prototype: 'Прототип охватывает полный цикл работы казначея: мониторинг, операции, аналитика, сценарии и отчёты.',
+    prototypeLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=8611-2796&t=11GHZNVYzlG4TsmR-1',
 
     results: '−60–70% время анализа ликвидности\n×3 ускорение выявления кассовых разрывов\n−80% ручной сверки данных\n−50% времени подготовки отчётности',
 
@@ -717,7 +722,7 @@ function openProject(id) {
   html += section("Контекст", p.context);
   html += section("Проблема", p.problem);
   html += section("Решение", p.solution);
-  html += section("Анализ конкурентов", p.competitorAnalysis);
+  html += section("Анализ конкурентов", p.competitorAnalysis, p.competitorLink);
   html += image(p.competitorImage);
 
   if (p.research) {
