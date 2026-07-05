@@ -67,19 +67,26 @@ const PROJECTS = [
     cjm: 'Переход от «Стресса и Тревоги» к «Контролю». Было: Елена работает аналитиком со средним доходом, понимает необходимость покупки жилья, но чувствует неопределённость и тревогу из-за отсутствия системы накоплений. Стало: благодаря приложению она переходит в состояние спокойной уверенности — ИИ-помощник позволяет ей не просто «откладывать», а видеть прогресс в достижении конкретной, амбициозной цели (квартира), превращая финансовое планирование из рутины в понятный творческий процесс. Пользователь переходит от фрагментированного управления деньгами к системному накоплению на конкретную цель с высокой степенью предсказуемости результата.',
     cjmImage: '',
 
+    keyScenarios: 'Пять ключевых сценариев продукта: ИИ-инсайты по тратам с рекомендациями на основе поведения и рыночной ситуации, онбординг инвестиций с прозрачным образовательным путём, портфель с понятной картиной доходности и риска, транзакции с контролем расходов и влиянием на цели, а также геймифицированный прогресс финансовой стабильности.',
+    keyScenariosImage: 'assets/FINCORP_key_scenarios.png',
+
     userFlow: 'Путь пользователя: регистрация → онбординг с эмоциональным триггером → верификация → постановка целей на основе ИИ-диагностики → персональный план → ежедневный поведенческий цикл → долгосрочное удержание через ИИ-инсайты, повторные цели и финансовый уровень.',
-    userflowImage: '',
+    userflowImage: 'assets/FINCORP_userflow.png',
     userFlowLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6472-6322&t=Dfme0MPLEWMfzThW-1',
 
+    purchaseScenario: 'Сценарий: пользователь планирует дорогую покупку. Когда пользователь собирается купить что-то крупное (например, AirPods за 18 990 ₽), ИИ анализирует, как это повлияет на финансовую подушку и текущие цели, и предлагает варианты действий: купить сейчас, отложить или разбить на части. После выбора решения ИИ пересчитывает план и прогноз — сколько дней «продержится» подушка безопасности и на сколько сдвинется цель.',
+    purchaseScenarioImage: 'assets/FINCORP_purchase_scenario.png',
+
     designSystem: 'Cyber-Minimalism с акцентом на игривый, дружелюбный ИИ-контекст.',
-    uikitImage: '',
+    uikitImage: 'assets/FINCORP_uikit.png',
     designSystemLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6472-6329&t=iCq6m8JjojlXfDCq-1',
 
     prototype: 'Прототип проведён через сценарий первого знакомства пользователя с приложением: от выбора цели до распределения бюджета — с поддержкой ИИ-помощника на каждом шаге.',
-    prototypeImage: '',
+    prototypeImage: 'assets/FINCORP_prototype.png',
     prototypeLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6288-11759&t=Dfme0MPLEWMfzThW-1',
 
     results:  'Gamification и progress feedback реально влияют на savings behavior. Визуализация целей улучшает финансовое здоровье и удовлетворённость пользователей. По результатам, основанным на исследовании аналогичных банковских приложений в других странах: вовлечённость +35%, достижение целей +28%, отток (churn) −22%, рост активов под управлением (AUM) +15%.',
+    resultsImage: 'assets/FINCORP_results.png',
 
     references: [
       { title: 'Visualizing Goals Study', url: 'https://www.prnewswire.com/news-releases/visualizing-goals-influences-financial-health-and-happiness-study-finds-300207028.html' },
@@ -410,7 +417,7 @@ const PROJECTS = [
   {
     id: 5,
     bannerColor: '#8B5E3C',
-    bannerImg: 'assets/Панорама_BIG.png',
+    bannerImg: 'assets/Панорама.png',
     images: [],
 
     context: 'Электронное меню для ресторана «Панорама Лаундж» в Доброграде — цифровой продукт, который заменяет статичное бумажное меню на удобный веб-сервис, доступный по QR-коду и через сайт ресторана, с инструментами управления для владельца.',
@@ -793,8 +800,14 @@ function openProject(id) {
   html += section("Customer Journey Map", p.cjm);
   html += image(p.cjmImage);
 
+  html += section("Ключевые сценарии", p.keyScenarios);
+  html += image(p.keyScenariosImage);
+
   html += section("User Flow", p.userFlow, p.userFlowLink);
   html += image(p.userflowImage);
+
+  html += section("Сценарий: Пользователь планирует дорогую покупку", p.purchaseScenario);
+  html += image(p.purchaseScenarioImage);
 
   html += section("Design System", p.designSystem, p.designSystemLink);
   html += image(p.uikitImage);
@@ -809,6 +822,7 @@ function openProject(id) {
   }
 
   html += section("Результаты", p.results);
+  html += image(p.resultsImage);
 
   if (p.references) {
   html += `
