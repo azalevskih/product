@@ -414,8 +414,8 @@ body {
    Скругление: border-radius
 ============================================================ */
 .project-card {
-  width: 340px;
-  height: 340px;
+  width: 598px;
+  height: 790px;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -637,7 +637,7 @@ footer {
   #skills               { padding: 40px 24px; }
   .projects-header      { padding: 40px 24px 24px; }
   .projects-track-wrapper { padding: 0 24px 48px; }
-  .project-card         { width: 280px; height: 280px; }
+  .project-card         { width: 240px; height: 317px; }
   #contact              { padding: 60px 0; }
   footer                { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
   .proj-body            { padding: 40px 24px 80px; }
