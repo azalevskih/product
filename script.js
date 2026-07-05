@@ -462,7 +462,7 @@ const PROJECTS = [
   {
     id: 6,
     bannerColor: '#B23A48',
-    bannerImg: '',
+    bannerImg: 'assets/Beyosa.ru_BIG.png',
     images: [],
 
     context: '«Разбуди Деда Мороза» — сезонный e-commerce лендинг для товара Body Pillow (обнимашка), выстроенный вокруг игровой механики коллективного прогресса: каждая покупка становится вкладом в общую новогоднюю миссию.',
