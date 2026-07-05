@@ -233,9 +233,59 @@ body {
    чтобы скомпенсировать освободившееся место.
 ============================================================ */
 #info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 48px 60px;
+}
+
+.info-block--about {
+  flex: 1;
+  max-width: none;
+}
+
+.info-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+  width: 220px;
+  padding-top: 40px;
+}
+
+.info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 100px;
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+}
+
+.info-btn--primary {
+  background: var(--black);
+  color: var(--white);
+}
+
+.info-btn--primary:hover {
+  opacity: 0.8;
+}
+
+.info-btn--secondary {
+  background: transparent;
+  color: var(--black);
+  border: 1px solid var(--gray-mid);
+}
+
+.info-btn--secondary:hover {
+  border-color: var(--black);
 }
 
 .info-block h2 {
@@ -251,10 +301,6 @@ body {
   font-size: 15px;
   color: var(--gray);
   line-height: 1.7;
-}
-
-.info-block--about {
-  max-width: none;
 }
 
 .info-block--about p {
@@ -631,7 +677,9 @@ footer {
 @media (max-width: 768px) {
   #main-nav             { padding: 0 24px; }
   #banner               { padding: 48px 24px; }
-  #info                 { padding: 48px 24px; }
+  #info                 { padding: 48px 24px; flex-direction: column; gap: 24px; }
+  .info-actions         { width: 100%; flex-direction: row; padding-top: 0; }
+  .info-btn             { flex: 1; }
   #experience-section   { padding: 40px 0; }
   .container            { padding: 0 24px; }
   .exp-item             { grid-template-columns: 1fr; gap: 6px; }
