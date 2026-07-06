@@ -739,9 +739,22 @@ footer {
   .container            { padding: 0 24px; }
   .exp-item             { grid-template-columns: 1fr; gap: 6px; }
   #skills               { padding: 40px 24px; }
-  .projects-header      { padding: 40px 24px 24px; }
-  .projects-track-wrapper { padding: 24px 24px 48px; }
-  .project-card         { width: 240px; height: 317px; }
+  .projects-track-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .projects-track {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .project-card {
+    scroll-snap-align: start;
+  }
   #contact              { padding: 60px 0; }
   footer                { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
   .proj-body            { padding: 40px 24px 80px; }
