@@ -693,13 +693,14 @@ function openProject(id) {
     `;
   }
 
-  function section(title, text, link) {
+  function section(title, text, link, id) {
     if (!text) return "";
     const linkHtml = link
       ? `<a class="figma-link" href="${link}" target="_blank" rel="noopener">Смотреть в Figma →</a>`
       : "";
+    const idAttr = id ? ` id="${id}"` : "";
     return `
-      <div class="proj-section">
+      <div class="proj-section"${idAttr}>
         <div class="proj-section-head">
           <h3>${title}</h3>
           ${linkHtml}
@@ -712,9 +713,9 @@ function openProject(id) {
   let html = "";
 
   html += section("Контекст", p.context);
-  html += section("Проблема", p.problem);
+  html += section("Проблема", p.problem, null, "proj-problem");
   html += image(p.problemImage);
-  html += section("Решение", p.solution);
+  html += section("Решение", p.solution, null, "proj-solution");
   html += section("Анализ конкурентов", p.competitorAnalysis, p.competitorLink);
   html += image(p.competitorImage);
 

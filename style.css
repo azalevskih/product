@@ -155,6 +155,10 @@ body {
   list-style: none;
 }
 
+.nav-links--project {
+  display: none;
+}
+
 .nav-links a {
   font-size: 16px;
   font-weight: 700;
@@ -757,8 +761,8 @@ footer {
 
   .nav-links {
     flex: 1;
-    gap: 0;
-    justify-content: space-around;
+    gap: 10px;
+    justify-content: space-between;
   }
 
   .nav-links a,
@@ -766,8 +770,17 @@ footer {
   #main-nav.home-page .nav-links a,
   #main-nav.light-banner .nav-links a {
     color: var(--black);
-    font-size: 12.5px;
+    font-size: 13.5px;
     letter-spacing: 0;
+  }
+
+  /* Внутри проекта таб-бар показывает "Проблема / Решение" вместо общих разделов сайта */
+  #main-nav.project-open .nav-links--site {
+    display: none;
+  }
+
+  #main-nav.project-open .nav-links--project {
+    display: flex;
   }
 
   /* Кнопка "Назад" на мобильных — просто ещё один пункт таб-бара, без fixed/absolute.
@@ -790,14 +803,20 @@ footer {
   footer { padding-bottom: calc(24px + 56px + env(safe-area-inset-bottom)); }
   .proj-body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
   #banner {
-    height: 45vh;
-    min-height: 340px;
+    height: 60vh;
+    min-height: 420px;
     padding: 48px 24px;
+    contain: paint;
+  }
+  .banner-bg {
+    contain: paint;
+    isolation: isolate;
   }
   .banner-bg spline-viewer {
-    pointer-events: none;   /* не даём сцене перехватывать свайп — скролл работает как обычно */
-    transform: scale(0.85); /* уменьшаем сцену, чтобы она полностью помещалась в кадр */
-    transform-origin: center center;
+    pointer-events: none;    /* не даём сцене перехватывать свайп — скролл работает как обычно */
+    transform: translateZ(0); /* форсируем отдельный GPU-слой, убирает "шлейф" картинки при скролле */
+    will-change: transform;
+    backface-visibility: hidden;
   }
   #info                 { padding: 48px 24px; flex-direction: column; align-items: stretch; gap: 24px; }
   .info-block--about    { flex: none; max-width: none; }
