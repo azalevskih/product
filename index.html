@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ============================================================
@@ -361,5 +362,17 @@
 
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
 <script src="script.js"></script>
+<script>
+const interval = setInterval(() => {
+    const viewer = document.querySelector('spline-viewer');
+    if (viewer && viewer.shadowRoot) {
+        const logo = viewer.shadowRoot.querySelector('#logo');
+        if (logo) {
+            logo.remove(); // Удаляет элемент логотипа
+            clearInterval(interval);
+        }
+    }
+}, 500);
+</script>
 </body>
 </html>
