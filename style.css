@@ -729,7 +729,61 @@ footer {
    АДАПТИВ (мобильные)
 ============================================================ */
 @media (max-width: 768px) {
-  #main-nav             { padding: 0 24px; }
+  #main-nav {
+    top: auto;
+    bottom: 0;
+    height: auto;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.9));
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 1px solid rgba(255,255,255,0.7);
+    border-bottom: none;
+    box-shadow: 0 -8px 24px rgba(60,60,90,0.12);
+  }
+
+  /* На мобильных фон таб-бара всегда одинаковый — не зависит от скролла или типа баннера */
+  #main-nav.scrolled,
+  #main-nav.home-page,
+  #main-nav.light-banner {
+    background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.9));
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 1px solid rgba(255,255,255,0.7);
+    border-bottom: none;
+  }
+
+  .nav-links {
+    flex: 1;
+    gap: 0;
+    justify-content: space-around;
+  }
+
+  .nav-links a,
+  #main-nav.scrolled .nav-links a,
+  #main-nav.home-page .nav-links a,
+  #main-nav.light-banner .nav-links a {
+    color: var(--black);
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  /* Кнопка "Назад" на мобильных — просто ещё один пункт таб-бара, без fixed/absolute */
+  .nav-back-btn,
+  #main-nav.scrolled .nav-back-btn,
+  #main-nav.home-page .nav-back-btn,
+  #main-nav.light-banner .nav-back-btn {
+    position: static;
+    color: var(--black);
+    font-size: 11px;
+    flex-shrink: 0;
+    padding-right: 6px;
+  }
+
+  footer { padding-bottom: calc(24px + 56px + env(safe-area-inset-bottom)); }
+  .proj-body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
   #banner               { padding: 48px 24px; }
   .banner-bg spline-viewer {
     pointer-events: none;   /* не даём сцене перехватывать свайп — скролл работает как обычно */
