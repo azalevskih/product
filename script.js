@@ -805,7 +805,7 @@ function openProject(id) {
     });
   }
 
-  html += section("Результаты", p.results);
+  html += section("Результаты", p.results, null, "proj-results");
   html += image(p.resultsImage);
 
   if (p.references) {
