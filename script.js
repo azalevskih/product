@@ -610,7 +610,13 @@ function maxScroll() {
   return track.scrollWidth - wrapperEl.clientWidth + 48;
 }
 
+function isMobileCarousel() {
+  return window.matchMedia('(max-width: 768px)').matches;
+}
+
 wrapper.addEventListener('wheel', (e) => {
+  if (isMobileCarousel()) return; // mobile uses native horizontal touch scroll instead
+
   const atStart = hPos <= 0;
   const atEnd   = hPos >= maxScroll();
 
@@ -621,21 +627,15 @@ wrapper.addEventListener('wheel', (e) => {
   }
 }, { passive: false });
 
-// Тач-скролл (мобильные)
-let tY = 0;
-wrapper.addEventListener('touchstart', e => { tY = e.touches[0].clientY; }, { passive: true });
-wrapper.addEventListener('touchmove', e => {
-  const dy = tY - e.touches[0].clientY;
-  const atStart = hPos <= 0;
-  const atEnd   = hPos >= maxScroll();
+// На мобильных горизонтальный скролл карточек — нативный (overflow-x: auto в CSS),
+// поэтому здесь никакого JS для тача не требуется.
 
-  if ((!atEnd && dy > 0) || (!atStart && dy < 0)) {
-    e.preventDefault();
-    hPos = Math.max(0, Math.min(maxScroll(), hPos + dy));
-    track.style.transform = `translateX(-${hPos}px)`;
-    tY = e.touches[0].clientY;
+window.addEventListener('resize', () => {
+  if (isMobileCarousel()) {
+    hPos = 0;
+    track.style.transform = '';
   }
-}, { passive: false });
+});
 
 
 /* ============================================================
