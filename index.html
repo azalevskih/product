@@ -42,8 +42,20 @@
   <section id="banner">
 
     <div class="banner-bg">
-      <spline-viewer url="https://prod.spline.design/yz9adVjoDMkXkCGH/scene.splinecode"></spline-viewer>
-    </div>
+
+  <!-- Desktop -->
+  <spline-viewer 
+    class="desktop-spline"
+    url="https://prod.spline.design/yz9adVjoDMkXkCGH/scene.splinecode">
+  </spline-viewer>
+
+  <!-- Mobile -->
+  <spline-viewer 
+    class="mobile-spline"
+    url="https://prod.spline.design/4VXBcxx2063VGfOJ/scene.splinecode">
+  </spline-viewer>
+
+</div>
 
     <div class="banner-overlay"></div>
 
@@ -347,7 +359,7 @@
   </div>
 
 
-  <script src="script.js"></script>
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
