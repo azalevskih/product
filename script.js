@@ -615,7 +615,7 @@ const PROJECTS = [
   {
     id: 8,
     bannerColor: '#1E1E96',
-    bannerImg: 'assets/VTB_BIG.png',
+    bannerImg: 'assets/VTB_BIG.jpg',
     lightBanner: true,
     images: [],
 
