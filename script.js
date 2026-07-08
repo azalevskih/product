@@ -641,7 +641,13 @@ function isMobileCarousel() {
   return window.matchMedia('(max-width: 768px)').matches;
 }
 
+// ВРЕМЕННО ОТКЛЮЧЕНО: скролл колесом мыши в блоке проектов на десктопе.
+// Все карточки теперь помещаются в один ряд без прокрутки.
+// Чтобы вернуть скролл — поставь DESKTOP_SCROLL_ENABLED = true.
+const DESKTOP_SCROLL_ENABLED = false;
+
 wrapper.addEventListener('wheel', (e) => {
+  if (!DESKTOP_SCROLL_ENABLED) return;
   if (isMobileCarousel()) return; // mobile uses native horizontal touch scroll instead
 
   const atStart = hPos <= 0;
