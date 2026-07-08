@@ -8,6 +8,23 @@
 ============================================================ */
 
 
+/* ============================================================
+   ГЛАВНЫЙ БАННЕР — выбор Spline-сцены под устройство
+   Десктоп и мобилка используют разные 3D-сцены.
+   Чтобы поменять ссылки — просто отредактируй значения ниже.
+============================================================ */
+(function setHeroSplineScene() {
+  const heroSpline = document.getElementById('hero-spline');
+  if (!heroSpline) return;
+
+  const DESKTOP_SCENE = 'https://prod.spline.design/yz9adVjoDMkXkCGH/scene.splinecode';
+  const MOBILE_SCENE  = 'https://prod.spline.design/4VXBcxx2063VGfOJ/scene.splinecode';
+
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  heroSpline.setAttribute('url', isMobile ? MOBILE_SCENE : DESKTOP_SCENE);
+})();
+
+
 const PROJECTS = [
 
   // ── ПРОЕКТ 0 ── FINCORP ──────────────────────────────────
