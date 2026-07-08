@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <!-- ============================================================
@@ -43,20 +42,8 @@
   <section id="banner">
 
     <div class="banner-bg">
-
-  <!-- Desktop -->
-  <spline-viewer 
-    class="desktop-spline"
-    url="https://prod.spline.design/yz9adVjoDMkXkCGH/scene.splinecode">
-  </spline-viewer>
-
-  <!-- Mobile -->
-  <spline-viewer 
-    class="mobile-spline"
-    url="https://prod.spline.design/4VXBcxx2063VGfOJ/scene.splinecode">
-  </spline-viewer>
-
-</div>
+      <spline-viewer url="https://prod.spline.design/yz9adVjoDMkXkCGH/scene.splinecode"></spline-viewer>
+    </div>
 
     <div class="banner-overlay"></div>
 
@@ -105,7 +92,7 @@
             <div class="exp-company">ООО «СЗ «Доброград»</div>
             <div class="exp-desc">
               <ul>
-                <li>Ведение сайта курортного проекта "Доброград", переработка информационной архитектуры, структуры и визуальной системы под новые бизнес-задачи.</li>
+                <li>Поддержание отдельных страниц сайта курортного проекта "Доброград", переработка информационной архитектуры, структуры и визуальной системы под новые бизнес-задачи.</li>
                 <li>Проектирование и оптимизация сценариев привлечения пользователей через таргетированные механики на сайте, с фокусом на повышение конверсии в целевые действия.</li>
                 <li>Разработка бренд-айдентики и дизайн-систем для проектов разного масштаба — от коммерческих пространств до спортивных мероприятий, включая: "Доброград Панорама Лаундж", "Доброград: Первенство по вейкбордингу", "Чемпионат России по вейкборду-электротяга".</li>
                 <li>Создание визуальной концепции и коммуникационной системы бренда с адаптацией под digital- и офлайн-каналы (социальные сети, афиши, промо-материалы, event-брендинг).</li>
@@ -245,14 +232,16 @@
         </div>
 
 
-        <!-- КАРТОЧКА 3 — Разбуди Деда Мороза (Beyosa) -->
-        <div class="project-card" data-id="6" onclick="openProject(6)">
-          <div class="card-bg" style="background-color: #f3dede; background-image: url('assets/Beyosa.ru.jpg');"></div>
-          <div class="card-overlay">
-            <div class="card-title">Разбуди Деда Мороза</div>
-            <div class="card-desc">Gamified e-commerce лендинг с live-прогрессом и социальным доказательством</div>
-          </div>
-        </div>
+        <!--
+КАРТОЧКА 3 — Разбуди Деда Мороза (Beyosa)
+<div class="project-card" data-id="6" onclick="openProject(6)">
+  <div class="card-bg" style="background-color: #f3dede; background-image: url('assets/Beyosa.ru.jpg');"></div>
+  <div class="card-overlay">
+    <div class="card-title">Разбуди Деда Мороза</div>
+    <div class="card-desc">Gamified e-commerce лендинг с live-прогрессом и социальным доказательством</div>
+  </div>
+</div>
+-->
 
 
         <!-- КАРТОЧКА 4 — Core Treasury -->
@@ -265,34 +254,36 @@
         </div>
 
 
-        <!-- КАРТОЧКА 5 — Доброград: платформа ипотеки -->
-        <div class="project-card" data-id="7" onclick="openProject(7)">
-          <div class="card-bg" style="background-color: #dbe6ea; background-image: url('assets/Dobrograd.jpg');"></div>
-          <div class="card-overlay">
-            <div class="card-title">Доброград: платформа ипотеки</div>
-            <div class="card-desc">Прозрачный выбор ипотеки и жилья через ежемесячный платёж</div>
-          </div>
-        </div>
+        <!--
+КАРТОЧКА 5 — Доброград: платформа ипотеки
+<div class="project-card" data-id="7" onclick="openProject(7)">
+  <div class="card-bg" style="background-color: #dbe6ea; background-image: url('assets/Dobrograd.jpg');"></div>
+  <div class="card-overlay">
+    <div class="card-title">Доброград: платформа ипотеки</div>
+    <div class="card-desc">Прозрачный выбор ипотеки и жилья через ежемесячный платёж</div>
+  </div>
+</div>
+-->
 
+        <!--
+КАРТОЧКА 6 — AI PM ассистент
+<div class="project-card" data-id="2" onclick="openProject(2)">
+  <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/AI PM Assistant.jpg');"></div>
+  <div class="card-overlay">
+    <div class="card-title">Внутренний AI PM ассистент</div>
+    <div class="card-desc">AI-ассистент внутри корпоративной платформы с доступом к проектным данным</div>
+  </div>
+</div>
 
-        <!-- КАРТОЧКА 6 — AI PM ассистент -->
-        <div class="project-card" data-id="2" onclick="openProject(2)">
-          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/AI PM Assistant.jpg');"></div>
-          <div class="card-overlay">
-            <div class="card-title">Внутренний AI PM ассистент</div>
-            <div class="card-desc">AI-ассистент внутри корпоративной платформы с доступом к проектным данным</div>
-          </div>
-        </div>
-
-
-        <!-- КАРТОЧКА 7 — DroneDrop -->
-        <div class="project-card" data-id="4" onclick="openProject(4)">
-          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Drone.jpg');"></div>
-          <div class="card-overlay">
-            <div class="card-title">DroneDrop</div>
-            <div class="card-desc">Беспилотная доставка дронами</div>
-          </div>
-        </div>
+КАРТОЧКА 7 — DroneDrop
+<div class="project-card" data-id="4" onclick="openProject(4)">
+  <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Drone.jpg');"></div>
+  <div class="card-overlay">
+    <div class="card-title">DroneDrop</div>
+    <div class="card-desc">Беспилотная доставка дронами</div>
+  </div>
+</div>
+-->
 
 
         <!-- КАРТОЧКА 8 — AI Design Workflow (временно скрыта) -->
@@ -360,19 +351,7 @@
   </div>
 
 
+  <script src="script.js"></script>
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
-<script src="script.js"></script>
-<script>
-const interval = setInterval(() => {
-    const viewer = document.querySelector('spline-viewer');
-    if (viewer && viewer.shadowRoot) {
-        const logo = viewer.shadowRoot.querySelector('#logo');
-        if (logo) {
-            logo.remove(); // Удаляет элемент логотипа
-            clearInterval(interval);
-        }
-    }
-}, 500);
-</script>
 </body>
 </html>

@@ -17,7 +17,7 @@
   --black:       #1a1a1a;
   --gray:        #3d3d3d;
   --gray-mid:    #888888;
-  --gray-light:  #ffffff;
+  --gray-light:  #e8e8e8;
   --white:       #ffffff;
   --accent:      #7C91FC;   /* фиолетово-синий акцент */
   --nav-h:       60px;
@@ -728,18 +728,6 @@ footer {
   color: var(--gray);
 }
 
-/* ============================================================
-   SPLINE — переключение Desktop / Mobile
-============================================================ */
-
-/* По умолчанию показываем Desktop Spline */
-.desktop-spline {
-  display: block;
-}
-
-.mobile-spline {
-  display: none;
-}
 
 /* ============================================================
    АДАПТИВ (мобильные)
@@ -759,26 +747,6 @@ footer {
     border-bottom: none;
     box-shadow: 0 -8px 24px rgba(60,60,90,0.12);
   }
-
-     /* Spline только для мобильной версии */
-  .desktop-spline {
-    display: none;
-  }
-
-  .mobile-spline {
-    display: block;
-  }
-
-  .banner-bg spline-viewer {
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    transform: translateZ(0);
-    will-change: transform;
-    backface-visibility: hidden;
-  }
-
-
 
   /* На мобильных фон таб-бара всегда одинаковый — не зависит от скролла или типа баннера */
   #main-nav.scrolled,
