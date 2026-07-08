@@ -247,8 +247,8 @@ body {
 }
 
 .info-block--about {
-  flex: 0 1 560px;
-  max-width: 560px;
+  flex: 1 1 720px;
+  max-width: 720px;
 }
 
 .info-actions {
