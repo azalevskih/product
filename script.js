@@ -162,8 +162,10 @@ const PROJECTS = [
       ]
     },
     researchLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=6004-9381&t=HGMOQk31tZlekgnU-1',
+    researchImage: 'assets/Исследование_1_Core.jpg',
 
     jtbd: 'Пользователи нанимают продукт для контроля ликвидности, предотвращения кассовых разрывов и получения единого источника финансовой правды в реальном времени.',
+    jtbdImage: 'assets/Исследование_2_Core.jpg',
 
     jtbdGroups: [
       {
@@ -192,9 +194,11 @@ const PROJECTS = [
 
     designSystem: 'High-density financial UI system с акцентом на скорость считывания и семантику рисков',
     designSystemLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=8611-2799&t=HGMOQk31tZlekgnU-1',
+    uikitImage: 'assets/Design_System_Core.jpg',
 
     prototype: 'Прототип охватывает полный цикл работы казначея: мониторинг, операции, аналитика, сценарии и отчёты.',
     prototypeLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=8611-2796&t=11GHZNVYzlG4TsmR-1',
+    prototypeImage: 'assets/Прототип_Core.jpg',
 
     results: '−60–70% время анализа ликвидности\n×3 ускорение выявления кассовых разрывов\n−80% ручной сверки данных\n−50% времени подготовки отчётности',
 
@@ -809,6 +813,8 @@ function openProject(id) {
     </div>
   `;
 }
+
+  html += image(p.researchImage);
 
   html += section("JTBD", p.jtbd);
   html += image(p.jtbdImage);
