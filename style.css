@@ -254,6 +254,10 @@ body {
   margin-top: 28px;
 }
 
+#mobile-about {
+  display: none;
+}
+
 
 /* ============================================================
    О СЕБЕ
@@ -840,14 +844,13 @@ footer {
   footer { padding-bottom: calc(24px + 56px + env(safe-area-inset-bottom)); }
   .proj-body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
   #banner {
-    height: auto;
-    min-height: 100vh;
-    padding: 120px 24px 60px;
+    height: 60vh;
+    min-height: 420px;
+    padding: 48px 24px;
     contain: paint;
   }
   .banner-content {
-    margin: 0;
-    max-width: 100%;
+    display: none;
   }
   .banner-bg {
     contain: paint;
@@ -858,6 +861,10 @@ footer {
     transform: translateZ(0); /* форсируем отдельный GPU-слой, убирает "шлейф" картинки при скролле */
     will-change: transform;
     backface-visibility: hidden;
+  }
+  #mobile-about {
+    display: block;
+    padding: 40px 24px 60px;
   }
   .info-block--about    { max-width: none; }
   .banner-actions        { flex-direction: column; align-items: stretch; gap: 12px; }
