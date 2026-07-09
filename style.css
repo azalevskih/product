@@ -844,10 +844,11 @@ footer {
   footer { padding-bottom: calc(24px + 56px + env(safe-area-inset-bottom)); }
   .proj-body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
   #banner {
-    height: 60vh;
-    min-height: 420px;
+    height: 78vh;
+    min-height: 560px;
     padding: 48px 24px;
     contain: paint;
+    isolation: isolate;
   }
   .banner-content {
     display: none;
@@ -864,6 +865,10 @@ footer {
   }
   #mobile-about {
     display: block;
+    position: relative;
+    z-index: 3;
+    background: var(--white);
+    margin-top: -1px;
     padding: 40px 24px 60px;
   }
   .info-block--about    { max-width: none; }
