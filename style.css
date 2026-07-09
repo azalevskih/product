@@ -17,7 +17,7 @@
   --black:       #1a1a1a;
   --gray:        #3d3d3d;
   --gray-mid:    #888888;
-  --gray-light:  #e8e8e8;
+  --gray-light:  #ffffff;
   --white:       #ffffff;
   --accent:      #7C91FC;   /* фиолетово-синий акцент */
   --nav-h:       60px;
@@ -229,16 +229,16 @@ body {
 
 .banner-name {
   font-family: 'Wix Madefor Display', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 28px;
   color: #000000;
 }
 
 .banner-role {
   font-family: 'Wix Madefor Display', sans-serif;
   font-weight: 400;
-  font-size: 10px;
-  color: #EBEBEB;
+  font-size: 16px;
+  color: #8d8a8a;
   margin-top: 4px;
 }
 
