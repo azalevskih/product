@@ -33,7 +33,7 @@ const PROJECTS = [
     bannerColor: '#7F77DD',
     bannerImg: 'assets/FINCORP_BIG.png',
     lightBanner: true,
-    images: [],
+    images: ['assets/Прототип_Fin.jpg'],
 
     context:  'Fin Corp — финансовый продукт, который помогает пользователям управлять деньгами: совершать платежи, отслеживать баланс и формировать накопления. Блок накоплений — один из ключевых инструментов долгосрочного использования продукта, так как напрямую связан с финансовыми привычками пользователей и их вовлечённостью в сервис.',
 
@@ -66,10 +66,11 @@ const PROJECTS = [
       ],
     },
     researchLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6011-9524&t=iCq6m8JjojlXfDCq-1',
+    researchImage: 'assets/Исследование_1_Fin.jpg',
     frameworksLink: 'https://www.figma.com/design/qKWn6ITFDRQpSaqm1ybAgV/FINCORP-Service-%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0?node-id=6472-6322&t=Dfme0MPLEWMfzThW-1',
 
     jtbd: 'Поскольку FINCORP ориентирован на широкую аудиторию, сегментация по возрасту или социально-демографическим признакам была недостаточно информативна. Поэтому для исследования пользователей использовался подход Jobs To Be Done (JTBD), который позволяет выявить реальные задачи, мотивы и контекст принятия финансовых решений. Общей чертой всех профилей является потребность в обучении в рамках приложения, чтобы помочь им преодолеть разрыв между их текущей ситуацией и финансовыми целями.',
-    jtbdImage: '',
+    jtbdImage: 'assets/Исследование_2_Fin.jpg',
     jtbdGroups: [
       {
         title: 'Финансовая подушка / безопасность',

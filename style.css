@@ -734,7 +734,7 @@ footer {
   width: 100%;
   overflow: hidden;
   margin: 32px 0;
-  background: var(--gray-light);
+  background: var(--white);
 }
 
 .proj-media img,
