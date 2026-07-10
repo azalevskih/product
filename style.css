@@ -338,7 +338,7 @@ body {
 }
 
 .info-block--about p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   margin-bottom: 14px;
 }
@@ -407,7 +407,7 @@ body {
 }
 
 .exp-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--gray);
   line-height: 1.7;
 }
@@ -588,7 +588,7 @@ body {
 }
 
 .contact-link {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--black);
   text-decoration: none;
   border-bottom: 1px solid var(--gray-mid);
@@ -607,7 +607,7 @@ body {
 ============================================================ */
 footer {
   padding: 32px 48px;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--gray-mid);
   display: flex;
   justify-content: space-between;
@@ -700,7 +700,7 @@ footer {
 }
 
 .proj-section p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--gray);
   line-height: 1.75;
   margin-bottom: 14px;
@@ -722,7 +722,7 @@ footer {
 
 .figma-link {
   flex-shrink: 0;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--black);
   text-decoration: none;
@@ -812,7 +812,7 @@ footer {
   #main-nav.home-page .nav-links a,
   #main-nav.light-banner .nav-links a {
     color: var(--black);
-    font-size: 13.5px;
+    font-size: 16px;
     letter-spacing: 0;
   }
 
