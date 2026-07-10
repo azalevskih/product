@@ -620,7 +620,7 @@ const PROJECTS = [
   {
     id: 8,
     bannerColor: '#1E1E96',
-    bannerImg: 'assets/VTB_BIG.jpg',
+    bannerImg: 'assets/VTB_BIG.png',
     lightBanner: false,
     images: [],
 
