@@ -6,364 +6,256 @@
   <title>Азалия Замалетдинова — Product Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- ============================================================
-    НАВИГАЦИЯ
-    Поменяй ссылки href и текст пунктов меню здесь
+       НАВИГАЦИЯ (верх)
+       Слева — имя (ведёт на "Обо мне"), по центру — "Проекты",
+       справа — переключатель RU / EN
   ============================================================ -->
   <nav id="main-nav" class="home-page">
-    <button class="nav-back-btn" onclick="closeProject()" aria-label="Назад"><span class="back-arrow">←</span><span class="back-label"> Назад</span></button>
-    <ul class="nav-links nav-links--site">
-      <li><a href="#banner">Обо мне</a></li>
-      <li><a href="#experience-section">Опыт</a></li>
-      <li><a href="#projects-wrapper">Проекты</a></li>
-      <li><a href="#contact">Контакты</a></li>
-    </ul>
-    <ul class="nav-links nav-links--project">
-      <li><a href="#proj-problem">Проблема</a></li>
-      <li><a href="#proj-solution">Решение</a></li>
-      <li><a href="#proj-results">Результат</a></li>
-    </ul>
+    <div class="container nav-grid">
+      <div class="nav-left">
+        <button type="button" class="nav-back-btn" onclick="navigateTo('about');return false;">
+          <span class="nav-back-arrow" aria-hidden="true">←</span>
+          <span class="lang-ru">Назад</span><span class="lang-en">Back</span>
+        </button>
+
+        <a href="#" class="nav-logo" onclick="navigateTo('about');return false;">
+          <span class="lang-ru">А. З.</span><span class="lang-en">A. Z.</span>
+        </a>
+      </div>
+
+      <ul class="nav-links nav-links--site">
+        <li><a href="#" onclick="navigateTo('projects');return false;">
+          <span class="lang-ru">Проекты</span><span class="lang-en">Projects</span>
+        </a></li>
+      </ul>
+
+      <div class="lang-switch-group">
+        <button type="button" id="lang-ru-btn" class="lang-switch active" onclick="switchLanguage('ru')">RU</button>
+        <button type="button" id="lang-en-btn" class="lang-switch" onclick="switchLanguage('en')">EN</button>
+      </div>
+    </div>
   </nav>
 
 
-  <!-- ============================================================
-    БАННЕР ГЛАВНОЙ СТРАНИЦЫ
-    Чтобы поставить своё фото:
-      1. Положи файл в папку images/
-      2. В style.css найди селектор .banner-bg
-         и замени background-image: url('') на url('images/твоё-фото.jpg')
-    Если фото нет — будет жёлтый фон.
-  ============================================================ -->
-  <section id="banner">
+  <main>
 
-    <div class="banner-bg">
-      <spline-viewer id="hero-spline"></spline-viewer>
-    </div>
+    <!-- ============================================================
+         СТРАНИЦА: ОБО МНЕ (главная)
+    ============================================================ -->
+    <section id="about-page" class="page active">
+      <section id="banner">
+        <div class="banner-bg">
+          <img src="assets/avatar_image_1.png" alt="Азалия Замалетдинова" class="banner-avatar banner-avatar--base">
+          <img src="assets/avatar_image_2.png" alt="Азалия Замалетдинова" class="banner-avatar banner-avatar--alt">
+          <div class="avatar-hover-zone" aria-hidden="true"></div>
+        </div>
+         <div class="banner-content">
+          <div class="banner-name">
 
-    <div class="banner-overlay"></div>
+  <div class="lang-ru">Азалия</div>
+  <div class="lang-en">Azaliya</div>
 
-    <div class="banner-content">
-      <div class="banner-name">Азалия Замалетдинова</div>
-      <div class="banner-role">Product designer</div>
+  <div class="lang-ru">Замалетдинова</div>
+  <div class="lang-en">Zamaletdinova</div>
 
-      <div class="info-block info-block--about">
+  <div class="role-word">Product Designer</div>
+</div>
 
-        <p>Привет! Меня зовут Азалия, я продуктовый дизайнер, проектирую мобильные и веб-интерфейсы с фокусом на UX, визуальную систему и продуктовую логику.</p>
-      </div>
+    
+          <div class="about-label"><span class="lang-ru">Обо мне</span><span class="lang-en">About me</span></div>
+          <div class="info-block info-block--about">
+            <p class="lang-ru">Привет! Меня зовут Азалия, я продуктовый дизайнер, проектирую мобильные и веб-интерфейсы с фокусом на UX, визуальную систему и продуктовую логику.</p>
+            <p class="lang-en">Hi! My name is Azaliya, I'm a product designer. I design mobile and web interfaces with a focus on UX, visual systems, and product logic.</p>
+            <p class="lang-en">I work with user scenarios, problem research, and building interfaces from idea to ready-to-develop mockups.</p>
+          </div>
 
-      <div class="banner-actions">
-        <a class="info-btn info-btn--secondary"
-   href="#projects-wrapper"
-   onclick="ym(110418530, 'reachGoal', 'click_project');">
-   Посмотреть кейсы
-</a>
-      </div>
-    </div>
+          <div class="banner-actions">
+            <a class="info-btn info-btn--secondary" href="#" onclick="navigateTo('projects');return false;">
+              <span class="lang-ru">Посмотреть кейсы</span><span class="lang-en">View case studies</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-  </section>
+      <!-- Дубликат блока "Обо мне" для мобильных — показывается под 3D-сценой -->
+      <section id="mobile-about">
+        <div class="banner-name">
+          <span class="lang-ru">Азалия Замалетдинова</span><span class="lang-en">Azaliya Zamaletdinova</span>
+        </div>
+        <div class="banner-role">Product designer</div>
 
-  <!-- ============================================================
-    МОБИЛЬНАЯ ВЕРСИЯ: имя, профессия, "о себе" и кнопка — под баннером.
-    На десктопе не показывается (там это оверлей поверх Spline-сцены).
-  ============================================================ -->
-  <section id="mobile-about">
-    <div class="banner-name"></div>
-    <div class="banner-role"></div>
+        <div class="about-label" style="margin-top:24px;"><span class="lang-ru">Обо мне</span><span class="lang-en">About me</span></div>
+        <div class="info-block info-block--about">
+          <p class="lang-ru">Привет! Меня зовут Азалия, я продуктовый дизайнер, проектирую мобильные и веб-интерфейсы с фокусом на UX, визуальную систему и продуктовую логику.</p>
+          <p class="lang-ru">Работаю с пользовательскими сценариями, исследованием проблем и созданием интерфейсов от идеи до готовых макетов для разработки. Интегрирую AI-инструменты в процесс дизайна для ускорения прототипирования, генерации решений и проверки гипотез.</p>
+          <p class="lang-en">Hi! My name is Azaliya, I'm a product designer. I design mobile and web interfaces with a focus on UX, visual systems, and product logic.</p>
+          <p class="lang-en">I work with user scenarios, problem research, and building interfaces from idea to ready-to-develop mockups. I integrate AI tools into the design process to speed up prototyping, generate solutions, and test hypotheses.</p>
+        </div>
+        <div class="banner-actions">
+          <a class="info-btn info-btn--secondary" href="#" onclick="navigateTo('projects');return false;">
+            <span class="lang-ru">Посмотреть кейсы</span><span class="lang-en">View case studies</span>
+          </a>
+        </div>
+      </section>
+    </section>
 
-    <div class="info-block info-block--about">
+    <!-- ============================================================
+         СТРАНИЦА: ОПЫТ РАБОТЫ
+    ============================================================ -->
+    <section id="experience-page" class="page">
+      <div class="container page-container">
+        <h2 class="section-title"><span class="lang-ru">Опыт работы</span><span class="lang-en">Experience</span></h2>
 
-      <p>Привет! Меня зовут Азалия, я продуктовый дизайнер, проектирую мобильные и веб-интерфейсы с фокусом на UX, визуальную систему и продуктовую логику.</p>
-    </div>
+        <div class="exp-list">
 
-    <div class="banner-actions">
-      <a class="info-btn info-btn--secondary" href="#projects-wrapper">Посмотреть кейсы</a>
-    </div>
-  </section>
+          <div class="exp-item">
+            <div class="exp-date">2023 — 2026</div>
+            <div>
+              <div class="exp-role">Product Designer</div>
+              <div class="exp-company">ООО «Доброград»</div>
+              <div class="exp-desc">
+                <ul>
+                  <li class="lang-ru">Развивала цифровой сервис курортного проекта «Доброград»: анализировала пользовательские сценарии поиска информации, выбора услуг и бронирования, оптимизировала структуру продукта и интерфейсы под бизнес-задачи.</li>
+                  <li class="lang-ru">Проводила UX-аудит пользовательских путей, выявляла точки потери пользователей и улучшала информационную архитектуру продукта.</li>
+                  <li class="lang-ru">Разрабатывала посадочные страницы и дизайн-системы для digital-проектов: «Доброград Панорама Лаундж», «Первенство по вейкбордингу», «Чемпионат России по вейкборду» и «Гордость Великой России».</li>
+                  <li class="lang-ru">Спроектировала цифровой сервис заказа блюд — от просмотра меню до оформления заказа.</li>
 
-  <div class="divider"></div>
-
-
-  <!-- ============================================================
-    ОПЫТ РАБОТЫ
-    Чтобы добавить новую строку — скопируй один блок .exp-item
-  ============================================================ -->
-  <section id="experience-section">
-    <div class="container">
-      <h2 class="section-title">Опыт работы</h2>
-      <div class="exp-list">
-
-        <div class="exp-item">
-          <div class="exp-date">2023 — 2026</div>
-          <div class="exp-body">
-            <div class="exp-role">Product Designer</div>
-            <div class="exp-company">ООО «Доброград»</div>
-            <div class="exp-desc">
-              <ul>
-                <li>Развивала цифровой сервис курортного проекта «Доброград»: анализировала пользовательские сценарии поиска информации, выбора услуг и бронирования, оптимизировала структуру продукта и интерфейсы под бизнес-задачи.</li>
-                <li>Проводила UX-аудит пользовательских путей, выявляла точки потери пользователей и улучшала информационную архитектуру продукта.</li>
-                <li>Проектировала пользовательские сценарии и посадочные страницы для рекламных кампаний с учетом различных сегментов аудитории, повышая релевантность коммуникации и качество пользовательского опыта.</li>
-                <li>Разрабатывала посадочные страницы и дизайн-системы для digital-проектов различного масштаба, включая «Доброград Панорама Лаундж», «Доброград: Первенство по вейкбордингу», «Чемпионат России по вейкборду (электротяга)» и «Гордость Великой России».</li>
-                <li>Спроектировала цифровой сервис заказа блюд: исследовала пользовательский сценарий выбора, выявила проблемы навигации и структуры каталога, протестировала решение и улучшила путь пользователя от просмотра меню до оформления заказа.</li>
-              </ul>
+                  <li class="lang-en">Developed the digital service for the Dobrograd resort project: analyzed user scenarios for finding information, choosing services and booking, optimized the product structure and interfaces for business goals.</li>
+                  <li class="lang-en">Conducted UX audits of user journeys, identified drop-off points and improved the product's information architecture.</li>
+                  <li class="lang-en">Designed landing pages and design systems for digital projects: "Dobrograd Panorama Lounge", the wakeboarding championship series and "Pride of Great Russia".</li>
+                  <li class="lang-en">Designed a digital food-ordering service — from browsing the menu to checkout.</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="exp-item">
-          <div class="exp-date">2025 — 2026</div>
-          <div class="exp-body">
-            <div class="exp-role">Product Designer (AI-enabled)</div>
-            <div class="exp-company">NEFIS GROUP</div>
-            <div class="exp-desc">
-              <ul>
-                <li>Спроектировала и оптимизировала маркетинговые сценарии привлечения пользователей через платные social и Telegram-каналы, фокусируясь на росте конверсии в подписку и вовлечённость в продукт.</li>
-                <li>Создавала и масштабировала креативные системы, где каждый визуальный эксперимент выступал как элемент продуктовой воронки и обеспечивал в среднем 2–3 тыс. новых пользователей в Telegram.</li>
-                <li>Спроектировала AI-ассистированные дизайн-процессы с использованием Midjourney, Stable Diffusion и DALL·E, оптимизировала сквозной конвейер производства креативов, интегрируя генеративные AI-инструменты (Generative Fill, upscaling, enhancement models), что ускорило процессы создания дизайна примерно в 3 раза.</li>
-                <li>Разработала и обучила LoRA-модели под задачи бренда, обеспечивая консистентность визуальной системы, оцифровала продукцию для задач.</li>
-                <li>Внедрила AI-инструменты в продуктовый процесс генерации и тестирования контента, сократив цикл от идеи до запуска креатива и повысив скорость экспериментирования.</li>
-              </ul>
+          <div class="exp-item">
+            <div class="exp-date">2025 — 2026</div>
+            <div>
+              <div class="exp-role"><span class="lang-ru">Product Designer (AI-enabled)</span><span class="lang-en">Product Designer (AI-enabled)</span></div>
+              <div class="exp-company">NEFIS GROUP</div>
+              <div class="exp-desc">
+                <ul>
+                  <li class="lang-ru">Проектировала и оптимизировала маркетинговые сценарии привлечения пользователей через платные social и Telegram-каналы.</li>
+                  <li class="lang-ru">Создавала креативные системы, обеспечивавшие в среднем 2–3 тыс. новых пользователей в Telegram.</li>
+                  <li class="lang-ru">Спроектировала AI-ассистированные дизайн-процессы (Midjourney, Stable Diffusion, DALL·E), ускорив создание дизайна примерно в 3 раза.</li>
+                  <li class="lang-ru">Разработала и обучила LoRA-модели под задачи бренда для консистентности визуальной системы.</li>
+
+                  <li class="lang-en">Designed and optimized marketing acquisition scenarios through paid social and Telegram channels.</li>
+                  <li class="lang-en">Built creative systems that drove an average of 2–3k new Telegram users per campaign.</li>
+                  <li class="lang-en">Designed AI-assisted design pipelines (Midjourney, Stable Diffusion, DALL·E), speeding up design production roughly 3x.</li>
+                  <li class="lang-en">Trained brand-specific LoRA models to keep the visual system consistent.</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="exp-item">
-          <div class="exp-date">2021 — 2025</div>
-          <div class="exp-body">
-            <div class="exp-role">Product Designer (E-commerce)</div>
-            <div class="exp-company">Askona</div>
-            <div class="exp-desc">
-              <ul>
-                <li>Спроектировала и оптимизировала e-commerce сценарии: веб-интерфейсы, лендинги и пользовательские пути, направленные на повышение конверсии в покупку.</li>
-                <li>Обеспечила дизайн-сопровождение маркетинговых запусков и акций (лендинги, промо-материалы); повысила конверсию в покупку на 4% (данные Яндекс.Метрики по сайту) в сравнении с предыдущим годом, что является хорошим результатом для e-com компаний.</li>
-                <li>Разрабатывала и развивала ключевые e-commerce сущности: промо-лендинги, цифровые каталоги, поддерживая целостность UX и конверсионных сценариев.</li>
-                <li>Разработала и масштабировала дизайн-систему для продуктового интерфейса проекта Beyosa.</li>
-                <li>Проектировала UX- и визуальные концепции продуктовых запусков и кампаний, связывая дизайн-решения с бизнес- и конверсионными метриками.</li>
-                <li>Работала с пользовательскими сценариями, состояниями интерфейсов и edge cases в кросс-функциональной продуктовой команде на всех этапах разработки.</li>
-              </ul>
+          <div class="exp-item">
+            <div class="exp-date">2021 — 2025</div>
+            <div>
+              <div class="exp-role"><span class="lang-ru">Product Designer (E-commerce)</span><span class="lang-en">Product Designer (E-commerce)</span></div>
+              <div class="exp-company">Askona</div>
+              <div class="exp-desc">
+                <ul>
+                  <li class="lang-ru">Проектировала и оптимизировала e-commerce сценарии: веб-интерфейсы, лендинги и пользовательские пути для роста конверсии в покупку.</li>
+                  <li class="lang-ru">Повысила конверсию в покупку на 4% год к году (данные Яндекс.Метрики).</li>
+                  <li class="lang-ru">Разработала и масштабировала дизайн-систему для продуктового интерфейса проекта Beyosa.</li>
+
+                  <li class="lang-en">Designed and optimized e-commerce scenarios: web interfaces, landing pages and user journeys aimed at purchase conversion.</li>
+                  <li class="lang-en">Increased purchase conversion by 4% year-over-year (Yandex.Metrica data).</li>
+                  <li class="lang-en">Built and scaled the design system for the Beyosa product interface.</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="exp-item">
-          <div class="exp-date">2020 — 2021</div>
-          <div class="exp-body">
-            <div class="exp-role">UX/UI Designer</div>
-            <div class="exp-company">Natural Health</div>
-            <div class="exp-desc">
-              <ul>
-                <li>Поддерживала и обновляла корпоративный сайт в период трансформации компании из сетевого маркетинга в розничную модель: адаптировала контент, структуру и визуальную коммуникацию под новые бизнес-задачи, обеспечивая единый бренд-стиль и актуальность информации на этапе перехода.</li>
-                <li>Разрабатывала маркетинговые материалы и digital-коммуникации для онлайн- и офлайн-каналов.</li>
-                <li>Создавала контент для социальных сетей и маркетинговых кампаний, который в среднем набирал 4–5 тыс. просмотров на единицу контента.</li>
-                <li>Разработала фирменный стиль компании и систему визуальных правил для поддержания целостного брендинга.</li>
-                <li>Внедрила фирменный стиль в продуктовую линейку и коммуникационные материалы компании.</li>
-                <li>Подготовила визуальное оформление для участия компании в форуме «Исламский мир 2021», где бренд был представлен в единый визуал.</li>
-              </ul>
+          <div class="exp-item">
+            <div class="exp-date">2020 — 2021</div>
+            <div>
+              <div class="exp-role">UX/UI Designer</div>
+              <div class="exp-company">Natural Health</div>
+              <div class="exp-desc">
+                <ul>
+                  <li class="lang-ru">Поддерживала и обновляла корпоративный сайт в период трансформации компании из сетевого маркетинга в розничную модель.</li>
+                  <li class="lang-ru">Разработала фирменный стиль компании и систему визуальных правил для целостного брендинга.</li>
+                  <li class="lang-ru">Создавала контент для соцсетей, набиравший в среднем 4–5 тыс. просмотров на единицу.</li>
+
+                  <li class="lang-en">Maintained and updated the corporate website during the company's transition from network marketing to a retail model.</li>
+                  <li class="lang-en">Developed the company's brand identity and visual guidelines for consistent branding.</li>
+                  <li class="lang-en">Created social media content averaging 4–5k views per post.</li>
+                </ul>
+              </div>
             </div>
           </div>
+
         </div>
 
+        <div id="skills">
+          <div class="skill-group">
+            <h3><span class="lang-ru">Инструменты</span><span class="lang-en">Tools</span></h3>
+            <p>Figma, User Flows, Wireframing, Prototyping, Design Systems</p>
+          </div>
+          <div class="skill-group">
+            <h3><span class="lang-ru">Методы</span><span class="lang-en">Methods</span></h3>
+            <p>UX Research, JTBD, CJM, Information Architecture, A/B Testing</p>
+          </div>
+          <div class="skill-group">
+            <h3><span class="lang-ru">Образование</span><span class="lang-en">Education</span></h3>
+            <p><span class="lang-ru">Казанский государственный институт культуры и искусств, 2020</span><span class="lang-en">Kazan State Institute of Culture and Arts, 2020</span></p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
-
-
-  <!-- ============================================================
-    НАВЫКИ
-  ============================================================ -->
-  <section id="skills">
-    <div class="skill-group">
-      <h3>Инструменты</h3>
-      <p>Figma, Adobe Photoshop, After Effects, Miro</p>
-    </div>
-    <div class="skill-group">
-      <h3>Нейросети</h3>
-      <p>GPT, Gemini, Grok, Claude, Midjourney, Comfy UI</p>
-    </div>
-    <div class="skill-group">
-      <h3>Процесс</h3>
-      <p>UX-исследования, прототипирование, AI, User Flow, HCD, CJM</p>
-    </div>
-    <div class="skill-group">
-      <h3>Метрики</h3>
-      <p>Яндекс.Метрика, AppMetrica</p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-
-  <!-- ============================================================
-    ПРОЕКТЫ — горизонтальный скролл колесом мыши
-
-    КАК ДОБАВИТЬ ФОТО НА КАРТОЧКУ:
-      1. Положи файл в папку images/ или assets/
-      2. В теге div class="card-bg" пропиши style:
-         style="background-image: url('assets/имя-файла.jpg')"
-
-    КАК ДОБАВИТЬ НОВУЮ КАРТОЧКУ:
-      1. Скопируй один блок КАРТОЧКА
-      2. Увеличь data-id на 1 (0, 1, 2, 3 ...)
-      3. Добавь объект в projects[] в script.js с таким же id
-
-    ПОРЯДОК КАРТОЧЕК:
-      Порядок отображения = порядок блоков ниже (сверху вниз = слева направо).
-      data-id при этом остаётся ссылкой на конкретный проект в script.js
-      и не обязан совпадать с порядковым номером карточки.
-  ============================================================ -->
-  <div id="projects-wrapper">
-    <div class="projects-header container">
-      <h2 class="section-title">Проекты</h2>
-    </div>
-    <div class="projects-track-wrapper">
-      <div class="projects-track" id="projects-track">
-
-
-        <!-- КАРТОЧКА 0 — FINCORP -->
-        <div class="project-card" data-id="0" onclick="openProject(0)">
-          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/FinCorp_Image.jpg');"></div>
-          <div class="card-overlay">
-            <div class="card-title">FINCORP</div>
-            <div class="card-desc">Банковская экосистема нового поколения с ИИ-советником</div>
+    <!-- ============================================================
+         СТРАНИЦА: ПРОЕКТЫ
+    ============================================================ -->
+    <section id="projects-page" class="page">
+      <div id="projects-wrapper">
+        <div class="projects-header container">
+          <h2 class="section-title"><span class="lang-ru">Проекты</span><span class="lang-en">Projects</span></h2>
+        </div>
+        <div class="projects-track-wrapper">
+          <div class="projects-track" id="projects-track">
+            <!-- карточки генерируются в script.js из массива PROJECTS -->
           </div>
         </div>
-
-
-        <!-- КАРТОЧКА 1 — Core Treasury -->
-        <div class="project-card" data-id="1" onclick="openProject(1)">
-          <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Core.jpg');"></div>
-          <div class="card-overlay">
-            <div class="card-title">Core Treasury</div>
-            <div class="card-desc">Корпоративная treasury-платформа для средних и крупных компаний</div>
-          </div>
-        </div>
-
-
-        <!-- КАРТОЧКА 2 — ВТБ Семья -->
-        <div class="project-card" data-id="8" onclick="openProject(8)">
-          <div class="card-bg" style="background-color: #dfe6f5; background-image: url('assets/VTB.jpg');"></div>
-          <div class="card-overlay">
-            <div class="card-title">ВТБ Семья</div>
-            <div class="card-desc">Совместный семейный бюджет внутри мобильного банка</div>
-          </div>
-        </div>
-
-
-        <!-- КАРТОЧКА 3 — Электронное меню «Панорама Лаундж» -->
-        <div class="project-card" data-id="5" onclick="openProject(5)">
-          <div class="card-bg" style="background-color: #efe0d0; background-image: url('assets/Панорама.jpg');"></div>
-          <div class="card-overlay">
-            <div class="card-title">Электронное меню «Панорама Лаундж»</div>
-            <div class="card-desc">Цифровое меню ресторана по QR-коду с админ-панелью и аналитикой</div>
-          </div>
-        </div>
-
-
-        <!--
-КАРТОЧКА 4 — Разбуди Деда Мороза (Beyosa)
-<div class="project-card" data-id="6" onclick="openProject(6)">
-  <div class="card-bg" style="background-color: #f3dede; background-image: url('assets/Beyosa.ru.jpg');"></div>
-  <div class="card-overlay">
-    <div class="card-title">Разбуди Деда Мороза</div>
-    <div class="card-desc">Gamified e-commerce лендинг с live-прогрессом и социальным доказательством</div>
-  </div>
-</div>
--->
-
-
-        <!--
-КАРТОЧКА 5 — Доброград: платформа ипотеки
-<div class="project-card" data-id="7" onclick="openProject(7)">
-  <div class="card-bg" style="background-color: #dbe6ea; background-image: url('assets/Dobrograd.jpg');"></div>
-  <div class="card-overlay">
-    <div class="card-title">Доброград: платформа ипотеки</div>
-    <div class="card-desc">Прозрачный выбор ипотеки и жилья через ежемесячный платёж</div>
-  </div>
-</div>
--->
-
-        <!--
-КАРТОЧКА 6 — AI PM ассистент
-<div class="project-card" data-id="2" onclick="openProject(2)">
-  <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/AI PM Assistant.jpg');"></div>
-  <div class="card-overlay">
-    <div class="card-title">Внутренний AI PM ассистент</div>
-    <div class="card-desc">AI-ассистент внутри корпоративной платформы с доступом к проектным данным</div>
-  </div>
-</div>
-
-КАРТОЧКА 7 — DroneDrop
-<div class="project-card" data-id="4" onclick="openProject(4)">
-  <div class="card-bg" style="background-color: #e8e4f8; background-image: url('assets/Drone.jpg');"></div>
-  <div class="card-overlay">
-    <div class="card-title">DroneDrop</div>
-    <div class="card-desc">Беспилотная доставка дронами</div>
-  </div>
-</div>
--->
-
-
-        <!-- КАРТОЧКА 8 — AI Design Workflow (временно скрыта) -->
-<!--
-<div class="project-card" data-id="3" onclick="openProject(3)">
-  <div class="card-bg" style="background-color: #dbe7f2; background-image: url('assets/AI_Workflow.jpg');"></div>
-  <div class="card-overlay">
-    <div class="card-title">AI Design Workflow</div>
-    <div class="card-desc">Интеграция Claude Code и MCP с Figma в продуктовый дизайн-процесс</div>
-  </div>
-</div>
--->
-
-
       </div>
-    </div>
-    <div class="scroll-hint"></div>
-  </div>
+    </section>
 
-  <div class="divider"></div>
-
-
-  <!-- ============================================================
-    КОНТАКТЫ
-  ============================================================ -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Контакты</h2>
-      <div class="contact-links">
-        <a class="contact-link" href="https://www.behance.net/azalevskih" target="_blank">Behance</a>
-        <a class="contact-link" href="https://t.me/Azalevskihh" target="_blank">Telegram</a>
-        <a class="contact-link" href="mailto:azalevskih@yandex.ru">azalevskih@yandex.ru</a>
-        <a class="contact-link" href="tel:+7 995 364 08 39">+7 995 364 08 39</a>
-        <a class="contact-link" href="https://power-vise-3e2.notion.site/31d358404622839a872481e12cfa7542?source=copy_link" target="_blank">
-          Notion
-        </a>
-        <a class="contact-link"
-           href="https://www.linkedin.com/in/%D0%B0%D0%B7%D0%B0%D0%BB%D0%B8%D1%8F-%D0%B7%D0%B0%D0%BC%D0%B0%D0%BB%D0%B5%D1%82%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2%D0%B0-67a936218/"
-           target="_blank">
-          LinkedIn
-        </a>
+    <!-- ============================================================
+         СТРАНИЦА: КОНТАКТЫ
+    ============================================================ -->
+    <section id="contact-page" class="page">
+      <div class="container page-container">
+        <h2 class="section-title"><span class="lang-ru">Контакты</span><span class="lang-en">Contact</span></h2>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:azalevskih@yandex.ru">azalevskih@yandex.ru</a>
+          <a class="contact-link" href="https://t.me/Azalevskihh" target="_blank" rel="noopener">Telegram — @Azalevskihh</a>
+          <a class="contact-link" href="https://azalevskih.github.io/product/" target="_blank" rel="noopener">
+            <span class="lang-ru">Портфолио</span><span class="lang-en">Portfolio</span>
+          </a>
+          <a class="contact-link" href="tel:+79934162829">+7 993 416 28 29</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <span>© 2026 Азалия Замалетдинова</span>
-    <span>Product Designer</span>
-  </footer>
-
+  </main>
 
   <!-- ============================================================
-    СТРАНИЦА ПРОЕКТА (открывается при клике на карточку)
-    Не редактируй этот блок — всё содержимое задаётся в script.js
+       ОВЕРЛЕЙ СТРАНИЦЫ ПРОЕКТА (открывается поверх при клике на карточку)
   ============================================================ -->
   <div id="project-overlay">
+    <button type="button" class="overlay-close" onclick="closeProject()">
+      ✕ <span class="lang-ru">Назад</span><span class="lang-en">Back</span>
+    </button>
+
     <div class="proj-banner" id="proj-banner">
       <div class="proj-banner-bg" id="proj-banner-bg"></div>
       <div class="proj-banner-overlay"></div>
@@ -371,11 +263,25 @@
         <h1 id="proj-title"></h1>
       </div>
     </div>
+
     <div class="proj-body" id="proj-body"></div>
   </div>
 
+  <!-- ============================================================
+       ФУТЕР (низ) — Опыт / CV / Контакты
+  ============================================================ -->
+  <footer>
+    <div class="container nav-grid">
+      <a href="#" onclick="navigateTo('experience');return false;">
+        <span class="lang-ru">Опыт</span><span class="lang-en">Experience</span>
+      </a>
+      <a href="#" onclick="downloadCV();return false;">CV</a>
+      <a href="#" onclick="navigateTo('contact');return false;">
+        <span class="lang-ru">Контакты</span><span class="lang-en">Contact</span>
+      </a>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
 </body>
 </html>
