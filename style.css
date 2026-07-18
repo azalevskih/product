@@ -82,6 +82,7 @@ body {
   right: 0;
   width: 100%; /* Убедитесь, что нав всегда на 100% */
   z-index: 10010;
+  background: var(--white);
 }
 
 .nav-grid {
@@ -603,7 +604,7 @@ body[data-page="about"] .nav-logo {
 .projects-track-wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 48px 160px;
+  padding: 140px 48px 160px;
 }
 
 /* ============================================================
@@ -1011,7 +1012,7 @@ footer .nav-grid > a:last-child {
   .exp-item             { grid-template-columns: 1fr; gap: 6px; }
   #skills               { padding: 40px 24px; }
   .projects-header      { padding: 40px 24px 24px; }
-  .projects-track-wrapper { padding: 0 24px 120px; }
+  .projects-track-wrapper { padding: 100px 24px 120px; }
   #contact              { padding: 60px 0; }
   .proj-body            { padding: 40px 24px 80px; }
   .proj-banner          { padding: 48px 24px; }
