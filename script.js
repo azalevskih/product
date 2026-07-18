@@ -1044,10 +1044,25 @@ function initAvatarHover() {
 
 
 /* ============================================================
+   МОБИЛЬНОЕ ФОТО НАД БЛОКОМ "О СЕБЕ" — плавный переход
+   с avatar_image_1_Mobile на avatar_image_2_Mobile при загрузке
+============================================================ */
+function initMobileAvatarFade() {
+  const wrap = document.querySelector('.mobile-avatar-wrap');
+  if (!wrap) return;
+
+  // небольшая пауза перед стартом перехода, чтобы сначала
+  // было видно первое фото
+  setTimeout(() => wrap.classList.add('avatar-loaded'), 900);
+}
+
+
+/* ============================================================
    ИНИЦИАЛИЗАЦИЯ
 ============================================================ */
 window.addEventListener('DOMContentLoaded', () => {
   renderProjectCards();
   navigateTo('about');
   initAvatarHover();
+  initMobileAvatarFade();
 });

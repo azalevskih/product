@@ -894,48 +894,82 @@ footer .nav-grid > a:last-child {
 ============================================================ */
 @media (max-width: 768px) {
   #main-nav {
-    padding: 0 16px;
+    padding: 0 14px;
+    height: calc(var(--nav-h) + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* Убираем двойной отступ: у #main-nav уже есть свой padding,
+     внутренний .container больше не должен добавлять ещё один —
+     иначе на узких экранах навигации не хватает места и она
+     не помещается в экран целиком. */
+  #main-nav .container {
+    padding: 0;
+    max-width: none;
   }
 
   .nav-grid {
-    gap: 10px;
+    gap: 6px;
+    grid-template-columns: auto 1fr auto;
   }
 
   .nav-left {
-    gap: 10px;
+    gap: 6px;
+    min-width: 0;
   }
 
   .nav-logo {
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    letter-spacing: 0.02em;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 42vw;
+    display: inline-block;
   }
 
   .nav-back-btn {
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 12px;
+    letter-spacing: 0.04em;
     gap: 0;
-    margin-right: 10px;
+    margin-right: 8px;
     white-space: nowrap;
   }
 
+  .nav-grid .nav-links {
+    gap: 0;
+    min-width: 0;
+  }
+
   .nav-grid .nav-links a {
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .lang-switch-group {
+    gap: 4px;
   }
 
   .lang-switch {
-    font-size: 12px;
-    padding: 4px 7px;
+    font-size: 10px;
+    padding: 4px 6px;
   }
 
   footer {
+    padding: 0 14px;
     font-size: 12px;
     height: calc(var(--nav-h) + env(safe-area-inset-bottom));
     padding-bottom: env(safe-area-inset-bottom);
   }
+  footer .container {
+    padding: 0;
+    max-width: none;
+  }
   footer a {
-    font-size: 12px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.06em !important;
+    white-space: nowrap;
   }
   .proj-body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
   #banner {
@@ -974,6 +1008,19 @@ footer .nav-grid > a:last-child {
   .proj-banner          { padding: 48px 24px; }
   .proj-section-head    { flex-direction: column; align-items: flex-start; }
   .figma-link           { font-size: 12px; padding: 7px 14px; }
+}
+
+/* Доп. подстраховка для очень узких экранов (320–360px) —
+   навигация ужимается ещё немного, но всегда остаётся в один ряд
+   и полностью помещается в ширину экрана */
+@media (max-width: 360px) {
+  #main-nav { padding: 0 10px; }
+  .nav-grid { gap: 4px; }
+  .nav-logo { font-size: 10px; max-width: 38vw; }
+  .nav-grid .nav-links a { font-size: 10px; }
+  .lang-switch { font-size: 9px; padding: 3px 5px; }
+  footer { padding: 0 10px; }
+  footer a { font-size: 10px !important; }
 }
 
 /* ============================================================
@@ -1060,12 +1107,71 @@ body.lang-en .lang-ru {
   color: white;
 }
 
+/* ============================================================
+   МОБИЛЬНОЕ ФОТО НАД БЛОКОМ "О СЕБЕ"
+   Два фото лежат друг на друге; при загрузке страницы плавно
+   переходим с avatar_image_1_Mobile на avatar_image_2_Mobile.
+   Виден только в мобильной версии (сама секция #mobile-about
+   скрыта на десктопе).
+============================================================ */
+.mobile-avatar-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--gray-light);
+  margin-bottom: 28px;
+}
+
+.mobile-avatar {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.mobile-avatar--alt {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.mobile-avatar-wrap.avatar-loaded .mobile-avatar--alt {
+  opacity: 1;
+}
+
+@media (min-width: 769px) {
+  .mobile-avatar-wrap {
+    display: none;
+  }
+}
+
 /* Для мобильных */
 @media (max-width: 768px) {
-  .banner-name {
-    font-size: 42px;
+  /* Имя/роль — уменьшенный размер, построчный перенос:
+     Азалия / Замалетдинова / Product / Designer, весь текст чёрный */
+  .banner-name--mobile {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--black);
   }
-  
+
+  .banner-name--mobile .role-line {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--black);
+  }
+
+  .banner-name--mobile .role-line:first-of-type {
+    margin-top: 6px;
+  }
+
   .info-block--about p {
     font-size: 16.5px;
   }
