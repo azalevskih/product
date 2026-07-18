@@ -143,9 +143,12 @@ body {
 /* Кнопка "Назад" — появляется рядом с лого на всех страницах, кроме
    главной, а также при открытой странице проекта. Лого при этом
    остаётся видимым и кликабельным всегда (нав должна быть fixed
-   и никогда не "пропадать"). */
+   и никогда не "пропадать"). Место под кнопку зарезервировано в
+   разметке всегда (через visibility, а не display), поэтому её
+   появление не сдвигает лого в сторону. */
 .nav-back-btn {
-  display: none;
+  display: inline-flex;
+  visibility: hidden;
   align-items: center;
   gap: 8px;
   background: none;
@@ -176,7 +179,7 @@ body {
 
 #main-nav.project-open .nav-back-btn,
 #main-nav.sub-page-open .nav-back-btn {
-  display: inline-flex;
+  visibility: visible;
 }
 
 .nav-links {
@@ -870,17 +873,27 @@ footer .nav-grid > a:last-child {
   }
 
   .nav-left {
-    gap: 12px;
+    gap: 10px;
   }
 
   .nav-logo {
     font-size: 13px;
     letter-spacing: 0.06em;
+    white-space: nowrap;
   }
 
   .nav-back-btn {
     font-size: 13px;
     letter-spacing: 0.06em;
+    gap: 0;
+    white-space: nowrap;
+  }
+
+  /* На узких экранах кнопка "Назад" показывает только стрелку —
+     так под неё резервируется меньше места и лого не переносится */
+  .nav-back-btn .lang-ru,
+  .nav-back-btn .lang-en {
+    display: none;
   }
 
   .nav-grid .nav-links a {
@@ -1153,29 +1166,33 @@ footer a:hover {
   }
 }
 
-/* Полная очистка для страницы контактов */
-#contact-page {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    padding-top: 140px !important;
-    padding-bottom: 100px !important;
-    margin: 0 !important;
+/* Страница "Контакты" — контент центрирован по вертикали и
+   горизонтали в области между шапкой и футером */
+#contact-page.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: var(--nav-h);
+    padding-bottom: var(--nav-h);
+    margin: 0;
     background: var(--white);
+    box-sizing: border-box;
 }
 
 #contact-page .container {
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 48px !important; /* Отступ по бокам */
+    width: auto;
+    max-width: calc(100% - 96px);
+    min-height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 /* На мобильных */
 @media (max-width: 768px) {
-    #contact-page {
-        padding-top: 100px !important;
-    }
     #contact-page .container {
-        padding: 0 24px !important;
+        max-width: calc(100% - 48px);
     }
 }
