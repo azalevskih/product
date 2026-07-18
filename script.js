@@ -17,6 +17,7 @@ const PROJECTS = [
     cardDesc: { ru: 'Семейный бюджет в мобильном банке', en: 'Family budgeting inside a mobile bank' },
     bannerColor: '#1E1E96',
     bannerImg: 'assets/VTB_BIG.png',
+    cardImg: 'assets/VTB.jpg',
     lightBanner: false,
     images: [],
 
