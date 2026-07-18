@@ -73,14 +73,14 @@ body {
    На главной странице баннер светлый (Spline на белом фоне),
    поэтому нав по умолчанию тёмная — см. класс .home-page ниже.
 ============================================================ */
-/* Фиксация навигации для всех страниц */
 #main-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%; /* Убедитесь, что нав всегда на 100% */
+  height: var(--nav-h);
   z-index: 10010;
+  background: var(--white);
 }
 
 .nav-grid {
@@ -89,13 +89,6 @@ body {
   align-items: center;
   height: var(--nav-h);
   gap: 24px;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-self: start;
 }
 
 .nav-grid .nav-links {
@@ -132,36 +125,36 @@ body {
 }
 
 .nav-logo {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--black);
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* Кнопка "Назад" — появляется рядом с лого на всех страницах, кроме
-   главной, а также при открытой странице проекта. Лого при этом
-   остаётся видимым и кликабельным всегда (нав должна быть fixed
-   и никогда не "пропадать"). */
+/* Кнопка "Назад" — часть навигации, видна на всех страницах, кроме главной,
+   а также при открытой странице проекта */
 .nav-back-btn {
   display: none;
   align-items: center;
   gap: 8px;
+  position: absolute;
+  left: 48px;
   background: none;
   border: none;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--black);
   cursor: pointer;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: opacity 0.2s;
 }
 
 .nav-back-arrow {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1;
   transition: transform 0.2s ease;
 }
@@ -179,6 +172,11 @@ body {
   display: inline-flex;
 }
 
+#main-nav.project-open .nav-logo,
+#main-nav.sub-page-open .nav-logo {
+  visibility: hidden;
+}
+
 .nav-links {
   display: flex;
   gap: 40px;
@@ -190,11 +188,11 @@ body {
 }
 
 .nav-links a {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--black);
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: opacity 0.2s;
 }
@@ -205,13 +203,13 @@ body {
 
 .lang-switch {
   font-family: inherit;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: var(--black);
   background: none;
   cursor: pointer;
-  padding: 5px 9px;
+  padding: 6px 11px;
   border: 1px solid var(--hairline);
   border-radius: 2px;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -262,7 +260,6 @@ body {
     flex: 1 1 auto;
     min-height: 0;
     padding-top: var(--nav-h);
-    padding-bottom: 88px;
     overflow: hidden;
   }
 
@@ -274,6 +271,10 @@ body {
   body.page-about #banner {
     min-height: auto;
     padding: 32px 48px;
+  }
+
+  body.page-about footer {
+    flex: 0 0 auto;
   }
 }
 
@@ -362,10 +363,6 @@ body {
   text-transform: uppercase;
   color: var(--gray-mid);
   margin-top: 6px;
-}
-
-.banner-role .role-word {
-  color: #000000;
 }
 
 .banner-content .info-block--about {
@@ -580,7 +577,7 @@ body {
 .projects-track-wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 48px 160px;
+  padding: 0 48px 100px;
 }
 
 /* ============================================================
@@ -666,17 +663,8 @@ body {
 
 /* ============================================================
    ФУТЕР
-   Зафиксирован внизу экрана точно так же, как верхняя навигация,
-   и одинаков на всех страницах сайта без исключений.
 ============================================================ */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 9000;
-  background: var(--white);
   padding: 24px 0;
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -869,28 +857,25 @@ footer .nav-grid > a:last-child {
     gap: 10px;
   }
 
-  .nav-left {
-    gap: 12px;
-  }
-
   .nav-logo {
-    font-size: 11px;
-    letter-spacing: 0.06em;
+    font-size: 13px;
+    letter-spacing: 0.05em;
   }
 
   .nav-back-btn {
-    font-size: 11px;
-    letter-spacing: 0.06em;
+    left: 16px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
   }
 
   .nav-grid .nav-links a {
-    font-size: 11px;
-    letter-spacing: 0.06em;
+    font-size: 13px;
+    letter-spacing: 0.05em;
   }
 
   .lang-switch {
-    font-size: 11px;
-    padding: 4px 7px;
+    font-size: 13px;
+    padding: 5px 8px;
   }
 
   footer { padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
@@ -915,7 +900,7 @@ footer .nav-grid > a:last-child {
     z-index: 3;
     background: var(--white);
     margin-top: -1px;
-    padding: 40px 24px 120px;
+    padding: 40px 24px 60px;
   }
   .info-block--about    { max-width: none; }
   .banner-actions        { flex-direction: column; align-items: stretch; gap: 12px; }
@@ -925,7 +910,7 @@ footer .nav-grid > a:last-child {
   .exp-item             { grid-template-columns: 1fr; gap: 6px; }
   #skills               { padding: 40px 24px; }
   .projects-header      { padding: 40px 24px 24px; }
-  .projects-track-wrapper { padding: 0 24px 120px; }
+  .projects-track-wrapper { padding: 0 24px 60px; }
   #contact              { padding: 60px 0; }
   footer                { padding: 16px 0; }
   .proj-body            { padding: 40px 24px 80px; }
@@ -1035,7 +1020,7 @@ body.lang-en .lang-ru {
 ============================================================ */
 .page-container {
   padding-top: 140px;
-  padding-bottom: 160px;
+  padding-bottom: 100px;
   min-height: 60vh;
 }
 
@@ -1091,7 +1076,7 @@ footer a:hover {
 @media (max-width: 768px) {
   .page-container {
     padding-top: 100px;
-    padding-bottom: 120px;
+    padding-bottom: 60px;
   }
   .overlay-close {
     top: auto;
@@ -1119,57 +1104,4 @@ footer a:hover {
 .research-block li {
   margin-bottom: 10px;
   line-height: 1.6;
-}
-
-/* Конкретно для страницы контактов на всю ширину */
-.contact-full-width {
-  width: 100%;
-  padding-top: 140px; /* Отступ от навигации */
-  padding-bottom: 100px;
-}
-
-.contact-content-wrapper {
-  width: 100%;
-  padding: 0 48px; /* Внутренние отступы, чтобы текст не прилипал к краям */
-  margin: 0 auto;
-  /* Если хотите, чтобы контент был по центру, но на всю ширину */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Мобильная адаптация */
-@media (max-width: 768px) {
-  .contact-full-width {
-    padding-top: 100px;
-  }
-  .contact-content-wrapper {
-    padding: 0 24px;
-  }
-}
-
-/* Полная очистка для страницы контактов */
-#contact-page {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    padding-top: 140px !important;
-    padding-bottom: 100px !important;
-    margin: 0 !important;
-    background: var(--white);
-}
-
-#contact-page .container {
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 48px !important; /* Отступ по бокам */
-}
-
-/* На мобильных */
-@media (max-width: 768px) {
-    #contact-page {
-        padding-top: 100px !important;
-    }
-    #contact-page .container {
-        padding: 0 24px !important;
-    }
 }
