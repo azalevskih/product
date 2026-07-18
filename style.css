@@ -979,8 +979,8 @@ footer .nav-grid > a:last-child {
     max-width: none;
   }
   footer a {
-    font-size: 11px !important;
-    letter-spacing: 0.06em !important;
+    font-size: 14px !important;
+    letter-spacing: 0.04em !important;
     white-space: nowrap;
   }
   .proj-body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
@@ -1020,7 +1020,7 @@ footer .nav-grid > a:last-child {
   .nav-grid .nav-links a { font-size: 12px; }
   .lang-switch { font-size: 11px; padding: 4px 6px; }
   footer { padding: 0 10px; }
-  footer a { font-size: 10px !important; }
+  footer a { font-size: 12px !important; }
 }
 
 /* ============================================================
@@ -1175,6 +1175,11 @@ body.lang-en .lang-ru {
 
   .info-block--about p {
     font-size: 16.5px;
+  }
+
+  /* Больше воздуха между блоком имени/роли и текстом "Привет..." */
+  #mobile-about .about-label {
+    margin-top: 40px !important;
   }
 }
 
