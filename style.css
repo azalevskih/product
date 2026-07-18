@@ -185,10 +185,9 @@ body {
   transform: translateX(-3px);
 }
 
-#main-nav.project-open .nav-back-btn,
-#main-nav.sub-page-open .nav-back-btn {
-  display: inline-flex;
-}
+/* Кнопка "Назад" показывается только на мобильных — правило,
+   которое её включает, вынесено в мобильный медиа-запрос ниже.
+   На десктопе она остаётся навсегда скрытой (см. display: none выше). */
 
 .nav-links {
   display: flex;
@@ -215,10 +214,13 @@ body {
 }
 
 /* Текущий раздел в навигации выделяется курсивным жирным начертанием —
-   и в верхней навигации ("Проекты"), и в нижней ("Опыт" / "Контакты") */
+   и в верхней навигации ("Проекты"), и в нижней ("Опыт" / "Контакты").
+   На главной странице тем же начертанием выделяется имя-лого —
+   как маркер того, что открыт блок "Обо мне". */
 body[data-page="projects"] .nav-links a[data-page="projects"],
 body[data-page="experience"] footer a[data-page="experience"],
-body[data-page="contact"] footer a[data-page="contact"] {
+body[data-page="contact"] footer a[data-page="contact"],
+body[data-page="about"] .nav-logo {
   font-style: italic;
   font-weight: 700;
 }
@@ -946,6 +948,12 @@ footer .nav-grid > a:last-child {
     gap: 0;
     margin-right: 8px;
     white-space: nowrap;
+  }
+
+  /* На мобильных кнопка "Назад" по-прежнему нужна */
+  #main-nav.project-open .nav-back-btn,
+  #main-nav.sub-page-open .nav-back-btn {
+    display: inline-flex;
   }
 
   .nav-grid .nav-links {
