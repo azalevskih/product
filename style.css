@@ -262,6 +262,7 @@ body {
     flex: 1 1 auto;
     min-height: 0;
     padding-top: var(--nav-h);
+    padding-bottom: 88px;
     overflow: hidden;
   }
 
@@ -273,10 +274,6 @@ body {
   body.page-about #banner {
     min-height: auto;
     padding: 32px 48px;
-  }
-
-  body.page-about footer {
-    flex: 0 0 auto;
   }
 }
 
@@ -583,7 +580,7 @@ body {
 .projects-track-wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 48px 100px;
+  padding: 0 48px 160px;
 }
 
 /* ============================================================
@@ -669,8 +666,17 @@ body {
 
 /* ============================================================
    ФУТЕР
+   Зафиксирован внизу экрана точно так же, как верхняя навигация,
+   и одинаков на всех страницах сайта без исключений.
 ============================================================ */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9000;
+  background: var(--white);
   padding: 24px 0;
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -688,13 +694,6 @@ footer .nav-grid > a:nth-child(2) {
 
 footer .nav-grid > a:last-child {
   justify-self: end;
-}
-
-/* Футер (Опыт / CV / Контакты) скрыт на страницах "Опыт" и "Проекты" —
-   остаётся только на главной и при переходе на страницу "Контакты" */
-body[data-page="experience"] footer,
-body[data-page="projects"] footer {
-  display: none;
 }
 
 
@@ -916,7 +915,7 @@ body[data-page="projects"] footer {
     z-index: 3;
     background: var(--white);
     margin-top: -1px;
-    padding: 40px 24px 60px;
+    padding: 40px 24px 120px;
   }
   .info-block--about    { max-width: none; }
   .banner-actions        { flex-direction: column; align-items: stretch; gap: 12px; }
@@ -926,7 +925,7 @@ body[data-page="projects"] footer {
   .exp-item             { grid-template-columns: 1fr; gap: 6px; }
   #skills               { padding: 40px 24px; }
   .projects-header      { padding: 40px 24px 24px; }
-  .projects-track-wrapper { padding: 0 24px 60px; }
+  .projects-track-wrapper { padding: 0 24px 120px; }
   #contact              { padding: 60px 0; }
   footer                { padding: 16px 0; }
   .proj-body            { padding: 40px 24px 80px; }
@@ -1036,7 +1035,7 @@ body.lang-en .lang-ru {
 ============================================================ */
 .page-container {
   padding-top: 140px;
-  padding-bottom: 100px;
+  padding-bottom: 160px;
   min-height: 60vh;
 }
 
@@ -1092,7 +1091,7 @@ footer a:hover {
 @media (max-width: 768px) {
   .page-container {
     padding-top: 100px;
-    padding-bottom: 60px;
+    padding-bottom: 120px;
   }
   .overlay-close {
     top: auto;
@@ -1150,7 +1149,6 @@ footer a:hover {
 
 /* Полная очистка для страницы контактов */
 #contact-page {
-    display: block !important;
     width: 100vw !important;
     max-width: 100vw !important;
     padding-top: 140px !important;
