@@ -897,6 +897,9 @@ footer .nav-grid > a:last-child {
     font-size: 12px;
     padding-bottom: calc(24px + env(safe-area-inset-bottom));
   }
+  footer a {
+    font-size: 12px !important;
+  }
   .proj-body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
   #banner {
     height: 78vh;
@@ -1047,7 +1050,7 @@ body.lang-en .lang-ru {
    ФУТЕР — три ссылки (Опыт / CV / Контакты)
 ============================================================ */
 footer a {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
