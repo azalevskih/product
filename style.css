@@ -140,15 +140,11 @@ body {
   text-transform: uppercase;
 }
 
-/* Кнопка "Назад" — появляется рядом с лого на всех страницах, кроме
-   главной, а также при открытой странице проекта. Лого при этом
-   остаётся видимым и кликабельным всегда (нав должна быть fixed
-   и никогда не "пропадать"). Место под кнопку зарезервировано в
-   разметке всегда (через visibility, а не display), поэтому её
-   появление не сдвигает лого в сторону. */
+/* Кнопка "Назад" — лого "А. З." всегда стоит на своём исходном месте
+   (первым в nav-left), кнопка "Назад" просто добавляется рядом справа
+   от него, когда нужна, и никак не сдвигает лого. */
 .nav-back-btn {
-  display: inline-flex;
-  visibility: hidden;
+  display: none;
   align-items: center;
   gap: 8px;
   background: none;
@@ -179,7 +175,7 @@ body {
 
 #main-nav.project-open .nav-back-btn,
 #main-nav.sub-page-open .nav-back-btn {
-  visibility: visible;
+  display: inline-flex;
 }
 
 .nav-links {
