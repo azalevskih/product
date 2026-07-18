@@ -247,6 +247,7 @@ const PROJECTS = [
     cardDesc: { ru: 'AI-инструмент для продуктовых команд', en: 'AI tool for product teams' },
     bannerColor: '#BA7517',
     bannerImg: 'assets/PM_BIG.png',
+    hidden: true,
 
     images: [
       'assets/Frame 148.png',
@@ -522,6 +523,7 @@ const PROJECTS = [
     bannerColor: '#B23A48',
     bannerImg: 'assets/Beyosa.ru_BIG.png',
     cardImg: 'assets/Beyosa.ru.jpg',
+    hidden: true,
     images: [],
 
     context: '«Разбуди Деда Мороза» — сезонный e-commerce лендинг для товара Body Pillow (обнимашка), выстроенный вокруг игровой механики коллективного прогресса: каждая покупка становится вкладом в общую новогоднюю миссию.',
@@ -593,6 +595,7 @@ const PROJECTS = [
     bannerColor: '#3B6E8F',
     bannerImg: 'assets/Dobrograd_BIG.png',
     cardImg: 'assets/Dobrograd.jpg',
+    hidden: true,
     images: [],
 
     context: 'Доброград — платформа прозрачного выбора ипотеки и жилья, которая объединяет ипотечные программы, банковские предложения, рассрочки от застройщика и калькулятор платежей в едином сценарии выбора.',
