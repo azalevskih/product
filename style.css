@@ -96,6 +96,7 @@ body {
   align-items: center;
   gap: 20px;
   justify-self: start;
+  position: relative;
 }
 
 .nav-grid .nav-links {
@@ -141,10 +142,16 @@ body {
 }
 
 /* Кнопка "Назад" — лого "А. З." всегда стоит на своём исходном месте
-   (первым в nav-left), кнопка "Назад" просто добавляется рядом справа
-   от него, когда нужна, и никак не сдвигает лого. */
+   (единственный элемент в обычном потоке внутри nav-left), кнопка
+   "Назад" появляется абсолютным позиционированием слева от него и
+   никак не сдвигает лого. */
 .nav-back-btn {
   display: none;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 16px;
   align-items: center;
   gap: 8px;
   background: none;
@@ -156,6 +163,7 @@ body {
   cursor: pointer;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
   transition: opacity 0.2s;
 }
 
@@ -856,6 +864,22 @@ footer .nav-grid > a:last-child {
 }
 
 
+/* Кнопка "Назад" стоит слева от лого абсолютным позиционированием.
+   На экранах теснее ~1300px слева от лого просто физически мало
+   места до края экрана — на них оставляем только стрелку, без слова,
+   чтобы кнопка нигде не обрезалась и не вылезала за экран. */
+@media (max-width: 1300px) {
+  .nav-back-btn {
+    margin-right: 12px;
+  }
+
+  .nav-back-btn .lang-ru,
+  .nav-back-btn .lang-en {
+    display: none;
+  }
+}
+
+
 /* ============================================================
    АДАПТИВ (мобильные)
 ============================================================ */
@@ -882,14 +906,8 @@ footer .nav-grid > a:last-child {
     font-size: 13px;
     letter-spacing: 0.06em;
     gap: 0;
+    margin-right: 10px;
     white-space: nowrap;
-  }
-
-  /* На узких экранах кнопка "Назад" показывает только стрелку —
-     так под неё резервируется меньше места и лого не переносится */
-  .nav-back-btn .lang-ru,
-  .nav-back-btn .lang-en {
-    display: none;
   }
 
   .nav-grid .nav-links a {
