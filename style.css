@@ -210,6 +210,15 @@ body {
   opacity: 0.5;
 }
 
+/* Текущий раздел в навигации выделяется курсивным жирным начертанием —
+   и в верхней навигации ("Проекты"), и в нижней ("Опыт" / "Контакты") */
+body[data-page="projects"] .nav-links a[data-page="projects"],
+body[data-page="experience"] footer a[data-page="experience"],
+body[data-page="contact"] footer a[data-page="contact"] {
+  font-style: italic;
+  font-weight: 700;
+}
+
 .lang-switch {
   font-family: inherit;
   font-size: 13px;
