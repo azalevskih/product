@@ -709,7 +709,6 @@ const PROJECTS = [
     cardDesc: { ru: 'AI-инструмент для продуктовых команд', en: 'AI tool for product teams' },
     bannerColor: '#BA7517',
     bannerImg: 'assets/PM_BIG.png',
-    hidden: true,
 
     images: [
       'assets/Frame 148.png',
@@ -915,6 +914,7 @@ const PROJECTS = [
     title: { ru: 'Panorama Lounge', en: 'Panorama Lounge' },
     cardDesc: { ru: 'Цифровое меню для ресторана премиум-класса', en: 'Digital menu for a premium restaurant' },
     bannerColor: '#8B5E3C',
+    hidden: true, // временно скрыт
     cardImg: 'assets/панорама.jpg',
     bannerImg: 'assets/Панорама_BIG.jpg',
     images: [],
