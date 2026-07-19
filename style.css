@@ -1054,11 +1054,11 @@ footer .nav-grid > a:last-child {
   display: none;
 }
 
-body.lang-en .lang-en {
+body.lang-mode-en .lang-en {
   display: initial;
 }
 
-body.lang-en .lang-ru {
+body.lang-mode-en .lang-ru {
   display: none;
 }
 
