@@ -709,6 +709,7 @@ const PROJECTS = [
     cardDesc: { ru: 'AI-инструмент для продуктовых команд', en: 'AI tool for product teams' },
     bannerColor: '#BA7517',
     bannerImg: 'assets/PM_BIG.jpg',
+    cardImg: 'assets/PM.jpg',
 
     images: [
       'assets/Frame 148.png',
