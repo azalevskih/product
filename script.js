@@ -1523,7 +1523,7 @@ let cardsNeedRerender = true; // выставляется в true, когда я
 
 function switchLanguage(lang) {
   currentLang = lang;
-  document.body.classList.toggle('lang-en', lang === 'en');
+  document.body.classList.toggle('lang-mode-en', lang === 'en');
   document.documentElement.setAttribute('lang', lang);
 
   document.getElementById('lang-ru-btn')?.classList.toggle('active', lang === 'ru');
