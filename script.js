@@ -478,7 +478,7 @@ const PROJECTS = [
     title: { ru: 'ВТБ Семья', en: 'VTB Family' },
     cardDesc: { ru: 'Семейный бюджет в мобильном банке', en: 'Family budgeting inside a mobile bank' },
     bannerColor: '#1E1E96',
-    bannerImg: 'assets/VTB_BIG.png',
+    bannerImg: 'assets/VTB_BIG.jpg',
     cardImg: 'assets/VTB.jpg',
     lightBanner: false,
     images: [],
