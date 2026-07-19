@@ -453,6 +453,7 @@ const PROJECTS = [
     title: { ru: 'Panorama Lounge', en: 'Panorama Lounge' },
     cardDesc: { ru: 'Цифровое меню для ресторана премиум-класса', en: 'Digital menu for a premium restaurant' },
     bannerColor: '#8B5E3C',
+    cardImg: 'assets/панорама.jpg',
     bannerImg: 'assets/Панорама_BIG.png',
     images: [],
 
