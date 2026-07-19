@@ -708,7 +708,7 @@ footer {
   right: 0;
   width: 100%;
   height: var(--nav-h);
-  z-index: 9000;
+  z-index: 9999;
   background: var(--white);
   font-size: 14px;
   letter-spacing: 0.1em;
