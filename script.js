@@ -792,6 +792,8 @@ projectOverlayEl.addEventListener('scroll', () => {
 });
 
 
+let currentOpenProjectId = null;
+
 function openProject(id) {
   id = Number(id);
   const p = PROJECTS.find(x => x.id === id);
@@ -976,6 +978,7 @@ function openProject(id) {
 
   document.getElementById("project-overlay").classList.add("open");
   document.body.style.overflow = "hidden";
+  currentOpenProjectId = id;
 
   // Открыта страница проекта: показываем "Назад" в навигации, сбрасываем прозрачность
   const navEl = document.getElementById("main-nav");
@@ -988,6 +991,7 @@ function openProject(id) {
 function closeProject() {
   document.getElementById("project-overlay").classList.remove("open");
   document.body.style.overflow = "";
+  currentOpenProjectId = null;
 
   // Вернулись на главную: убираем "Назад", восстанавливаем нав по прокрутке страницы
   const navEl = document.getElementById("main-nav");
@@ -1002,7 +1006,10 @@ function closeProject() {
    СТРАНИЦЫ САЙТА (SPA-навигация одним файлом)
    Доступные страницы: about, experience, projects, contact
 ============================================================ */
+let currentPage = 'about';
+
 function navigateTo(page) {
+  currentPage = page;
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.getElementById(page + '-page');
   if (target) target.classList.add('active');
@@ -1022,6 +1029,13 @@ function navigateTo(page) {
   // Закрываем оверлей проекта, если он был открыт
   closeProject();
 
+  // Карточки могли устареть по языку, пока мы были на другой странице —
+  // досчитываем их именно сейчас, а не при каждом переключении языка.
+  if (page === 'projects' && cardsNeedRerender) {
+    renderProjectCards();
+    cardsNeedRerender = false;
+  }
+
   // Мгновенный сброс скролла (без плавной анимации): на длинных
   // страницах плавный scroll-behavior из CSS заставлял скролл долго
   // "доезжать" наверх, из-за чего казалось, что верхняя навигация
@@ -1040,16 +1054,35 @@ function navigateTo(page) {
    на нужном языке отдельно.
 ============================================================ */
 let currentLang = 'ru';
+let cardsNeedRerender = true; // выставляется в true, когда язык поменялся,
+                               // а страница "Проекты" сейчас не активна —
+                               // тогда карточки перерисуются лениво, при
+                               // переходе на эту страницу (см. navigateTo)
 
 function switchLanguage(lang) {
   currentLang = lang;
-  document.body.classList.toggle('lang-mode-en', lang === 'en');
+  document.body.classList.toggle('lang-en', lang === 'en');
   document.documentElement.setAttribute('lang', lang);
 
   document.getElementById('lang-ru-btn')?.classList.toggle('active', lang === 'ru');
   document.getElementById('lang-en-btn')?.classList.toggle('active', lang === 'en');
 
-  renderProjectCards();
+  // Карточки на странице "Проекты" перерисовываем сразу, только если
+  // она сейчас видна — на остальных страницах это лишняя работа,
+  // перерисуем при переходе туда (навигация ниже).
+  if (currentPage === 'projects') {
+    renderProjectCards();
+    cardsNeedRerender = false;
+  } else {
+    cardsNeedRerender = true;
+  }
+
+  // Если открыта карточка конкретного проекта — переоткрываем её на новом
+  // языке. Раньше переключатель языка её не трогал, поэтому текст внутри
+  // открытого проекта не менялся.
+  if (currentOpenProjectId !== null) {
+    openProject(currentOpenProjectId);
+  }
 }
 
 
