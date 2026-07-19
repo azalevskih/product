@@ -1450,6 +1450,16 @@ function openProject(id) {
   navEl.classList.toggle("light-banner", !!p.lightBanner);
 }
 
+function handleNavBack() {
+  // На странице проекта "Назад" закрывает оверлей проекта,
+  // а не уводит на страницу "Обо мне"
+  if (document.getElementById('main-nav').classList.contains('project-open')) {
+    closeProject();
+  } else {
+    navigateTo('about');
+  }
+}
+
 function closeProject() {
   document.getElementById("project-overlay").classList.remove("open");
   document.body.style.overflow = "";
