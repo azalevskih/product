@@ -513,7 +513,7 @@ const PROJECTS = [
     title: { ru: 'Fin Corp', en: 'Fin Corp' },
     cardDesc: { ru: 'Вовлечённость в накопления в финтех-продукте', en: 'Boosting savings engagement in a fintech product' },
     bannerColor: '#7F77DD',
-    bannerImg: 'assets/FINCORP_BIG.png',
+    bannerImg: 'assets/FINCORP_BIG.jpg',
     cardImg: 'assets/FinCorp_Image.jpg',
     lightBanner: true,
     images: ['assets/Прототип_Fin.jpg'],
