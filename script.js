@@ -605,7 +605,7 @@ const PROJECTS = [
     title: { ru: 'Core Treasury', en: 'Core Treasury' },
     cardDesc: { ru: 'Корпоративная treasury-платформа для управления ликвидностью', en: 'Corporate treasury platform for liquidity management' },
     bannerColor: '#1D9E75',
-    bannerImg: 'assets/CORE_BIG.png',
+    bannerImg: 'assets/CORE_BIG.jpg',
     cardImg: 'assets/Core.jpg',
 
     images: [
