@@ -708,7 +708,7 @@ const PROJECTS = [
     title: { ru: 'AI PM Assistant', en: 'AI PM Assistant' },
     cardDesc: { ru: 'AI-инструмент для продуктовых команд', en: 'AI tool for product teams' },
     bannerColor: '#BA7517',
-    bannerImg: 'assets/PM_BIG.png',
+    bannerImg: 'assets/PM_BIG.JPG',
 
     images: [
       'assets/Frame 148.png',
