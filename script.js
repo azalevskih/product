@@ -665,6 +665,66 @@ const PROJECTS = [
 
 
 /* ============================================================
+   ПЕРЕВОД КОНТЕНТА ПРОЕКТОВ (RU / EN)
+
+   Длинные текстовые поля проектов (context, problem, solution,
+   research, jtbdGroups, references и т.д.) переведены отдельно
+   в translations.js (TRANSLATIONS_EN, SECTION_TITLES).
+
+   Эти функции берут перевод для currentLang, а если для
+   конкретного поля/языка перевода нет — показывают русский
+   оригинал, чтобы страница никогда не оставалась пустой.
+============================================================ */
+
+// Простое текстовое поле проекта: p.context, p.problem, p.solution...
+function tr(p, field) {
+  if (currentLang === 'en') {
+    const en = TRANSLATIONS_EN[p.id];
+    if (en && en[field] !== undefined) return en[field];
+  }
+  return p[field];
+}
+
+// Массив внутри p.research: userProblems / valueHypotheses / behaviorHypotheses / insights
+function trResearch(p, field) {
+  if (currentLang === 'en') {
+    const en = TRANSLATIONS_EN[p.id];
+    if (en && en.research && en.research[field]) return en.research[field];
+  }
+  return (p.research && p.research[field]) || [];
+}
+
+// p.jtbdGroups — массив {title, description}
+function trGroups(p) {
+  if (currentLang === 'en') {
+    const en = TRANSLATIONS_EN[p.id];
+    if (en && en.jtbdGroups) return en.jtbdGroups;
+  }
+  return p.jtbdGroups || [];
+}
+
+// p.references — массив {title, url}; переводим только title, url общий
+function trReferences(p) {
+  if (currentLang === 'en' && p.references) {
+    const en = TRANSLATIONS_EN[p.id];
+    if (en && en.references) {
+      return p.references.map((ref, i) => ({
+        url: ref.url,
+        title: (en.references[i] && en.references[i].title) || ref.title,
+      }));
+    }
+  }
+  return p.references;
+}
+
+// Заголовок блока ("Контекст"/"Context" и т.д.) — см. SECTION_TITLES в translations.js
+function st(key) {
+  const entry = SECTION_TITLES[key];
+  return (entry && entry[currentLang]) || (entry && entry.ru) || key;
+}
+
+
+/* ============================================================
    ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ В ЗОНЕ ПРОЕКТОВ
    (не редактировать)
 ============================================================ */
@@ -751,8 +811,9 @@ function openProject(id) {
   const bg = document.getElementById("proj-banner-bg");
   bg.style.backgroundImage = p.bannerImg ? `url('${p.bannerImg}')` : "none";
 
-  const tagsHtml = p.tags
-    ? (Array.isArray(p.tags) ? p.tags : p.tags.split(","))
+  const tagsValue = tr(p, 'tags');
+  const tagsHtml = tagsValue
+    ? (Array.isArray(tagsValue) ? tagsValue : tagsValue.split(","))
         .map(tag => `<span class="tag">${tag.trim()}</span>`)
         .join("")
     : "";
@@ -769,7 +830,7 @@ function openProject(id) {
   function section(title, text, link, id) {
     if (!text) return "";
     const linkHtml = link
-      ? `<a class="figma-link" href="${link}" target="_blank" rel="noopener">Смотреть в Figma →</a>`
+      ? `<a class="figma-link" href="${link}" target="_blank" rel="noopener">${st('figmaLink')}</a>`
       : "";
     const idAttr = id ? ` id="${id}"` : "";
     return `
@@ -785,46 +846,46 @@ function openProject(id) {
 
   let html = "";
 
-  html += section("Контекст", p.context);
-  html += section("Проблема", p.problem, null, "proj-problem");
+  html += section(st('context'), tr(p, 'context'));
+  html += section(st('problem'), tr(p, 'problem'), null, "proj-problem");
   html += image(p.problemImage);
-  html += section("Решение", p.solution, null, "proj-solution");
-  html += section("Анализ конкурентов", p.competitorAnalysis, p.competitorLink);
+  html += section(st('solution'), tr(p, 'solution'), null, "proj-solution");
+  html += section(st('competitors'), tr(p, 'competitorAnalysis'), p.competitorLink);
   html += image(p.competitorImage);
 
   if (p.research) {
   html += `
     <div class="proj-section">
       <div class="proj-section-head">
-        <h3>Исследование и инсайты</h3>
-        ${p.researchLink ? `<a class="figma-link" href="${p.researchLink}" target="_blank" rel="noopener">Смотреть в Figma →</a>` : ""}
+        <h3>${st('research')}</h3>
+        ${p.researchLink ? `<a class="figma-link" href="${p.researchLink}" target="_blank" rel="noopener">${st('figmaLink')}</a>` : ""}
       </div>
 
       <div class="research-block">
-        <h4>Проблемы</h4>
+        <h4>${st('userProblems')}</h4>
         <ul>
-          ${p.research.userProblems.map(item => `<li>${item}</li>`).join("")}
+          ${trResearch(p, 'userProblems').map(item => `<li>${item}</li>`).join("")}
         </ul>
       </div>
 
       <div class="research-block">
-        <h4>Гипотезы ценности</h4>
+        <h4>${st('valueHyp')}</h4>
         <ul>
-          ${p.research.valueHypotheses.map(item => `<li>${item}</li>`).join("")}
+          ${trResearch(p, 'valueHypotheses').map(item => `<li>${item}</li>`).join("")}
         </ul>
       </div>
 
       <div class="research-block">
-        <h4>Поведенческие гипотезы</h4>
+        <h4>${st('behaviorHyp')}</h4>
         <ul>
-          ${p.research.behaviorHypotheses.map(item => `<li>${item}</li>`).join("")}
+          ${trResearch(p, 'behaviorHypotheses').map(item => `<li>${item}</li>`).join("")}
         </ul>
       </div>
 
       <div class="research-block">
-        <h4>Инсайты</h4>
+        <h4>${st('insights')}</h4>
         <ul>
-          ${p.research.insights.map(item => `<li>${item}</li>`).join("")}
+          ${trResearch(p, 'insights').map(item => `<li>${item}</li>`).join("")}
         </ul>
       </div>
     </div>
@@ -833,18 +894,18 @@ function openProject(id) {
 
   html += image(p.researchImage);
 
-  html += section("JTBD", p.jtbd);
+  html += section(st('jtbd'), tr(p, 'jtbd'));
   html += image(p.jtbdImage);
 
   if (p.jtbdGroups) {
     html += `
       <div class="proj-section">
         <div class="proj-section-head">
-          <h3>Основные группы пользователей</h3>
-          ${p.frameworksLink ? `<a class="figma-link" href="${p.frameworksLink}" target="_blank" rel="noopener">Смотреть в Figma →</a>` : ""}
+          <h3>${st('userGroups')}</h3>
+          ${p.frameworksLink ? `<a class="figma-link" href="${p.frameworksLink}" target="_blank" rel="noopener">${st('figmaLink')}</a>` : ""}
         </div>
 
-        ${p.jtbdGroups.map(group => `
+        ${trGroups(p).map(group => `
           <div style="margin-bottom:30px">
             <h4>${group.title}</h4>
             <p>${group.description}</p>
@@ -856,22 +917,25 @@ function openProject(id) {
   }
   html += image(p.jtbdGroupsImage);
 
-  html += section("Customer Journey Map", p.cjm);
+  html += section(st('cjm'), tr(p, 'cjm'));
   html += image(p.cjmImage);
 
-  html += section("Ключевые сценарии", p.keyScenarios);
+  html += section(st('keyScenarios'), tr(p, 'keyScenarios'));
   html += image(p.keyScenariosImage);
 
-  html += section("User Flow", p.userFlow, p.userFlowLink);
+  html += section(st('userFlow'), tr(p, 'userFlow'), p.userFlowLink);
   html += image(p.userflowImage);
 
-  html += section(p.purchaseScenarioTitle || "Сценарий: Пользователь планирует дорогую покупку", p.purchaseScenario);
+  html += section(
+    p.purchaseScenarioTitle ? tr(p, 'purchaseScenarioTitle') : st('purchaseDefault'),
+    tr(p, 'purchaseScenario')
+  );
   html += image(p.purchaseScenarioImage);
 
-  html += section("Design System", p.designSystem, p.designSystemLink);
+  html += section(st('designSystem'), tr(p, 'designSystem'), p.designSystemLink);
   html += image(p.uikitImage);
 
-  html += section("Прототип", p.prototype, p.prototypeLink);
+  html += section(st('prototype'), tr(p, 'prototype'), p.prototypeLink);
   html += image(p.prototypeImage);
 
   if (p.images) {
@@ -880,15 +944,15 @@ function openProject(id) {
     });
   }
 
-  html += section("Результаты", p.results, null, "proj-results");
+  html += section(st('results'), tr(p, 'results'), null, "proj-results");
   html += image(p.resultsImage);
 
   if (p.references) {
   html += `
     <div class="proj-section">
-      <h3>Источники</h3>
+      <h3>${st('sources')}</h3>
       <ul>
-        ${p.references.map(link => `
+        ${trReferences(p).map(link => `
           <li>
             <a href="${link.url}" target="_blank">
               ${link.title}
