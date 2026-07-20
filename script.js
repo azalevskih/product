@@ -1624,4 +1624,4 @@ window.addEventListener('DOMContentLoaded', () => {
   navigateTo('about');
   initAvatarHover();
   initMobileAvatarFade();
-});
+}); 
