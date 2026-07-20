@@ -1074,6 +1074,13 @@ body.lang-mode-en .lang-en {
   display: initial;
 }
 
+/* Имя и фамилия в блоке .banner-name — каждая строка на отдельной
+   строке (в т.ч. в английской версии), чтобы "Zamaletdinova"
+   переносилась под "Azaliya", а не стояла в одну строку с ней */
+body.lang-mode-en .banner-name .lang-en {
+  display: block;
+}
+
 body.lang-mode-en .lang-ru {
   display: none;
 }
