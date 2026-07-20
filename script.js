@@ -474,6 +474,7 @@ const PROJECTS = [
     cardImg: 'assets/VTB.jpg',
     lightBanner: false,
     images: [],
+    solutionImage: 'assets/VTB_Interface.png',
 
     context: 'Сценарий оплаты — одно из самых частых действий в банковском приложении: переводы близким, оплата связи, ЖКХ и других повторяющихся услуг. Несмотря на это, текущий путь пользователя требует нескольких шагов и не предлагает нужное действие заранее, а заставляет искать его каждый раз самостоятельно.\n\nЦель: сократить время выполнения платежа и сделать повторные операции доступными за минимальное количество действий.',
 
@@ -1296,6 +1297,7 @@ function openProject(id) {
   html += section(st('context'), tr(p, 'context'));
   html += section(st('problem'), tr(p, 'problem'), null, "proj-problem");
   html += image(p.problemImage);
+  html += image(p.solutionImage);
   html += section(st('solution'), tr(p, 'solution'), null, "proj-solution");
   html += section(st('competitors'), tr(p, 'competitorAnalysis'), p.competitorLink);
   html += image(p.competitorImage);
