@@ -826,10 +826,10 @@ footer .nav-grid > a:last-child {
 }
 
 .proj-section h3 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #070680;
+  color: var(--black);
   margin-bottom: 14px;
 }
 
