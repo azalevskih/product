@@ -1320,7 +1320,9 @@ footer a:hover {
 
 .research-block h4 {
   margin: 10px 0;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
+  color: #070680;
 }
 
 .research-block ul {
@@ -1330,7 +1332,9 @@ footer a:hover {
 
 .research-block li {
   margin-bottom: 10px;
-  line-height: 1.6;
+  font-size: 18px;
+  color: var(--gray);
+  line-height: 1.75;
 }
 
 /* Конкретно для страницы контактов на всю ширину */
