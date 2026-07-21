@@ -1284,18 +1284,22 @@ function openProject(id) {
     `;
   }
 
-  function section(title, text, link, id) {
+  function section(title, text, link, id, headerImg) {
     if (!text) return "";
     const linkHtml = link
       ? `<a class="figma-link" href="${link}" target="_blank" rel="noopener">${st('figmaLink')}</a>`
       : "";
     const idAttr = id ? ` id="${id}"` : "";
+    const headerImgHtml = headerImg
+      ? `<div class="proj-media"><img src="${headerImg}" alt=""></div>`
+      : "";
     return `
       <div class="proj-section"${idAttr}>
         <div class="proj-section-head">
           <h3>${title}</h3>
           ${linkHtml}
         </div>
+        ${headerImgHtml}
         <p>${text}</p>
       </div>
     `;
@@ -1303,11 +1307,21 @@ function openProject(id) {
 
   let html = "";
 
+  if (p.id === 0) {
+    html += `<h1 class="proj-big-title">Эмоциональный дизайн в приложении финансов</h1>`;
+  }
+
   html += section(st('context'), tr(p, 'context'));
+  if (p.id === 0) {
+    html += image('assets/FinCorp_about.jpg');
+  }
   html += section(st('problem'), tr(p, 'problem'), null, "proj-problem");
   html += image(p.problemImage);
   html += image(p.solutionImage);
   html += section(st('solution'), tr(p, 'solution'), null, "proj-solution");
+  if (p.id === 0) {
+    html += image('assets/FinCorp_mentor.jpg');
+  }
   html += section(st('competitors'), tr(p, 'competitorAnalysis'), p.competitorLink);
   html += image(p.competitorImage);
 
@@ -1390,7 +1404,7 @@ function openProject(id) {
   );
   html += image(p.purchaseScenarioImage);
 
-  html += section(st('designSystem'), tr(p, 'designSystem'), p.designSystemLink);
+  html += section(st('designSystem'), tr(p, 'designSystem'), p.designSystemLink, null, p.id === 0 ? 'assets/FinCorp_design_system.jpg' : null);
   html += image(p.uikitImage);
 
   html += section(st('prototype'), tr(p, 'prototype'), p.prototypeLink);
@@ -1402,8 +1416,33 @@ function openProject(id) {
     });
   }
 
-  html += section(st('results'), tr(p, 'results'), null, "proj-results");
-  html += image(p.resultsImage);
+  if (p.id === 0) {
+    const resultsText = tr(p, 'results');
+    const marker = '— AI Recommendation Acceptance Rate — доля рекомендаций, которые пользователь принимает или использует в своих финансовых решениях';
+    const markerIndex = resultsText.indexOf(marker);
+
+    if (markerIndex !== -1) {
+      const splitAt = markerIndex + marker.length;
+      const beforeText = resultsText.slice(0, splitAt);
+      const afterText = resultsText.slice(splitAt);
+      html += `
+        <div class="proj-section" id="proj-results">
+          <div class="proj-section-head">
+            <h3>${st('results')}</h3>
+          </div>
+          <p>${beforeText}</p>
+          <div class="proj-media"><img src="assets/FINCORP_results.jpg" alt=""></div>
+          <p>${afterText}</p>
+        </div>
+      `;
+    } else {
+      html += section(st('results'), resultsText, null, "proj-results");
+      html += image('assets/FINCORP_results.jpg');
+    }
+  } else {
+    html += section(st('results'), tr(p, 'results'), null, "proj-results");
+    html += image(p.resultsImage);
+  }
 
   if (p.references) {
   html += `
@@ -1428,6 +1467,10 @@ function openProject(id) {
         ${tagsHtml}
       </div>
     `;
+  }
+
+  if (p.id === 0) {
+    html += image('assets/FinCorp_End.jpg');
   }
 
   document.getElementById("proj-body").innerHTML = html;
