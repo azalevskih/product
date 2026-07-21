@@ -1308,7 +1308,7 @@ function openProject(id) {
   let html = "";
 
   if (p.id === 0) {
-    html += `<h1 class="proj-big-title">Эмоциональный дизайн в приложении<br>финансов</h1>`;
+    html += `<h1 class="proj-big-title">Эмоциональный дизайн в B2c продукте</h1>`;
     html += `<p class="proj-role-line">Роль: Senior Product Designer</p>`;
   }
 
