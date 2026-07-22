@@ -1312,7 +1312,7 @@ function openProject(id) {
   let html = "";
 
   if (p.id === 0) {
-    html += `<h1 class="proj-big-title">Эмоциональный дизайн в B2c продукте</h1>`;
+    html += `<h1 class="proj-big-title">Эмоциональный дизайн в B2C продукте</h1>`;
   }
   if (p.id === 1) {
     html += `<h1 class="proj-big-title">Прогнозирование рисков в B2B сервисе</h1>`;
