@@ -1322,7 +1322,7 @@ function openProject(id) {
     html += `<h1 class="proj-big-title">Интеграция AI в процесс разработки</h1>`;
   }
   if (p.id === 8) {
-    html += `<h1 class="proj-big-title">Оптимизация функции перевода средств в приложении</h1>`;
+    html += `<h1 class="proj-big-title">Оптимизация функции перевода средств</br>в приложении</h1>`;
   }
   html += `<p class="proj-role-line">Роль: Senior Product Designer</p>`;
 
