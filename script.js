@@ -663,6 +663,7 @@ const PROJECTS = [
     frameworksLink: 'https://www.figma.com/design/WMwmseisn5bklCo8ry63Ax/Core-Treasury?node-id=8610-2768&t=HGMOQk31tZlekgnU-1',
 
     cjm: 'Переход от реактивного контроля к превентивному управлению ликвидностью через единый источник данных и сценарное моделирование.',
+    cjmImage: 'assets/UI_Core.jpg',
 
     userFlow: 'Регистрация → подключение банков → консолидация данных → мониторинг ликвидности → сценарное моделирование → принятие решений',
     userflowImage: 'assets/Core_User_Flow.jpg',
