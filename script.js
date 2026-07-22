@@ -1324,8 +1324,6 @@ function openProject(id) {
   if (p.id === 8) {
     html += `<h1 class="proj-big-title">Оптимизация функции перевода средств</br>в приложении</h1>`;
   }
-  html += `<p class="proj-role-line">Роль: Senior Product Designer</p>`;
-
   html += section(st('context'), tr(p, 'context'));
   if (p.id === 0) {
     html += image('assets/FinCorp_about.jpg');
