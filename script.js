@@ -1314,6 +1314,12 @@ function openProject(id) {
   if (p.id === 0) {
     html += `<h1 class="proj-big-title">Эмоциональный дизайн в B2c продукте</h1>`;
   }
+  if (p.id === 1) {
+    html += `<h1 class="proj-big-title">Прогнозирование рисков в B2B сервисе</h1>`;
+  }
+  if (p.id === 2) {
+    html += `<h1 class="proj-big-title">Интеграция AI в процесс разработки</h1>`;
+  }
   html += `<p class="proj-role-line">Роль: Senior Product Designer</p>`;
 
   html += section(st('context'), tr(p, 'context'));
