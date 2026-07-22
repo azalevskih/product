@@ -743,6 +743,7 @@ const PROJECTS = [
       ]
     },
     researchLink: 'https://www.figma.com/design/mmPUfztaSjEcBFTs0EXhcY/AI-PM-Assistant?node-id=10002-1884&t=tzdVtiuN3fzFs89G-1',
+    researchImage: 'assets/About_Ai_PM.jpg',
 
     jtbd: 'Когда мне нужно принять продуктовое решение, я хочу быстро структурировать проблему и варианты решения, чтобы двигаться дальше без постоянного поиска информации и дополнительных синхронизаций.',
 
@@ -772,6 +773,7 @@ const PROJECTS = [
     prototypeLink: 'https://www.figma.com/design/mmPUfztaSjEcBFTs0EXhcY/AI-PM-Assistant?node-id=8076-2943&t=QIUHChasraIJLAG3-1',
 
     results: 'После изменений AI PM Assistant стал:\n— понятнее для новых пользователей\n— эффективнее в сложных продуктовых сценариях\n— менее зависимым от навыков написания промптов\n— ближе к реальному процессу работы Product Manager\n\nГлавное изменение было не в генерации более красивых ответов — UX-решение изменило саму модель взаимодействия: от AI-чата → к AI-партнёру в принятии продуктовых решений.',
+    resultsImage: 'assets/Results_Ai_PM.jpg',
 
     references: [
       { title: 'MIT + Stanford', url: 'https://www.nber.org/papers/w31161?utm_source' },
@@ -1379,6 +1381,8 @@ function openProject(id) {
           <h3>${st('userGroups')}</h3>
           ${p.frameworksLink ? `<a class="figma-link" href="${p.frameworksLink}" target="_blank" rel="noopener">${st('figmaLink')}</a>` : ""}
         </div>
+
+        ${p.id === 2 ? `<div class="proj-media"><img src="assets/Users_Ai_PM.jpg" alt=""></div>` : ""}
 
         ${trGroups(p).map(group => `
           <div style="margin-bottom:30px">
