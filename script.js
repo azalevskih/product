@@ -1321,6 +1321,9 @@ function openProject(id) {
   if (p.id === 2) {
     html += `<h1 class="proj-big-title">Интеграция AI в процесс разработки</h1>`;
   }
+  if (p.id === 8) {
+    html += `<h1 class="proj-big-title">Оптимизация функции перевода средств в приложении</h1>`;
+  }
   html += `<p class="proj-role-line">Роль: Senior Product Designer</p>`;
 
   html += section(st('context'), tr(p, 'context'));
