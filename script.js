@@ -495,6 +495,22 @@ const PROJECTS = [
     results: 'Для проверки гипотезы использовала бы следующие метрики:\n— Time to Complete Payment — время выполнения операции\n— Payment Success Rate — процент успешно завершённых платежей\n— Drop-off Rate — количество пользователей, покинувших сценарий\n— Количество шагов до оплаты\n\nГипотеза: большая часть пользователей совершает повторяющиеся операции. Если вынести частые действия на первый экран, добавить быстрые платежи и персональные подсказки, пользователи смогут завершать оплату быстрее, что повысит конверсию в успешные операции. Эффект необходимо подтвердить через A/B-тестирование.',
 
     tags: 'UX Research, Product Design, Fintech, Mobile Banking, A/B Testing, Figma',
+
+    references: [
+      { title: 'ВТБ прогнозирует активный рост аудитории мобильного приложения', url: 'https://pg21.ru/news/123905' },
+      { title: 'ВТБ: более 27 млн клиентов пользуются онлайн-банком — АБН 24', url: 'https://abnews.ru/news/2026/6/2/vtb-bolee-27-mln-klientov-polzuyutsya-onlajn-bankom' },
+      { title: 'ВТБ прогнозирует активный рост аудитории мобильного приложения', url: 'https://bankinform.ru/news/141916' },
+      { title: 'ВТБ прогнозирует рост аудитории мобильного банкинга при сотрудничестве с маркетплейсами', url: 'https://samaraonline24.ru/samara/view/vtb-prognoziruet-rost-auditorii-mobilnogo-bankinga-pri-sotrudnicestve-s-marketplejsami' },
+      { title: 'Что нового в приложении ВТБ в 2026 году (обновление интерфейса)', url: 'https://www.om1.ru/bank/news/414245-vtb_anonsiroval_polnoe_obnovlenie_svoego_mobilnogo_prilozhenija/' },
+      { title: 'Отзывы о работе интернет-банка ВТБ', url: 'https://topbanki.ru/banks/vtb/online/' },
+      { title: 'Отзывы о мобильном банке (приложении) ВТБ — 88 мнений', url: 'https://topbanki.ru/banks/vtb/mobile/' },
+      { title: 'Отзывы о ВТБ-Онлайн — приложение для Android (стр. 1)', url: 'https://otzovik.com/reviews/vtb-onlayn-prilozhenie_dlya_android/' },
+      { title: 'Отзывы о ВТБ-Онлайн — приложение для Android (стр. 3)', url: 'https://otzovik.com/reviews/vtb-onlayn-prilozhenie_dlya_android/3/' },
+      { title: 'Отзывы о ВТБ-Онлайн (общие отзывы)', url: 'https://otzovik.com/reviews/vtb-onlayn/' },
+      { title: 'Приложение ВТБ-Онлайн | отзывы (Irecommend)', url: 'https://irecommend.ru/content/kompyuternaya-programma-vtb-onlain' },
+      { title: 'Не могу совершать переводы — отзыв о ВТБ, Банки.ру', url: 'https://www.banki.ru/services/responses/bank/response/10730464/' },
+      { title: 'Проблема с транзакциями в приложении ВТБ', url: 'https://topbanki.ru/response/27908/' },
+    ],
   },
 
 
