@@ -796,7 +796,11 @@ footer .nav-grid > a:last-child {
 }
 
 .proj-section {
-  margin-bottom: 56px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  column-gap: 48px;
+  align-items: start;
+  margin-bottom: 72px;
 }
 
 /* Крупный вводный заголовок над блоком "Контекст" (используется у отдельных проектов, напр. Fin Corp) */
@@ -850,12 +854,15 @@ footer .nav-grid > a:last-child {
 }
 
 .proj-section-head {
+  grid-column: 1;
+  grid-row: 1 / -1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
-  margin-bottom: 14px;
+  position: sticky;
+  top: calc(var(--nav-h) + 40px);
+  margin-bottom: 0;
 }
 
 .proj-section-head h3 {
@@ -1098,7 +1105,8 @@ footer .nav-grid > a:last-child {
   #contact              { padding: 60px 0; }
   .proj-body            { padding: 40px 24px 80px; }
   .proj-banner          { padding: 48px 24px; margin-top: calc(var(--nav-h) + env(safe-area-inset-top)); }
-  .proj-section-head    { flex-direction: column; align-items: flex-start; }
+  .proj-section         { grid-template-columns: 1fr; row-gap: 16px; }
+  .proj-section-head    { grid-column: 1; grid-row: auto; position: static; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; }
   .figma-link           { font-size: 12px; padding: 7px 14px; }
 }
 
