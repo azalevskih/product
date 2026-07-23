@@ -896,6 +896,52 @@ footer .nav-grid > a:last-child {
   display: block;
 }
 
+/* Список источников внутри секции "Источники" */
+.proj-section ul {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.proj-section ul li {
+  margin-bottom: 10px;
+}
+
+.proj-section ul a {
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 1.6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-word;
+  transition: color 0.2s;
+}
+
+.proj-section ul a:hover {
+  color: var(--black);
+}
+
+/* Подзаголовок подблока внутри секции "Источники" (напр. "Вторичное исследование методом review mining") */
+.proj-refs-group-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  margin: 28px 0 8px;
+}
+
+.proj-refs-group-title:first-child {
+  margin-top: 0;
+}
+
+/* Вводный текст подблока (напр. "Отзывы пользователей (боли/жалобы...)") */
+.proj-refs-group-intro {
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
 /* Теги */
 .proj-tags {
   display: flex;

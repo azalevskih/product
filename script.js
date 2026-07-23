@@ -497,19 +497,27 @@ const PROJECTS = [
     tags: 'UX Research, Product Design, Fintech, Mobile Banking, A/B Testing, Figma',
 
     references: [
+      // Блок 1: Общие показатели аудитории и активности
       { title: 'ВТБ прогнозирует активный рост аудитории мобильного приложения', url: 'https://pg21.ru/news/123905' },
       { title: 'ВТБ: более 27 млн клиентов пользуются онлайн-банком — АБН 24', url: 'https://abnews.ru/news/2026/6/2/vtb-bolee-27-mln-klientov-polzuyutsya-onlajn-bankom' },
       { title: 'ВТБ прогнозирует активный рост аудитории мобильного приложения', url: 'https://bankinform.ru/news/141916' },
       { title: 'ВТБ прогнозирует рост аудитории мобильного банкинга при сотрудничестве с маркетплейсами', url: 'https://samaraonline24.ru/samara/view/vtb-prognoziruet-rost-auditorii-mobilnogo-bankinga-pri-sotrudnicestve-s-marketplejsami' },
       { title: 'Что нового в приложении ВТБ в 2026 году (обновление интерфейса)', url: 'https://www.om1.ru/bank/news/414245-vtb_anonsiroval_polnoe_obnovlenie_svoego_mobilnogo_prilozhenija/' },
-      { title: 'Отзывы о работе интернет-банка ВТБ', url: 'https://topbanki.ru/banks/vtb/online/' },
-      { title: 'Отзывы о мобильном банке (приложении) ВТБ — 88 мнений', url: 'https://topbanki.ru/banks/vtb/mobile/' },
-      { title: 'Отзывы о ВТБ-Онлайн — приложение для Android (стр. 1)', url: 'https://otzovik.com/reviews/vtb-onlayn-prilozhenie_dlya_android/' },
-      { title: 'Отзывы о ВТБ-Онлайн — приложение для Android (стр. 3)', url: 'https://otzovik.com/reviews/vtb-onlayn-prilozhenie_dlya_android/3/' },
-      { title: 'Отзывы о ВТБ-Онлайн (общие отзывы)', url: 'https://otzovik.com/reviews/vtb-onlayn/' },
-      { title: 'Приложение ВТБ-Онлайн | отзывы (Irecommend)', url: 'https://irecommend.ru/content/kompyuternaya-programma-vtb-onlain' },
-      { title: 'Не могу совершать переводы — отзыв о ВТБ, Банки.ру', url: 'https://www.banki.ru/services/responses/bank/response/10730464/' },
-      { title: 'Проблема с транзакциями в приложении ВТБ', url: 'https://topbanki.ru/response/27908/' },
+
+      // Блок 2: Вторичное исследование методом review mining
+      {
+        title: 'Отзывы о работе интернет-банка ВТБ',
+        url: 'https://topbanki.ru/banks/vtb/online/',
+        group: 'Вторичное исследование методом review mining',
+        groupIntro: 'Отзывы пользователей (боли/жалобы на сценарий платежей):',
+      },
+      { title: 'Отзывы о мобильном банке (приложении) ВТБ — 88 мнений', url: 'https://topbanki.ru/banks/vtb/mobile/', group: 'Вторичное исследование методом review mining' },
+      { title: 'Отзывы о ВТБ-Онлайн — приложение для Android (стр. 1)', url: 'https://otzovik.com/reviews/vtb-onlayn-prilozhenie_dlya_android/', group: 'Вторичное исследование методом review mining' },
+      { title: 'Отзывы о ВТБ-Онлайн — приложение для Android (стр. 3)', url: 'https://otzovik.com/reviews/vtb-onlayn-prilozhenie_dlya_android/3/', group: 'Вторичное исследование методом review mining' },
+      { title: 'Отзывы о ВТБ-Онлайн (общие отзывы)', url: 'https://otzovik.com/reviews/vtb-onlayn/', group: 'Вторичное исследование методом review mining' },
+      { title: 'Приложение ВТБ-Онлайн | отзывы (Irecommend)', url: 'https://irecommend.ru/content/kompyuternaya-programma-vtb-onlain', group: 'Вторичное исследование методом review mining' },
+      { title: 'Не могу совершать переводы — отзыв о ВТБ, Банки.ру', url: 'https://www.banki.ru/services/responses/bank/response/10730464/', group: 'Вторичное исследование методом review mining' },
+      { title: 'Проблема с транзакциями в приложении ВТБ', url: 'https://topbanki.ru/response/27908/', group: 'Вторичное исследование методом review mining' },
     ],
   },
 
@@ -1179,14 +1187,16 @@ function trGroups(p) {
   return p.jtbdGroups || [];
 }
 
-// p.references — массив {title, url}; переводим только title, url общий
+// p.references — массив {title, url, group?, groupIntro?}; переводим только title/group/groupIntro, url общий
 function trReferences(p) {
   if (currentLang === 'en' && p.references) {
     const en = TRANSLATIONS_EN[p.id];
     if (en && en.references) {
       return p.references.map((ref, i) => ({
-        url: ref.url,
+        ...ref,
         title: (en.references[i] && en.references[i].title) || ref.title,
+        group: (en.references[i] && en.references[i].group) || ref.group,
+        groupIntro: (en.references[i] && en.references[i].groupIntro) || ref.groupIntro,
       }));
     }
   }
@@ -1476,11 +1486,26 @@ function openProject(id) {
   }
 
   if (p.references) {
-  html += `
-    <div class="proj-section">
-      <h3>${st('sources')}</h3>
+    const refs = trReferences(p);
+
+    // Разбиваем плоский список источников на блоки по полю group.
+    // Элементы без group попадают в блок без подзаголовка (buckets[0]).
+    const buckets = [];
+    let current = { group: null, groupIntro: null, items: [] };
+    refs.forEach(link => {
+      if (link.group !== current.group) {
+        if (current.items.length) buckets.push(current);
+        current = { group: link.group || null, groupIntro: link.groupIntro || null, items: [] };
+      }
+      current.items.push(link);
+    });
+    if (current.items.length) buckets.push(current);
+
+    const refsHtml = buckets.map(bucket => `
+      ${bucket.group ? `<h4 class="proj-refs-group-title">${bucket.group}</h4>` : ""}
+      ${bucket.groupIntro ? `<p class="proj-refs-group-intro">${bucket.groupIntro}</p>` : ""}
       <ul>
-        ${trReferences(p).map(link => `
+        ${bucket.items.map(link => `
           <li>
             <a href="${link.url}" target="_blank">
               ${link.title}
@@ -1488,9 +1513,15 @@ function openProject(id) {
           </li>
         `).join("")}
       </ul>
-    </div>
-  `;
-}
+    `).join("");
+
+    html += `
+      <div class="proj-section">
+        <h3>${st('sources')}</h3>
+        ${refsHtml}
+      </div>
+    `;
+  }
 
   if (tagsHtml) {
     html += `
