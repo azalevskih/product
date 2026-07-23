@@ -1356,8 +1356,13 @@ function openProject(id) {
   }
   html += section(st('problem'), tr(p, 'problem'), null, "proj-problem");
   html += image(p.problemImage);
-  html += image(p.solutionImage);
+  if (p.id !== 8) {
+    html += image(p.solutionImage);
+  }
   html += section(st('solution'), tr(p, 'solution'), null, "proj-solution");
+  if (p.id === 8) {
+    html += image(p.solutionImage);
+  }
   if (p.id === 0) {
     html += image('assets/FinCorp_mentor.jpg');
   }
