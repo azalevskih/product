@@ -1330,8 +1330,10 @@ function openProject(id) {
           <h3>${title}</h3>
           ${linkHtml}
         </div>
-        ${headerImgHtml}
-        <p>${text}</p>
+        <div class="proj-section-body">
+          ${headerImgHtml}
+          <p>${text}</p>
+        </div>
       </div>
     `;
   }
@@ -1377,32 +1379,34 @@ function openProject(id) {
         ${p.researchLink ? `<a class="figma-link" href="${p.researchLink}" target="_blank" rel="noopener">${st('figmaLink')}</a>` : ""}
       </div>
 
-      <div class="research-block">
-        <h4>${st('userProblems')}</h4>
-        <ul>
-          ${trResearch(p, 'userProblems').map(item => `<li>${item}</li>`).join("")}
-        </ul>
-      </div>
+      <div class="proj-section-body">
+        <div class="research-block">
+          <h4>${st('userProblems')}</h4>
+          <ul>
+            ${trResearch(p, 'userProblems').map(item => `<li>${item}</li>`).join("")}
+          </ul>
+        </div>
 
-      <div class="research-block">
-        <h4>${st('valueHyp')}</h4>
-        <ul>
-          ${trResearch(p, 'valueHypotheses').map(item => `<li>${item}</li>`).join("")}
-        </ul>
-      </div>
+        <div class="research-block">
+          <h4>${st('valueHyp')}</h4>
+          <ul>
+            ${trResearch(p, 'valueHypotheses').map(item => `<li>${item}</li>`).join("")}
+          </ul>
+        </div>
 
-      <div class="research-block">
-        <h4>${st('behaviorHyp')}</h4>
-        <ul>
-          ${trResearch(p, 'behaviorHypotheses').map(item => `<li>${item}</li>`).join("")}
-        </ul>
-      </div>
+        <div class="research-block">
+          <h4>${st('behaviorHyp')}</h4>
+          <ul>
+            ${trResearch(p, 'behaviorHypotheses').map(item => `<li>${item}</li>`).join("")}
+          </ul>
+        </div>
 
-      <div class="research-block">
-        <h4>${st('insights')}</h4>
-        <ul>
-          ${trResearch(p, 'insights').map(item => `<li>${item}</li>`).join("")}
-        </ul>
+        <div class="research-block">
+          <h4>${st('insights')}</h4>
+          <ul>
+            ${trResearch(p, 'insights').map(item => `<li>${item}</li>`).join("")}
+          </ul>
+        </div>
       </div>
     </div>
   `;
@@ -1421,15 +1425,16 @@ function openProject(id) {
           ${p.frameworksLink ? `<a class="figma-link" href="${p.frameworksLink}" target="_blank" rel="noopener">${st('figmaLink')}</a>` : ""}
         </div>
 
-        ${p.id === 2 ? `<div class="proj-media"><img src="assets/Users_Ai_PM.jpg" alt=""></div>` : ""}
+        <div class="proj-section-body">
+          ${p.id === 2 ? `<div class="proj-media"><img src="assets/Users_Ai_PM.jpg" alt=""></div>` : ""}
 
-        ${trGroups(p).map(group => `
-          <div style="margin-bottom:30px">
-            <h4>${group.title}</h4>
-            <p>${group.description}</p>
-          </div>
-        `).join("")}
-
+          ${trGroups(p).map(group => `
+            <div style="margin-bottom:30px">
+              <h4>${group.title}</h4>
+              <p>${group.description}</p>
+            </div>
+          `).join("")}
+        </div>
       </div>
     `;
   }
@@ -1476,9 +1481,11 @@ function openProject(id) {
           <div class="proj-section-head">
             <h3>${st('results')}</h3>
           </div>
-          <p>${beforeText}</p>
-          <div class="proj-media"><img src="assets/FINCORP_results.jpg" alt=""></div>
-          <p>${afterText}</p>
+          <div class="proj-section-body">
+            <p>${beforeText}</p>
+            <div class="proj-media"><img src="assets/FINCORP_results.jpg" alt=""></div>
+            <p>${afterText}</p>
+          </div>
         </div>
       `;
     } else {
@@ -1525,7 +1532,9 @@ function openProject(id) {
         <div class="proj-section-head">
           <h3>${st('sources')}</h3>
         </div>
-        ${refsHtml}
+        <div class="proj-section-body">
+          ${refsHtml}
+        </div>
       </div>
     `;
   }
