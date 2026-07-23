@@ -19,6 +19,8 @@
   --gray-mid:    #8f8f8a;
   --gray-light:  #e6e6e2;
   --white:       #ffffff;
+  --link-blue:   #0563C1;
+  --link-blue-hover: #0A47A0;
   --hairline:    #e2e2de;   /* тонкие разделительные линии, как в референсе */
   --accent:      #111111;   /* акцент = чёрный, без цветной подсветки */
   --nav-h:       64px;
@@ -909,7 +911,7 @@ footer .nav-grid > a:last-child {
 
 .proj-section ul a {
   font-size: 16px;
-  color: var(--gray);
+  color: var(--link-blue);
   line-height: 1.6;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -918,7 +920,7 @@ footer .nav-grid > a:last-child {
 }
 
 .proj-section ul a:hover {
-  color: var(--black);
+  color: var(--link-blue-hover);
 }
 
 /* Подзаголовок подблока внутри секции "Источники" (напр. "Вторичное исследование методом review mining") */
