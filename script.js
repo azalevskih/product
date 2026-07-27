@@ -351,54 +351,30 @@ const TRANSLATIONS_EN = {
 
   // ── 6 ── Разбуди Деда Мороза / Wake Up Santa ─────────────
   6: {
-    context: '"Wake Up Santa" is a seasonal e-commerce landing page for a Body Pillow product, built around a collective-progress game mechanic: every purchase becomes a contribution to a shared New Year\'s mission.',
+    context: 'Beyosa is an online store for sleep products: mattresses, beds, sofas, and accessories.\n\nBuying furniture is a high-cost decision, so the checkout process needs to build trust, stay as clear as possible, and never distract the user from completing the purchase.\n\nThe team\'s task was to rework the checkout flow to make it simpler, reduce drop-off points, and prepare the platform for future delivery and payment methods.',
 
-    problem: 'Standard gift landing pages read as a static product showcase: users have no reason to buy right now, no sense of participating in an event, and retention stays low because there\'s no reason to come back to the site.',
+    problem: 'An audit of the existing checkout surfaced several key problems.\n\n— Users had to fill in a large number of fields with no clear sense of which were actually required.\n— Different delivery methods followed different flows, creating a chaotic experience.\n— Order-cost information wasn\'t visible enough throughout checkout.\n— Installment payment was a separate flow that pulled users out of the purchase process.\n— There wasn\'t enough feedback while filling out forms or handling errors.\n— The interface was hard to scale as new delivery and payment methods were added.',
 
-    solution: 'The landing page was designed as a living progress system with a collective goal — a purchase becomes a contribution to a shared mission, reinforced by other users\' live activity, milestone rewards, and social proof.',
+    solution: 'The checkout redesign was built around five key UX decisions.\n\n<strong class="proj-highlight">1. Pinned the order total</strong>\nThroughout checkout, the user always sees the item cost, discount, delivery cost, and order total — so they never lose context and can decide without scrolling back.\n\n<strong class="proj-highlight">2. Split the delivery scenarios</strong>\nInstead of one large form, delivery was split into two separate flows — courier delivery (address, comment, date) and pickup (map, store list, stock availability). The user only sees the fields relevant to their choice.\n\n<strong class="proj-highlight">3. Integrated a store-selection map</strong>\nFor pickup, the user can see nearby locations, pick a convenient store, and view its address and hours — a map helps users orient themselves faster than a long list of addresses.\n\n<strong class="proj-highlight">4. Built installment payment into the main flow</strong>\nInstallment became part of checkout rather than a separate process: the user selects the payment method, fills in the required data, and returns to checkout — reducing the risk of abandoning the purchase after navigating to a new screen.\n\n<strong class="proj-highlight">5. Added clear interface states</strong>\nEvery form was designed with empty, filled, error, success-validation, and disabled-until-valid states — helping users fix mistakes faster and complete checkout.',
 
-    competitorAnalysis: 'Classic gift landing pages — a static showcase with no emotional engagement\nSeasonal email campaigns — low engagement, no interactivity\nMarketplaces — wide selection but no emotional context or sense of participation\nBrand gamified promos — engaging, but rarely tied directly to a purchase',
+    competitorAnalysis: 'I studied checkout flows at leading online retailers: Askona, Hoff, IKEA, Ozon, Wildberries, and DNS.\n\nI compared checkout structure, delivery methods, pickup flows, order-total display, and installment integration — this helped identify which patterns work best for high-cost purchases.\n\nIn parallel, I audited Beyosa\'s existing checkout and identified the main friction points: long forms, no visual hierarchy, overloaded screens, weak system feedback, and too much secondary information.',
 
-    research: {
-      userProblems: [
-        'Low engagement with standard gift landing pages.',
-        'No reason to buy right now.',
-        'No sense of participating in a shared event.',
-        'Weak retention — no reason to return to the site.',
-      ],
-      valueHypotheses: [
-        'Visible shared progress boosts purchase motivation.',
-        'Instant feedback after a purchase increases satisfaction and trust in the mechanic.',
-      ],
-      behaviorHypotheses: [
-        'New Year\'s purchases tend to be more impulsive.',
-        'Social participation and other users\' live activity increase motivation to act.',
-        'A feeling of an "almost-reached goal" nudges people to buy right here, right now.',
-      ],
-      insights: [
-        'Users buy not just a product but an emotional context and a sense of progress.',
-        'Game-like progress is more persuasive than rational product comparison.',
-        'Intermediate rewards hold attention better than a single final goal.',
-        'Other participants\' activity creates social proof and reduces purchase hesitation.',
-      ],
-    },
-
-    jtbd: 'Users want to quickly pick an emotional gift, feel part of a shared activity, and get a clear reason to buy right now instead of putting off the decision.',
+    jtbd: 'The user wants to complete a high-cost purchase — a mattress, bed, or sofa — without second-guessing themselves: to see a clear cost at every step, understand the delivery option in seconds, and set up installment payment without falling out of the purchase flow.',
 
     jtbdGroups: [
-      { title: 'Gift buyers', description: 'Want to quickly choose an emotional, "alive" gift without spending time comparing lots of products.' },
-      { title: 'Event participants', description: 'Engage through live progress and social proof, come back to check on the shared goal.' },
+      { title: 'Courier-delivery buyers', description: 'Want to quickly enter an address, comment, and delivery date without filling out unnecessary fields.' },
+      { title: 'Pickup buyers', description: 'Want to quickly find the nearest store, check stock availability, and see its hours.' },
     ],
 
-    cjm: 'The shift from passively browsing a showcase to active participation: the user lands on the page, quickly grasps the mechanic through a live counter and progress bar, makes a purchase, instantly sees their contribution to the shared goal, and returns later to check progress and updates.',
+    cjm: 'The user journey runs from adding an item to the cart to confirming the order: at every step they see the order total, only fill in the fields relevant to their chosen scenario, and get clear feedback while filling forms and handling errors — reducing anxiety around a high-cost purchase and cutting drop-off points.',
 
-    userFlow: 'Land on the page → learn the progress mechanic → view the product → purchase → shared progress updates instantly → social confirmation (activity feed) → return to check progress.',
+    userFlow: 'Add to cart → Cart → Checkout → Contact details → Delivery method (Courier: enter address / Pickup: choose a store on the map) → Payment method (Online / Cash on delivery / Installment) → Order review → Thank-you page',
 
-    designSystem: 'A warm festive palette: red for urgency, beige for coziness, gold for reward. Key components: an animated progress bar, a live counter, an activity feed, and milestone-reward cards.',
+    designSystem: 'Checkout was built from a set of reusable, scalable components:\n\n— Cart: product card, quantity control, removal, recommendations.\n— Forms: text fields, phone, email, comment, address.\n— Delivery: toggles, map, pickup-point list.\n— Payment: bank card, cash, installment.\n— UI components: radio buttons, checkboxes, buttons, accordions, modals, notifications, info blocks.\n— States: hover, focus, disabled, loading, success, error.',
 
-    prototype: 'The prototype includes the key screens: a hero section with the live progress system, the product card, an activity feed of other buyers, the milestone-reward system, a social-proof block, and the final CTA with sharing.',
+    prototype: 'The final deliverables: cart, checkout, delivery-method selection, courier-delivery popup, pickup popup, store-selection map, installment setup, and the order-confirmation page.',
 
-    results: 'Expected effect: higher conversion from a sense of urgency, more return visits through the progress-based return loop, more time on site, and more social sharing.',
+    results: 'The result is a single, consistent checkout flow that made the purchase process more coherent, reduced unnecessary user actions, simplified delivery selection, and merged installment setup into the main purchase flow.\n\nOrder-cost transparency improved at every step, and the interface is now prepared to scale as new payment and delivery methods are added.',
   },
 
   // ── 7 ── Доброград Ипотека / Dobrograd Mortgage ──────────
@@ -465,6 +441,55 @@ const TRANSLATIONS_EN = {
 
 
 const PROJECTS = [
+
+  // ── ПРОЕКТ 6 ── Beyosa: оптимизация корзины и оформления заказа ──
+  {
+    id: 6,
+    title: { ru: 'Beyosa — Оформление заказа', en: 'Beyosa — Checkout' },
+    cardDesc: { ru: 'Оптимизация корзины и оформления заказа в e-commerce', en: 'Optimizing cart and checkout for an e-commerce store' },
+    bannerColor: '#2E3652',
+    bannerImg: 'assets/Beyosa.ru_BIG.png',
+    cardImg: 'assets/Beyosa.ru.jpg',
+    lightBanner: false,
+    images: [],
+
+    context: 'Beyosa — интернет-магазин товаров для сна: матрасов, кроватей, диванов и аксессуаров.\n\nПокупка мебели — дорогостоящее решение, поэтому процесс оформления заказа должен вызывать доверие, быть максимально понятным и не отвлекать пользователя от завершения покупки.\n\nПеред командой стояла задача переработать сценарий оформления заказа, чтобы сделать его проще, уменьшить количество точек отказа и подготовить платформу к дальнейшему развитию способов доставки и оплаты.',
+
+    problem: 'Анализ текущего checkout показал несколько ключевых проблем.\n\n— Пользователю приходилось заполнять большое количество полей без понимания, какие из них действительно обязательны.\n— Разные способы доставки работали по разным сценариям и создавали ощущение хаотичного процесса.\n— Информация о стоимости заказа была недостаточно заметной во время оформления.\n— Рассрочка представляла собой отдельный сценарий, который выбивал пользователя из процесса покупки.\n— Не хватало обратной связи при заполнении форм и обработке ошибок.\n— Интерфейс было сложно масштабировать при добавлении новых способов доставки и оплаты.',
+
+    solution: 'Redesign checkout строился вокруг пяти ключевых UX-решений.\n\n<strong class="proj-highlight">1. Зафиксировала итоговую стоимость заказа</strong>\nВо время оформления пользователь постоянно видит стоимость товаров, скидку, стоимость доставки и итоговую сумму — это позволяет не терять контекст покупки и принимать решение, не возвращаясь назад.\n\n<strong class="proj-highlight">2. Разделила сценарии доставки</strong>\nВместо одной большой формы доставка разделена на два отдельных сценария — курьерскую доставку (адрес, комментарий, дата) и самовывоз (карта, список магазинов, наличие товара). Пользователь видит только нужные поля и не перегружается лишней информацией.\n\n<strong class="proj-highlight">3. Интегрировала карту выбора магазина</strong>\nПри самовывозе пользователь может посмотреть ближайшие точки, выбрать удобный магазин и увидеть адрес и режим работы — карта помогает ориентироваться быстрее, чем длинный список адресов.\n\n<strong class="proj-highlight">4. Встроила рассрочку в основной сценарий</strong>\nРассрочка стала частью checkout, а не отдельным процессом: пользователь выбирает способ оплаты, заполняет нужные данные и возвращается к оформлению заказа — это снижает вероятность того, что он бросит покупку после перехода на новый экран.\n\n<strong class="proj-highlight">5. Добавила понятные состояния интерфейса</strong>\nДля всех форм продуманы пустые состояния, заполнение, ошибки, успешная валидация и блокировка кнопки до заполнения обязательных полей — это помогает пользователю быстрее исправлять ошибки и завершать оформление.',
+
+    competitorAnalysis: 'Изучила checkout ведущих интернет-магазинов: Askona, Hoff, IKEA, Ozon, Wildberries, DNS.\n\nСравнивала структуру оформления заказа, способы доставки, оформление самовывоза, отображение итоговой стоимости и интеграцию рассрочки — это помогло определить, какие паттерны лучше всего работают для дорогостоящих покупок.\n\nПараллельно провела UX-аудит текущего сценария Beyosa и выявила основные точки трения: длинные формы, отсутствие визуальной иерархии, перегруженные экраны, слабая обратная связь системы и большое количество второстепенной информации.',
+    competitorImage: '',
+
+    jtbd: 'Пользователь хочет оформить дорогостоящую покупку — матрас, кровать или диван — без лишних сомнений: видеть понятную стоимость на каждом шаге, разобраться в способе доставки за несколько секунд и оформить рассрочку, не выпадая из процесса покупки.',
+
+    jtbdGroups: [
+      {
+        title: 'Покупатели с курьерской доставкой',
+        description: 'Хотят быстро указать адрес, комментарий и дату доставки, не заполняя лишние поля.'
+      },
+      {
+        title: 'Покупатели самовывозом',
+        description: 'Хотят быстро найти ближайший магазин, увидеть наличие товара и режим работы.'
+      }
+    ],
+
+    cjm: 'Путь пользователя строится от добавления товара в корзину до подтверждения заказа: на каждом шаге он видит итоговую стоимость, заполняет только нужные для выбранного сценария поля и получает понятную обратную связь при заполнении форм и ошибках — это снижает тревожность при дорогостоящей покупке и уменьшает количество точек отказа.',
+
+    userFlow: 'Добавление товара → Корзина → Оформление заказа → Контактные данные → Выбор способа доставки (Курьер: ввод адреса / Самовывоз: выбор магазина на карте) → Способ оплаты (Онлайн / При получении / Рассрочка) → Проверка заказа → Спасибо за заказ',
+
+    designSystem: 'Для checkout спроектирован набор переиспользуемых компонентов, готовых к масштабированию:\n\n— Корзина: карточка товара, изменение количества, удаление, рекомендации.\n— Формы: текстовые поля, телефон, email, комментарий, адрес.\n— Доставка: переключатели, карта, список пунктов выдачи.\n— Оплата: банковская карта, наличные, рассрочка.\n— UI-компоненты: радиокнопки, чекбоксы, кнопки, аккордеоны, модальные окна, уведомления, информационные блоки.\n— Состояния: hover, focus, disabled, loading, success, error.',
+    uikitImage: '',
+
+    prototype: 'В результате были спроектированы: корзина, оформление заказа, выбор способа доставки, попап курьерской доставки, попап самовывоза, карта выбора магазина, оформление рассрочки и страница успешного оформления заказа.',
+    prototypeImage: '',
+
+    results: 'В результате был создан единый сценарий оформления заказа, который сделал процесс покупки более последовательным, сократил количество лишних действий пользователя, упростил выбор доставки и объединил оформление рассрочки с основным процессом покупки.\n\nПрозрачность стоимости заказа выросла на всех этапах, а интерфейс подготовлен к дальнейшему масштабированию и добавлению новых способов оплаты и доставки.',
+    resultsImage: '',
+
+    tags: 'UX, Product Design, E-commerce, Checkout, Design System, Figma'
+  },
 
   // ── ПРОЕКТ 8 ── ВТБ Оплата ──────────────────────────────
   {
@@ -1000,78 +1025,6 @@ const PROJECTS = [
     tags: 'UX, Product Design, HoReCa, Digital Menu, Figma'
   },
 
-  // ── ПРОЕКТ 6 ── Разбуди Деда Мороза ───────────────────────
-  {
-    id: 6,
-    title: { ru: 'Разбуди Деда Мороза', en: 'Wake Up Santa' },
-    cardDesc: { ru: 'Игровой e-commerce лендинг с коллективным прогрессом', en: 'Gamified e-commerce landing with collective progress' },
-    bannerColor: '#B23A48',
-    bannerImg: 'assets/Beyosa.ru_BIG.png',
-    cardImg: 'assets/Beyosa.ru.jpg',
-    hidden: true,
-    images: [],
-
-    context: '«Разбуди Деда Мороза» — сезонный e-commerce лендинг для товара Body Pillow (обнимашка), выстроенный вокруг игровой механики коллективного прогресса: каждая покупка становится вкладом в общую новогоднюю миссию.',
-
-    problem: 'Стандартные gift-лендинги воспринимаются как статичная витрина товара: у пользователя нет причины купить именно сейчас, нет ощущения участия в событии, а retention остаётся низким из-за отсутствия поводов вернуться на сайт.',
-
-    solution: 'Лендинг спроектирован как живая система прогресса с коллективной целью — покупка становится вкладом в общую миссию, подкреплённым live-активностью других пользователей, промежуточными наградами (milestones) и социальным доказательством.',
-
-    competitorAnalysis: 'Классические gift-лендинги — статичная витрина без эмоционального вовлечения\nСезонные email-рассылки — низкая вовлечённость, отсутствие интерактива\nМаркетплейсы — широкий выбор, но нет эмоционального контекста и ощущения участия\nИгровые промо-акции брендов — вовлекают, но редко напрямую связаны с покупкой',
-
-    competitorImage: '',
-
-    research: {
-      userProblems: [
-        'Низкая вовлечённость в стандартные gift-лендинги',
-        'Отсутствие причины купить именно сейчас',
-        'Нет ощущения участия в общем событии',
-        'Слабый retention — нет поводов вернуться на сайт'
-      ],
-      valueHypotheses: [
-        'Видимый общий прогресс усиливает мотивацию к покупке',
-        'Мгновенная обратная связь после покупки повышает удовлетворённость и доверие к механике'
-      ],
-      behaviorHypotheses: [
-        'Новогодние покупки чаще совершаются импульсивно',
-        'Социальное участие и live-активность других пользователей усиливают мотивацию к действию',
-        'Ощущение «почти достигнутой цели» подталкивает к покупке здесь и сейчас'
-      ],
-      insights: [
-        'Пользователь покупает не продукт, а эмоциональный контекст и ощущение прогресса',
-        'Игровой прогресс убеждает сильнее рационального сравнения товаров',
-        'Промежуточные награды удерживают внимание лучше одной финальной цели',
-        'Активность других участников формирует социальное доказательство и снижает сомнения в покупке'
-      ]
-    },
-
-    jtbd: 'Пользователь хочет быстро выбрать эмоциональный подарок, почувствовать участие в общей активности и получить понятный повод купить именно сейчас, а не откладывать решение.',
-
-    jtbdGroups: [
-      {
-        title: 'Покупатели подарков',
-        description: 'Хотят быстро выбрать эмоциональный, «живой» подарок и не тратить время на сравнение множества товаров'
-      },
-      {
-        title: 'Участники события',
-        description: 'Вовлекаются через live-прогресс и социальное доказательство, возвращаются проверить статус общей цели'
-      }
-    ],
-
-    cjm: 'Переход от пассивного просмотра витрины к активному участию: пользователь заходит на лендинг, быстро считывает механику через live-счётчик и прогресс-бар, совершает покупку, мгновенно видит свой вклад в общую цель и возвращается позже, чтобы проверить прогресс и обновления.',
-
-    userFlow: 'Вход на лендинг → знакомство с механикой прогресса → просмотр товара → покупка → мгновенное обновление общего прогресса → социальное подтверждение (лента активности) → возвращение для проверки прогресса',
-
-    designSystem: 'Тёплая праздничная палитра: красный — срочность, бежевый — уют, золотой — награда. Ключевые компоненты — анимированный прогресс-бар, live-счётчик, лента активности, карточки milestone-наград.',
-
-    prototype: 'Прототип включает ключевые экраны: hero с live-системой прогресса, карточку товара, ленту активности других покупателей, систему промежуточных наград, блок социального доказательства и финальный CTA с шерингом.',
-    prototypeLink: 'https://www.figma.com/design/vTgSN0n37HFla5d1n7odp7/%D0%A0%D0%B0%D0%B7%D0%B1%D1%83%D0%B4%D0%B8-%D0%94%D0%B5%D0%B4%D0%B0?node-id=0-1&t=0DgnakFNuGwSq8d8-1',
-
-    results: 'Ожидаемый эффект: рост конверсии за счёт ощущения срочности, рост возвратов благодаря return-loop вокруг прогресса, увеличение времени на сайте и рост социального шеринга.',
-
-    tags: 'UX, Growth Design, E-commerce, Gamification, Landing Page'
-  },
-
   // ── ПРОЕКТ 7 ── Доброград: платформа ипотеки и жилья ─────
   {
     id: 7,
@@ -1351,6 +1304,9 @@ function openProject(id) {
   }
   if (p.id === 8) {
     html += `<h1 class="proj-big-title">Оптимизация функции перевода средств</br>в приложении</h1>`;
+  }
+  if (p.id === 6) {
+    html += `<h1 class="proj-big-title">Оптимизация корзины и оформления заказа</h1>`;
   }
   html += section(st('context'), tr(p, 'context'));
   if (p.id === 0) {
