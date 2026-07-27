@@ -368,6 +368,8 @@ const TRANSLATIONS_EN = {
 
     cjm: 'The user journey runs from adding an item to the cart to confirming the order: at every step they see the order total, only fill in the fields relevant to their chosen scenario, and get clear feedback while filling forms and handling errors — reducing anxiety around a high-cost purchase and cutting drop-off points.',
 
+    keyScenarios: 'For pickup, the user can switch between a map and a list of pickup points.\n\nThe map shows nearby stores visually and highlights the selected location with its address, hours, and the date the order can be picked up. The list gives the same information in table form — for users who\'d rather read than search a map.',
+
     userFlow: 'Add to cart → Cart → Checkout → Contact details → Delivery method (Courier: enter address / Pickup: choose a store on the map) → Payment method (Online / Cash on delivery / Installment) → Order review → Thank-you page',
 
     designSystem: 'Checkout was built from a set of reusable, scalable components:\n\n— Cart: product card, quantity control, removal, recommendations.\n— Forms: text fields, phone, email, comment, address.\n— Delivery: toggles, map, pickup-point list.\n— Payment: bank card, cash, installment.\n— UI components: radio buttons, checkboxes, buttons, accordions, modals, notifications, info blocks.\n— States: hover, focus, disabled, loading, success, error.',
@@ -427,7 +429,8 @@ const PROJECTS = [
     bannerImg: 'assets/Beyosa.ru_BIG.png',
     cardImg: 'assets/Beyosa.ru.jpg',
     lightBanner: false,
-    images: [],
+    images: ['assets/Beyosa_pickup_list.jpg'],
+    solutionImage: 'assets/Beyosa_checkout_delivery.jpg',
 
     context: 'Beyosa — интернет-магазин товаров для сна: матрасов, кроватей, диванов и аксессуаров.\n\nПокупка мебели — дорогостоящее решение, поэтому процесс оформления заказа должен вызывать доверие, быть максимально понятным и не отвлекать пользователя от завершения покупки.\n\nПеред командой стояла задача переработать сценарий оформления заказа, чтобы сделать его проще, уменьшить количество точек отказа и подготовить платформу к дальнейшему развитию способов доставки и оплаты.',
 
@@ -452,17 +455,22 @@ const PROJECTS = [
     ],
 
     cjm: 'Путь пользователя строится от добавления товара в корзину до подтверждения заказа: на каждом шаге он видит итоговую стоимость, заполняет только нужные для выбранного сценария поля и получает понятную обратную связь при заполнении форм и ошибках — это снижает тревожность при дорогостоящей покупке и уменьшает количество точек отказа.',
+    cjmImage: 'assets/Beyosa_checkout_summary.jpg',
+
+    keyScenarios: 'При самовывозе пользователь может переключаться между картой и списком точек выдачи.\n\nКарта показывает ближайшие магазины визуально и выделяет выбранную точку с адресом, часами работы и датой, когда можно забрать заказ. Список даёт ту же информацию в табличном виде — для тех, кто предпочитает читать, а не искать на карте.',
+    keyScenariosImage: 'assets/Beyosa_pickup_map.jpg',
 
     userFlow: 'Добавление товара → Корзина → Оформление заказа → Контактные данные → Выбор способа доставки (Курьер: ввод адреса / Самовывоз: выбор магазина на карте) → Способ оплаты (Онлайн / При получении / Рассрочка) → Проверка заказа → Спасибо за заказ',
+    userflowImage: 'assets/Beyosa_checkout_pickup.jpg',
 
     designSystem: 'Для checkout спроектирован набор переиспользуемых компонентов, готовых к масштабированию:\n\n— Корзина: карточка товара, изменение количества, удаление, рекомендации.\n— Формы: текстовые поля, телефон, email, комментарий, адрес.\n— Доставка: переключатели, карта, список пунктов выдачи.\n— Оплата: банковская карта, наличные, рассрочка.\n— UI-компоненты: радиокнопки, чекбоксы, кнопки, аккордеоны, модальные окна, уведомления, информационные блоки.\n— Состояния: hover, focus, disabled, loading, success, error.',
-    uikitImage: '',
+    uikitImage: 'assets/Beyosa_product_modal.jpg',
 
     prototype: 'В результате были спроектированы: корзина, оформление заказа, выбор способа доставки, попап курьерской доставки, попап самовывоза, карта выбора магазина, оформление рассрочки и страница успешного оформления заказа.',
-    prototypeImage: '',
+    prototypeImage: 'assets/Beyosa_cart.jpg',
 
     results: 'В результате был создан единый сценарий оформления заказа, который сделал процесс покупки более последовательным, сократил количество лишних действий пользователя, упростил выбор доставки и объединил оформление рассрочки с основным процессом покупки.\n\nПрозрачность стоимости заказа выросла на всех этапах, а интерфейс подготовлен к дальнейшему масштабированию и добавлению новых способов оплаты и доставки.',
-    resultsImage: '',
+    resultsImage: 'assets/Beyosa_thank_you.jpg',
 
     tags: 'UX, Product Design, E-commerce, Checkout, Design System, Figma'
   },
