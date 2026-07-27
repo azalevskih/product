@@ -796,6 +796,7 @@ const PROJECTS = [
   // ── ПРОЕКТ 2 ── Ai PM ───────────────────────────────────
   {
     id: 2,
+    hidden: true, // временно скрыт
     title: { ru: 'AI PM Assistant', en: 'AI PM Assistant' },
     cardDesc: { ru: 'AI-инструмент для продуктовых команд', en: 'AI tool for product teams' },
     bannerColor: '#BA7517',
