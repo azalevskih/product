@@ -379,54 +379,30 @@ const TRANSLATIONS_EN = {
 
   // ── 7 ── Доброград Ипотека / Dobrograd Mortgage ──────────
   7: {
-    context: 'Dobrograd is a platform for transparent mortgage and housing selection that brings together mortgage programs, bank offers, developer installment plans, and a payment calculator in a single selection flow.',
+    context: 'Dobrograd is a housing-selection service that brings together a property catalog, mortgage programs, payment calculations, and booking a house or apartment in a single flow.\n\nBooking a home is the final and most consequential step before a deal: the user reserves a specific property, so the decision needs to be made with full clarity on the terms, and the move into booking should feel like a natural continuation of exploring options — not a separate, disconnected action.\n\nThe task was to design the path from browsing the catalog to a confirmed booking so that every step builds confidence in the decision.',
 
-    problem: 'Users don\'t struggle with a lack of mortgage information — they struggle with too much of it and a lack of clarity: complex terminology, distrust of calculations and the final overpayment, fear of making a mistake in a long-term commitment, and having to manually recalculate scenarios across different banks.',
+    problem: 'An audit of the existing flow showed that booking was weakly connected to the rest of the user journey.\n\n— After selecting a property, users didn\'t understand which next step led to booking.\n— The mortgage calculator existed separately from the property card and didn\'t lead toward a booking decision.\n— It wasn\'t clear whether a property was currently available or how long it would stay that way.\n— The booking form asked for personal data without explaining what would happen next.\n— There was no booking confirmation with clear next steps.\n— A user who left the flow once couldn\'t easily return to an interrupted booking.',
 
-    solution: 'The platform turns choosing a mortgage into a transparent, manageable process: every decision is translated into a clear monthly payment, banks and programs are compared in a single interface, and a live calculator shows whether a user can "afford" a given scenario.',
+    solution: 'The redesign was built around making booking a natural continuation of exploring a property, rather than a separate action.\n\n<strong class="proj-highlight">1. Built the "Book now" CTA into the property card</strong>\nThe booking button became part of the property card and calculator instead of a separate screen — users can move to booking at the moment of maximum confidence, without losing the property or the calculation context.\n\n<strong class="proj-highlight">2. Showed property availability status</strong>\nThe card and catalog show whether a property is available, already booked by another user, or open for a viewing — creating a sense of real demand and reducing the tendency to postpone a decision.\n\n<strong class="proj-highlight">3. Connected the calculator to booking</strong>\nAfter calculating a comfortable monthly payment, users can immediately reserve the property — the calculation and the booking became one flow instead of two disconnected ones.\n\n<strong class="proj-highlight">4. Split booking into clear steps</strong>\nInstead of one long form, booking now consists of short stages: choosing a format (property viewing or reservation), contact details, confirmation — at every step the user sees how many actions remain.\n\n<strong class="proj-highlight">5. Added confirmation with clear next steps</strong>\nAfter booking, users get a confirmation with concrete next steps — how long the reservation is held and the manager\'s contact — instead of just a success message.',
 
-    competitorAnalysis: 'Banks (Sber, VTB, etc.) — overload users with numbers and no explanation\nReal-estate aggregators — strong at finding properties, weak on transparency of terms\nDevelopers — hide the calculation logic behind a sales manager\nMortgage brokers — a personal approach, but it doesn\'t scale and isn\'t transparent to the user',
+    competitorAnalysis: 'I studied booking and property-selection flows on Cian, Domklik, PIK, and Samolet.\n\nI compared how each platform leads users toward booking: where the CTA sits, how availability is shown, whether the mortgage calculator connects to booking, and what the user sees right after confirming.\n\nMost aggregators are strong at helping users find a property but weak at guiding them past the card — booking usually requires a call to a manager instead of finishing inside the interface.',
 
-    research: {
-      userProblems: [
-        'Overwhelming choice between banks, rates, and programs.',
-        'Complex financial terminology that\'s hard to understand without explanation.',
-        'No understanding of what\'s personally the right fit.',
-        'Distrust of calculations and the final overpayment.',
-        'Fear of making a mistake in a long-term financial commitment.',
-      ],
-      valueHypotheses: [
-        'Translating all terms into a monthly payment reduces cognitive load and builds trust.',
-        'Being able to compare banks in a single interface increases confidence in the decision.',
-      ],
-      behaviorHypotheses: [
-        'Users decide not based on the rate, but on the size of the monthly payment.',
-        'Decisions are made iteratively: users repeatedly change parameters and recalculate scenarios before choosing.',
-      ],
-      insights: [
-        'A rate without context has no value to the user — the decision is made through the monthly payment.',
-        'Trust matters more than benefit: users would rather pick a clear option than a formally better but opaque one.',
-        'The market competes not on interfaces, but on sources of trust.',
-        'Transparency of the data source and calculation logic reduces the feeling of a "black box."',
-      ],
-    },
-
-    jtbd: 'At different stages, users want to: understand whether they can afford a home; explore what\'s available on the market; compare terms and choose a comfortable payment; and be confident their decision is safe and won\'t be a mistake.',
+    jtbd: 'The user wants to reserve a house or apartment they like, feeling confident about the terms and payment, and get clear confirmation that the property is actually held for them — without waiting for a manager\'s call.',
 
     jtbdGroups: [
-      { title: 'First-time home buyers', description: 'High anxiety, low financial literacy, fear of making a mistake when choosing a mortgage.' },
-      { title: 'Terms optimizers', description: 'Already familiar with mortgages, comparing rates and banks, looking for better and more flexible terms.' },
+      { title: 'First-time home buyers', description: 'Need extra reassurance before booking: want to understand a property\'s status, how long a reservation is held, and what happens after confirmation.' },
+      { title: 'Decided buyers', description: 'Know exactly which property they want and aim to book it as fast as possible without unnecessary screens.' },
     ],
 
-    cjm: 'The shift from anxious uncertainty ("what should I choose, can I afford this") to a confident decision: the user starts by estimating their budget, explores housing and program options, iteratively compares banks and recalculates scenarios, then moves on to an application with a sense of control and a clear financial picture.',
+    cjm: 'The journey starts with browsing the catalog and gradually narrows down to a specific property: the user compares options, calculates the payment, watches the availability status, and moves to booking at the moment of maximum confidence. Every step — from the card to confirmation — is designed to avoid a pause where the user might reconsider or lose their train of thought.',
 
-    userFlow: 'Enter the platform → choose a property or set budget parameters → initial payment calculation → iterative comparison of banks and programs while adjusting parameters → choose a comfortable scenario → apply for a consultation/approval.',
+    userFlow: 'Home → Property catalog → Property card → Mortgage calculator → Booking (choose format: viewing or reservation) → Contact details → Booking confirmation → Personal account',
 
-    designSystem: 'A "financial clarity interface" — payment visualization, a live calculator with instant recalculation, a sticky monthly-payment block, bank cards, and an accordion for mortgage programs.',
+    designSystem: 'A set of components was designed for the booking flow:\n\n— Property card: availability status, sticky "Book now" button, quick payment estimate.\n— Calculator: live recalculation, moves into booking without losing parameters.\n— Booking: step indicator, contact-details form, format choice (viewing / reservation).\n— Confirmation: booking status, hold period, manager contact.\n— States: available, booked, unavailable, loading, success, error.',
 
-    prototype: 'The prototype demonstrates the full scenario: selecting a property, live recalculation of the monthly payment as parameters change, comparing bank offers, and moving to an application.',
+    prototype: 'The final deliverables: the property catalog, a property card with availability status, the mortgage calculator, a step-by-step booking form, and a confirmation page with the personal account.',
 
-    results: 'Expected effect for users — lower anxiety, faster decisions, and more trust in the process. For the business — higher application conversion, less dependence on sales managers, and more comparisons (an engagement loop).',
+    results: 'As a result, booking became a logical continuation of exploring a property rather than a separate flow: users can reserve a house right after calculating the payment, seeing the availability status at every step.\n\nExpected effect: a higher share of users moving from the property card to a confirmed booking, fewer drop-offs at the calculator, and fewer bookings abandoned midway due to unclear next steps.',
   },
 
 };
@@ -448,7 +424,7 @@ const PROJECTS = [
     title: { ru: 'Beyosa — Оформление заказа', en: 'Beyosa — Checkout' },
     cardDesc: { ru: 'Оптимизация корзины и оформления заказа в e-commerce', en: 'Optimizing cart and checkout for an e-commerce store' },
     bannerColor: '#2E3652',
-    bannerImg: 'assets/Beyosa.ru_BIG.jpg',
+    bannerImg: 'assets/Beyosa.ru_BIG.png',
     cardImg: 'assets/Beyosa.ru.jpg',
     lightBanner: false,
     images: [],
@@ -1028,73 +1004,50 @@ const PROJECTS = [
   // ── ПРОЕКТ 7 ── Доброград: платформа ипотеки и жилья ─────
   {
     id: 7,
-    title: { ru: 'Доброград Ипотека', en: 'Dobrograd Mortgage' },
-    cardDesc: { ru: 'Платформа прозрачного выбора ипотеки и жилья', en: 'Platform for transparent mortgage and housing selection' },
+    title: { ru: 'Доброград — Путь пользователя к бронированию', en: 'Dobrograd — The User\'s Path to Booking' },
+    cardDesc: { ru: 'Проектирование сценария бронирования жилья в сервисе Доброград', en: 'Designing the housing-booking flow for Dobrograd' },
     bannerColor: '#3B6E8F',
     bannerImg: 'assets/Dobrograd_BIG.png',
     cardImg: 'assets/Dobrograd.jpg',
-    hidden: true,
     images: [],
 
-    context: 'Доброград — платформа прозрачного выбора ипотеки и жилья, которая объединяет ипотечные программы, банковские предложения, рассрочки от застройщика и калькулятор платежей в едином сценарии выбора.',
+    context: 'Доброград — сервис прозрачного выбора жилья, который объединяет каталог объектов, ипотечные программы, расчёт платежей и бронирование дома или квартиры в едином сценарии.\n\nБронирование жилья — финальный и самый ответственный шаг перед сделкой: пользователь фиксирует за собой конкретный объект, поэтому решение должно приниматься с полным пониманием условий, а сам переход к брони — быть логичным продолжением изучения вариантов, а не отдельным, оторванным действием.\n\nЗадачей было спроектировать путь пользователя от знакомства с каталогом до подтверждённой брони так, чтобы каждый шаг наращивал уверенность в решении.',
 
-    problem: 'Пользователь сталкивается не с нехваткой информации об ипотеке, а с её избыточностью и непрозрачностью: сложная терминология, недоверие к расчётам и итоговой переплате, страх ошибки в долгосрочном обязательстве и необходимость вручную пересчитывать сценарии в разных банках.',
+    problem: 'Анализ текущего сценария показал, что бронирование было слабо связано с остальным путём пользователя.\n\n— После выбора объекта пользователь не понимал, какой следующий шаг ведёт к брони.\n— Ипотечный калькулятор существовал отдельно от карточки объекта и не подводил к решению забронировать.\n— Не было понятно, свободен ли объект сейчас и как долго он останется доступным.\n— Форма бронирования запрашивала данные без объяснения, что произойдёт дальше.\n— Отсутствовало подтверждение брони с понятными следующими шагами.\n— Пользователь, единожды покинувший сценарий, не мог легко вернуться к прерванному бронированию.',
 
-    solution: 'Платформа превращает выбор ипотеки в прозрачный, управляемый сценарий: все решения переводятся в понятный ежемесячный платёж, банки и программы сравниваются в едином интерфейсе, а живой калькулятор показывает, «потянет» ли пользователь конкретный сценарий.',
+    solution: 'Redesign строился вокруг того, чтобы бронирование стало естественным продолжением изучения объекта, а не отдельным действием.\n\n<strong class="proj-highlight">1. Встроила CTA «Забронировать» в карточку объекта</strong>\nКнопка бронирования стала частью карточки и калькулятора, а не отдельного экрана — пользователь может перейти к брони в момент, когда уверенность максимальна, не теряя контекст объекта и расчёта.\n\n<strong class="proj-highlight">2. Показала статус доступности объекта</strong>\nКарточка и каталог отображают, свободен ли объект, забронирован ли он другим пользователем или доступен для просмотра — это создаёт ощущение реального спроса и снижает откладывание решения.\n\n<strong class="proj-highlight">3. Связала калькулятор с бронированием</strong>\nПосле расчёта комфортного ежемесячного платежа пользователь может сразу закрепить объект за собой — расчёт и бронирование стали одним сценарием вместо двух разрозненных.\n\n<strong class="proj-highlight">4. Разделила бронирование на понятные шаги</strong>\nВместо одной длинной формы бронирование состоит из коротких этапов: выбор формата (просмотр объекта или закрепление брони), контактные данные, подтверждение — на каждом шаге видно, сколько действий осталось.\n\n<strong class="proj-highlight">5. Добавила подтверждение и понятные следующие шаги</strong>\nПосле бронирования пользователь получает подтверждение с конкретными следующими шагами — сроком удержания брони и контактом менеджера, — а не просто сообщение об успехе.',
 
-    competitorAnalysis: 'Банки (Сбер, ВТБ и др.) — перегружают цифрами без объяснений\nАгрегаторы недвижимости — сильны в подборе объектов, слабы в прозрачности условий\nЗастройщики — скрывают логику расчётов за менеджером\nИпотечные брокеры — персональный подход, но не масштабируется и не прозрачен для пользователя',
-
+    competitorAnalysis: 'Изучила сценарии бронирования и подбора жилья на площадках Циан, Домклик, ПИК и Самолет.\n\nСравнивала, как площадки подводят пользователя к брони: где размещён CTA, как показывается доступность объекта, связан ли ипотечный калькулятор с бронированием и что пользователь видит сразу после подтверждения.\n\nБольшинство агрегаторов сильны в подборе объектов, но слабо ведут пользователя дальше карточки — решение о брони чаще всего требует звонка менеджеру, а не завершается в интерфейсе.',
     competitorImage: '',
 
-    research: {
-      userProblems: [
-        'Перегруженный выбор между банками, ставками и программами',
-        'Сложная финансовая терминология, непонятная без объяснений',
-        'Отсутствие понимания, что подходит лично пользователю',
-        'Недоверие к расчётам и итоговой переплате',
-        'Страх ошибки в долгосрочном финансовом обязательстве'
-      ],
-      valueHypotheses: [
-        'Перевод всех условий в ежемесячный платёж снижает когнитивную нагрузку и повышает доверие',
-        'Возможность сравнения банков в едином интерфейсе увеличивает уверенность в решении'
-      ],
-      behaviorHypotheses: [
-        'Пользователь принимает решение не через ставку, а через размер ежемесячного платежа',
-        'Решение принимается итеративно: пользователь многократно меняет параметры и пересчитывает сценарии перед выбором'
-      ],
-      insights: [
-        'Ставка без контекста не имеет ценности для пользователя — решение принимается через monthly payment',
-        'Доверие важнее выгоды: пользователь скорее выберет понятный вариант, чем формально более выгодный, но непрозрачный',
-        'Рынок конкурирует не интерфейсами, а источниками доверия',
-        'Прозрачность источника данных и логики расчёта снижает ощущение «чёрного ящика»'
-      ]
-    },
-
-    jtbd: 'На разных этапах пользователь хочет: понять, может ли он позволить себе жильё; изучить доступные варианты на рынке; сравнить условия и выбрать комфортный платёж; убедиться, что решение безопасно и не станет ошибкой.',
+    jtbd: 'Пользователь хочет закрепить за собой понравившийся дом или квартиру, будучи уверенным в условиях и платеже, и получить чёткое подтверждение того, что объект действительно закреплён за ним, — не дожидаясь звонка менеджера.',
 
     jtbdGroups: [
       {
         title: 'Покупатели первого жилья',
-        description: 'Высокая тревожность, низкая финансовая грамотность, страх ошибки при выборе ипотеки'
+        description: 'Нуждаются в дополнительной уверенности перед бронированием: хотят понимать статус объекта, условия удержания брони и что произойдёт после подтверждения.'
       },
       {
-        title: 'Оптимизаторы условий',
-        description: 'Уже знакомы с ипотекой, сравнивают ставки и банки, ищут более выгодные и гибкие условия'
+        title: 'Уже определившиеся покупатели',
+        description: 'Знают, какой объект хотят, и стремятся забронировать его максимально быстро, не проходя лишние экраны.'
       }
     ],
 
-    cjm: 'Переход от тревожной неопределённости («что мне выбрать и потяну ли я это») к уверенному решению: пользователь начинает с оценки бюджета, исследует варианты жилья и программ, итеративно сравнивает банки и пересчитывает сценарии, а затем переходит к заявке с ощущением контроля и понятной финансовой картиной.',
+    cjm: 'Путь начинается с изучения каталога и постепенно сужается до конкретного объекта: пользователь сравнивает варианты, рассчитывает платёж, наблюдает за статусом доступности и в момент максимальной уверенности переходит к брони. Каждый шаг — от карточки до подтверждения — спроектирован так, чтобы не создавать паузу, в которой пользователь мог бы передумать или потерять нить решения.',
 
-    userFlow: 'Вход на платформу → выбор объекта или параметров бюджета → первичный расчёт платежа → итеративное сравнение банков и программ с изменением параметров → выбор комфортного сценария → заявка на консультацию/одобрение',
+    userFlow: 'Главная → Каталог объектов → Карточка объекта → Ипотечный калькулятор → Бронирование (выбор формата: просмотр или закрепление) → Контактные данные → Подтверждение брони → Личный кабинет',
 
-    designSystem: '«Financial clarity interface» — визуализация платежей, live-калькулятор с мгновенным пересчётом, sticky-блок ежемесячного платежа, карточки банков и accordion для ипотечных программ',
+    designSystem: 'Для сценария бронирования спроектирован набор компонентов:\n\n— Карточка объекта: статус доступности, sticky-кнопка «Забронировать», краткий расчёт платежа.\n— Калькулятор: live-пересчёт, переход к брони без потери параметров.\n— Бронирование: степпер шагов, форма контактных данных, выбор формата (просмотр / закрепление).\n— Подтверждение: статус брони, срок удержания, контакт менеджера.\n— Состояния: доступен, забронирован, недоступен, loading, success, error.',
+    uikitImage: '',
 
-    prototype: 'Прототип демонстрирует полный сценарий: подбор объекта, живой пересчёт ежемесячного платежа при изменении параметров, сравнение банковских предложений и переход к заявке.',
+    prototype: 'В результате были спроектированы: каталог объектов, карточка объекта со статусом доступности, ипотечный калькулятор, пошаговая форма бронирования и страница подтверждения с личным кабинетом.',
+    prototypeImage: '',
     prototypeLink: 'https://www.figma.com/design/aPaopHrRCHxvmctS2g9jbl/dobrograd-ipoteka?node-id=6013-1357&t=YhMG5t68rY5pw8Oc-1',
 
-    results: 'Ожидаемый эффект для пользователя — снижение тревожности, ускорение принятия решения и рост доверия к процессу. Для бизнеса — рост конверсии в заявку, снижение зависимости от менеджеров и увеличение числа сравнений (engagement loop).',
+    results: 'В результате бронирование стало логичным продолжением изучения объекта, а не отдельным сценарием: пользователь может закрепить дом за собой сразу после расчёта платежа, видя статус доступности на каждом шаге.\n\nОжидаемый эффект: рост доли пользователей, доходящих от карточки объекта до подтверждённой брони, снижение оттока на калькуляторе и уменьшение количества броней, прерванных на середине из-за непонятных следующих шагов.',
+    resultsImage: '',
 
-    tags: 'UX Research, Product Design, Fintech, PropTech, Figma'
+    tags: 'UX Research, Product Design, PropTech, Booking Flow, Figma'
   },
 
 
