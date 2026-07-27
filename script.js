@@ -1079,6 +1079,7 @@ const PROJECTS = [
   // ── ПРОЕКТ 7 ── Доброград: платформа ипотеки и жилья ─────
   {
     id: 7,
+    hidden: true, // временно скрыт
     title: { ru: 'Доброград — Путь пользователя к бронированию', en: 'Dobrograd — The User\'s Path to Booking' },
     cardDesc: { ru: 'Проектирование сценария бронирования жилья в сервисе Доброград', en: 'Designing the housing-booking flow for Dobrograd' },
     bannerColor: '#3B6E8F',
