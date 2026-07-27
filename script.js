@@ -801,6 +801,7 @@ const PROJECTS = [
     bannerColor: '#BA7517',
     bannerImg: 'assets/PM_BIG.jpg',
     cardImg: 'assets/PM.jpg',
+    hidden: true, // временно скрыт
 
     images: [
       'assets/Frame 148.png',
