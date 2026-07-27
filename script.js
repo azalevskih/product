@@ -543,6 +543,7 @@ const PROJECTS = [
   // ── ПРОЕКТ 8 ── ВТБ Оплата ──────────────────────────────
   {
     id: 8,
+    hidden: true, // временно скрыт
     title: { ru: 'ВТБ Оплата', en: 'VTB Payment' },
     cardDesc: { ru: 'Оптимизация сценария оплаты в мобильном банке', en: 'Streamlining the payment flow in a mobile bank' },
     bannerColor: '#1E1E96',
