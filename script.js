@@ -473,8 +473,8 @@ const PROJECTS = [
     title: { ru: 'Беспилотное Т-Такси', en: 'Autonomous T-Taxi' },
     cardDesc: { ru: 'Тестовое задание — мониторинг флота беспилотного такси Т-Банка', en: 'Test assignment — fleet monitoring for T-Bank\'s autonomous taxi' },
     bannerColor: '#EDEDED',
-    bannerImg: 'assets/TTaxi_BIG.jpg',
-    cardImg: 'assets/TTaxi.jpg',
+    bannerImg: 'assets/T-Bank_BIG.jpg',
+    cardImg: 'assets/T-Bank.jpg',
     lightBanner: true,
     images: [],
     problemImage: 'assets/TTaxi_Immersion.jpg',
@@ -801,7 +801,6 @@ const PROJECTS = [
     bannerColor: '#BA7517',
     bannerImg: 'assets/PM_BIG.jpg',
     cardImg: 'assets/PM.jpg',
-    hidden: true, // временно скрыт
 
     images: [
       'assets/Frame 148.png',
