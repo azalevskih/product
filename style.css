@@ -945,6 +945,22 @@ footer .nav-grid > a:last-child {
   margin-top: 12px;
 }
 
+/* Сетка изображений бенчмарка / анализа конкурентов */
+.proj-benchmark-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.proj-benchmark-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  background: var(--white);
+}
+
 /* Список источников внутри секции "Источники" */
 .proj-section ul {
   list-style: none;
@@ -1149,6 +1165,7 @@ footer .nav-grid > a:last-child {
   .proj-section-head    { grid-column: 1; position: static; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; }
   .proj-section-body    { grid-column: 1; }
   .figma-link           { font-size: 12px; padding: 7px 14px; }
+  .proj-benchmark-grid  { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* Доп. подстраховка для очень узких экранов (320–360px) —
