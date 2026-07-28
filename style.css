@@ -941,6 +941,14 @@ footer .nav-grid > a:last-child {
   min-width: 0;
 }
 
+/* Гарантируем тонкое начертание основного текста секций —
+   жирным остаётся только то, что помечено явно (.proj-highlight,
+   маркированные метрики результатов и т.д.) */
+.proj-section-body p,
+.proj-section-body li {
+  font-weight: 400;
+}
+
 .proj-section-head h3 {
   margin-bottom: 0;
 }
