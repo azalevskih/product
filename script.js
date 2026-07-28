@@ -358,7 +358,14 @@ const TRANSLATIONS_EN = {
 
     solution: 'The checkout redesign was built around five key UX decisions.\n\n<strong class="proj-highlight">1. Pinned the order total</strong>\nThroughout checkout, the user always sees the item cost, discount, delivery cost, and order total — so they never lose context and can decide without scrolling back.\n\n<strong class="proj-highlight">2. Split the delivery scenarios</strong>\nInstead of one large form, delivery was split into two separate flows — courier delivery (address, comment, date) and pickup (map, store list, stock availability). The user only sees the fields relevant to their choice.\n\n<strong class="proj-highlight">3. Integrated a store-selection map</strong>\nFor pickup, the user can see nearby locations, pick a convenient store, and view its address and hours — a map helps users orient themselves faster than a long list of addresses.\n\n<strong class="proj-highlight">4. Built installment payment into the main flow</strong>\nInstallment became part of checkout rather than a separate process: the user selects the payment method, fills in the required data, and returns to checkout — reducing the risk of abandoning the purchase after navigating to a new screen.\n\n<strong class="proj-highlight">5. Added clear interface states</strong>\nEvery form was designed with empty, filled, error, success-validation, and disabled-until-valid states — helping users fix mistakes faster and complete checkout.',
 
-    competitorAnalysis: 'I studied checkout flows at leading online retailers: Askona, Hoff, IKEA, Ozon, Wildberries, and DNS.\n\nI compared checkout structure, delivery methods, pickup flows, order-total display, and installment integration — this helped identify which patterns work best for high-cost purchases.\n\nIn parallel, I audited Beyosa\'s existing checkout and identified the main friction points: long forms, no visual hierarchy, overloaded screens, weak system feedback, and too much secondary information.',
+    competitorAnalysis: '<p>I studied checkout flows at leading online retailers: Askona, Hoff, IKEA, Ozon, Wildberries, and DNS — comparing not individual screens, but specific decisions that build trust in a high-cost purchase.</p>' +
+      '<div class="proj-table-wrap"><table class="proj-comparison-table"><thead><tr><th>Solution</th><th>Ozon</th><th>Askona</th><th>Beyosa</th></tr></thead><tbody>' +
+      '<tr><td>Order total visible at every step</td><td>+</td><td>+</td><td>–</td></tr>' +
+      '<tr><td>Pickup via a map of nearby stores</td><td>+</td><td>–</td><td>–</td></tr>' +
+      '<tr><td>Installment built into the main checkout</td><td>–</td><td>+</td><td>–</td></tr>' +
+      '</tbody></table></div>' +
+      '<blockquote class="proj-quote">I found that Beyosa\'s checkout lagged behind competitors in cost transparency and flexibility of the pickup/delivery choice — this became the key product insight behind the redesign.</blockquote>' +
+      '<p>In parallel, I audited Beyosa\'s existing checkout and identified the main friction points: long forms, no visual hierarchy, overloaded screens, weak system feedback, and too much secondary information.</p>',
 
     jtbd: 'The user wants to complete a high-cost purchase — a mattress, bed, or sofa — without second-guessing themselves: to see a clear cost at every step, understand the delivery option in seconds, and set up installment payment without falling out of the purchase flow.',
 
@@ -449,7 +456,14 @@ const PROJECTS = [
 
     solution: 'Редизайн оформления заказа строился вокруг пяти ключевых UX-решений.\n\n<strong class="proj-highlight">1. Зафиксировала итоговую стоимость заказа</strong>\nВо время оформления пользователь постоянно видит стоимость товаров, скидку, стоимость доставки и итоговую сумму — это позволяет не терять контекст покупки и принимать решение, не возвращаясь назад.\n\n<strong class="proj-highlight">2. Разделила сценарии доставки</strong>\nВместо одной большой формы доставка разделена на два отдельных сценария — курьерскую доставку (адрес, комментарий, дата) и самовывоз (карта, список магазинов, наличие товара). Пользователь видит только нужные поля и не перегружается лишней информацией.\n\n<strong class="proj-highlight">3. Интегрировала карту выбора магазина</strong>\nПри самовывозе пользователь может посмотреть ближайшие точки, выбрать удобный магазин и увидеть адрес и режим работы — карта помогает ориентироваться быстрее, чем длинный список адресов.\n\n<strong class="proj-highlight">4. Встроила рассрочку в основной сценарий</strong>\nРассрочка стала частью оформления заказа, а не отдельным процессом: пользователь выбирает способ оплаты, заполняет нужные данные и возвращается к оформлению заказа — это снижает вероятность того, что он бросит покупку после перехода на новый экран.\n\n<strong class="proj-highlight">5. Добавила понятные состояния интерфейса</strong>\nДля всех форм продуманы пустые состояния, заполнение, ошибки, успешная валидация и блокировка кнопки до заполнения обязательных полей — это помогает пользователю быстрее исправлять ошибки и завершать оформление.',
 
-    competitorAnalysis: 'Изучила оформление заказа у ведущих интернет-магазинов: Askona, Hoff, IKEA, Ozon, Wildberries, DNS.\n\nСравнивала структуру оформления заказа, способы доставки, оформление самовывоза, отображение итоговой стоимости и интеграцию рассрочки — это помогло определить, какие паттерны лучше всего работают для дорогостоящих покупок.\n\nПараллельно провела UX-аудит текущего сценария Beyosa и выявила основные точки трения: длинные формы, отсутствие визуальной иерархии, перегруженные экраны, слабая обратная связь системы и большое количество второстепенной информации.',
+    competitorAnalysis: '<p>Изучила оформление заказа у ведущих интернет-магазинов: Askona, Hoff, IKEA, Ozon, Wildberries, DNS — сравнивала не отдельные экраны, а конкретные решения, которые влияют на доверие к дорогостоящей покупке.</p>' +
+      '<div class="proj-table-wrap"><table class="proj-comparison-table"><thead><tr><th>Решение</th><th>Ozon</th><th>Askona</th><th>Beyosa</th></tr></thead><tbody>' +
+      '<tr><td>Итоговая стоимость видна на каждом шаге</td><td>+</td><td>+</td><td>–</td></tr>' +
+      '<tr><td>Самовывоз через карту с ближайшими магазинами</td><td>+</td><td>–</td><td>–</td></tr>' +
+      '<tr><td>Рассрочка встроена в основной checkout</td><td>–</td><td>+</td><td>–</td></tr>' +
+      '</tbody></table></div>' +
+      '<blockquote class="proj-quote">Обнаружила, что в оформлении заказа Beyosa уступала конкурентам по прозрачности итоговой стоимости и гибкости выбора способа получения — это и стало ключевым продуктовым выводом для редизайна.</blockquote>' +
+      '<p>Параллельно провела UX-аудит текущего сценария Beyosa и выявила основные точки трения: длинные формы, отсутствие визуальной иерархии, перегруженные экраны, слабая обратная связь системы и большое количество второстепенной информации.</p>',
     competitorImage: '',
     competitorImages: [
       'assets/Beyosa_benchmark_1.jpg',
@@ -1365,6 +1379,11 @@ function openProject(id) {
     const headerImgHtml = headerImg
       ? `<div class="proj-media"><img src="${headerImg}" alt=""></div>`
       : "";
+    // Если текст уже содержит готовую разметку (таблица, цитата и т.д.),
+    // выводим его как есть — иначе оборачиваем в <p>, как раньше.
+    const isRichHtml = /<(table|blockquote|div)[\s>]/.test(text);
+    const bodyHtml = isRichHtml ? text : `<p>${text}</p>`;
+
     return `
       <div class="proj-section"${idAttr}>
         <div class="proj-section-head">
@@ -1373,7 +1392,7 @@ function openProject(id) {
         </div>
         <div class="proj-section-body">
           ${headerImgHtml}
-          <p>${text}</p>
+          ${bodyHtml}
         </div>
       </div>
     `;

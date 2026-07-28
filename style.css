@@ -853,6 +853,62 @@ footer .nav-grid > a:last-child {
   color: #070680;
 }
 
+/* Цитата внутри секции проекта — короткий инсайт/вывод, выделенный отступом и линией слева */
+.proj-quote {
+  margin: 0 0 24px;
+  padding: 2px 0 2px 20px;
+  border-left: 2px solid var(--black);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--gray);
+  font-style: normal;
+}
+
+/* Таблица сравнения с конкурентами (например, в разделе "Анализ конкурентов") */
+.proj-table-wrap {
+  overflow-x: auto;
+  margin: 4px 0 28px;
+}
+
+.proj-comparison-table {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+}
+
+.proj-comparison-table th {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+  padding: 0 16px 12px 0;
+  border-bottom: 1px solid var(--hairline);
+  white-space: nowrap;
+}
+
+.proj-comparison-table td {
+  font-size: 16px;
+  color: var(--gray);
+  padding: 16px 16px 16px 0;
+  border-bottom: 1px solid var(--hairline);
+  line-height: 1.5;
+}
+
+.proj-comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.proj-comparison-table th:not(:first-child),
+.proj-comparison-table td:not(:first-child) {
+  text-align: center;
+  padding-left: 16px;
+}
+
+.proj-comparison-table td:not(:first-child) {
+  font-weight: 600;
+  color: var(--black);
+}
+
 .proj-section-head {
   grid-column: 1;
   display: flex;
