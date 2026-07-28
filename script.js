@@ -438,7 +438,7 @@ const PROJECTS = [
     title: { ru: 'Beyosa — Оформление заказа', en: 'Beyosa — Checkout' },
     cardDesc: { ru: 'Оптимизация корзины и оформления заказа в e-commerce', en: 'Optimizing cart and checkout for an e-commerce store' },
     bannerColor: '#2E3652',
-    bannerImg: 'assets/Beyosa.ru_BIG.png',
+    bannerImg: 'assets/Beyosa.ru_BIG.jpg',
     cardImg: 'assets/Beyosa.ru.jpg',
     lightBanner: false,
     images: [],
