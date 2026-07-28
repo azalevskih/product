@@ -909,6 +909,21 @@ footer .nav-grid > a:last-child {
   color: var(--black);
 }
 
+.proj-cjm-table th:not(:first-child),
+.proj-cjm-table td:not(:first-child) {
+  text-align: left;
+}
+
+.proj-cjm-table td:not(:first-child) {
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.proj-cjm-table td:first-child {
+  font-weight: 600;
+  color: var(--black);
+}
+
 .proj-section-head {
   grid-column: 1;
   display: flex;

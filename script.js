@@ -374,7 +374,13 @@ const TRANSLATIONS_EN = {
       { title: 'Pickup buyers', description: 'Want to quickly find the nearest store, check stock availability, and see its hours.' },
     ],
 
-    cjm: 'The user journey runs from adding an item to the cart to confirming the order: at every step they see the order total, only fill in the fields relevant to their chosen scenario, and get clear feedback while filling forms and handling errors — reducing anxiety around a high-cost purchase and cutting drop-off points.',
+    cjm: '<p>The user journey runs from adding an item to the cart to confirming the order. Each stage has its own pain point and its own opportunity:</p>' +
+      '<div class="proj-table-wrap"><table class="proj-comparison-table proj-cjm-table"><thead><tr><th>Stage</th><th>Pain</th><th>Opportunity</th></tr></thead><tbody>' +
+      '<tr><td>Cart</td><td>Order total isn\'t visible enough</td><td>Pin the order total at every step</td></tr>' +
+      '<tr><td>Delivery</td><td>Courier delivery and pickup follow the same flow</td><td>Split delivery and pickup into separate flows</td></tr>' +
+      '<tr><td>Pickup</td><td>Hard to navigate a long list of store addresses</td><td>Show a map of nearby stores</td></tr>' +
+      '<tr><td>Installment</td><td>A separate flow pulls users out of the purchase</td><td>Build installment into the main checkout</td></tr>' +
+      '</tbody></table></div>',
 
     userFlow: 'Add to cart → Cart → Checkout → Contact details → Delivery method (Courier: enter address / Pickup: choose a store on the map) → Payment method (Online / Cash on delivery / Installment) → Order review → Thank-you page',
 
@@ -483,7 +489,13 @@ const PROJECTS = [
       }
     ],
 
-    cjm: 'Путь пользователя строится от добавления товара в корзину до подтверждения заказа: на каждом шаге он видит итоговую стоимость, заполняет только нужные для выбранного сценария поля и получает понятную обратную связь при заполнении форм и ошибках — это снижает тревожность при дорогостоящей покупке и уменьшает количество точек отказа.',
+    cjm: '<p>Путь пользователя строится от добавления товара в корзину до подтверждения заказа. На каждом этапе — своя боль и своя возможность для решения:</p>' +
+      '<div class="proj-table-wrap"><table class="proj-comparison-table proj-cjm-table"><thead><tr><th>Этап</th><th>Боль</th><th>Возможность</th></tr></thead><tbody>' +
+      '<tr><td>Корзина</td><td>Итоговая стоимость заказа недостаточно заметна</td><td>Закрепить итоговую стоимость на каждом шаге</td></tr>' +
+      '<tr><td>Доставка</td><td>Курьерская доставка и самовывоз идут по одному сценарию</td><td>Разделить сценарии доставки и самовывоза</td></tr>' +
+      '<tr><td>Самовывоз</td><td>Сложно ориентироваться по списку адресов магазинов</td><td>Показать карту с ближайшими магазинами</td></tr>' +
+      '<tr><td>Рассрочка</td><td>Отдельный сценарий выбивает пользователя из процесса покупки</td><td>Встроить рассрочку в основной checkout</td></tr>' +
+      '</tbody></table></div>',
 
     userFlow: 'Добавление товара → Корзина → Оформление заказа → Контактные данные → Выбор способа доставки (Курьер: ввод адреса / Самовывоз: выбор магазина на карте) → Способ оплаты (Онлайн / При получении / Рассрочка) → Проверка заказа → Спасибо за заказ',
 
