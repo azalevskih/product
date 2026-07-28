@@ -910,6 +910,41 @@ footer .nav-grid > a:last-child {
   display: block;
 }
 
+/* Галерея ключевых экранов процесса (с нумерацией и подписями) */
+.proj-process-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.proj-process-item {
+  margin: 0;
+  position: relative;
+}
+
+.proj-process-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  background: var(--white);
+}
+
+.proj-process-num {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gray-mid);
+  margin-bottom: 10px;
+}
+
+.proj-process-item figcaption {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
 /* Список источников внутри секции "Источники" */
 .proj-section ul {
   list-style: none;

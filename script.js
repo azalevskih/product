@@ -30,6 +30,7 @@ const SECTION_TITLES = {
   purchaseDefault:{ ru: 'Сценарий: Пользователь планирует дорогую покупку', en: 'Scenario: User Plans an Expensive Purchase' },
   designSystem:   { ru: 'Design System',                     en: 'Design System' },
   prototype:      { ru: 'Прототип',                          en: 'Prototype' },
+  process:        { ru: 'Процесс — ключевые экраны',         en: 'Process — Key Screens' },
   results:        { ru: 'Результаты',                        en: 'Results' },
   sources:        { ru: 'Источники',                         en: 'Sources' },
   figmaLink:      { ru: 'Смотреть в Figma →',                en: 'View in Figma →' },
@@ -372,7 +373,20 @@ const TRANSLATIONS_EN = {
 
     designSystem: 'Checkout was built from a set of reusable, scalable components:\n\n— Cart: product card, quantity control, removal, recommendations.\n— Forms: text fields, phone, email, comment, address.\n— Delivery: toggles, map, pickup-point list.\n— Payment: bank card, cash, installment.\n— UI components: radio buttons, checkboxes, buttons, accordions, modals, notifications, info blocks.\n— States: hover, focus, disabled, loading, success, error.',
 
-    prototype: 'The final deliverables: cart, checkout, delivery-method selection, courier-delivery popup, pickup popup, store-selection map, installment setup, and the order-confirmation page.',
+    prototype: 'The final deliverables: cart, checkout, delivery-method selection, courier-delivery popup, pickup popup, store-selection map, installment setup, and the order-confirmation page.\n\nBelow are the key screens of the flow, in the order the user moves through them — from cart to order confirmation.',
+
+    processScreens: [
+      { img: 'assets/Beyosa_Process_01_Cart.jpg', caption: 'Cart — items, recommendations, and the order total on a single screen.' },
+      { img: 'assets/Beyosa_Process_02_Cart_Product_Modal.jpg', caption: 'Editing a product\'s options right from the cart, with no need to open the product page.' },
+      { img: 'assets/Beyosa_Process_03_Checkout_Default.jpg', caption: 'Checkout: contact details are filled in, delivery and payment are still to be chosen.' },
+      { img: 'assets/Beyosa_Process_04_Popup_Delivery.jpg', caption: 'The "Delivery method" popup, courier scenario: address, entrance, floor, apartment, note.' },
+      { img: 'assets/Beyosa_Process_05_Popup_Pickup_Map.jpg', caption: 'Pickup scenario — a map of nearby stores with pickup conditions.' },
+      { img: 'assets/Beyosa_Process_06_Popup_Pickup_List.jpg', caption: 'A store list as an alternative to the map, for users who prefer text over a map view.' },
+      { img: 'assets/Beyosa_Process_07_Checkout_Delivery_Selected.jpg', caption: 'The chosen delivery method appears directly in the checkout form.' },
+      { img: 'assets/Beyosa_Process_08_Checkout_Pickup_Selected.jpg', caption: 'The chosen pickup point, with the store\'s address and opening hours.' },
+      { img: 'assets/Beyosa_Process_09_Checkout_3Plus_Items.jpg', caption: 'With more than 3 items in the order, the list collapses into a compact "N more items" card.' },
+      { img: 'assets/Beyosa_Process_10_Thank_You.jpg', caption: 'The final screen — order confirmation with the order number, delivery date, and a map.' }
+    ],
 
     results: 'The result is a single, consistent checkout flow that made the purchase process more coherent, reduced unnecessary user actions, simplified delivery selection, and merged installment setup into the main purchase flow.\n\nOrder-cost transparency improved at every step, and the interface is now prepared to scale as new payment and delivery methods are added.',
   },
@@ -458,8 +472,21 @@ const PROJECTS = [
     designSystem: 'Для checkout спроектирован набор переиспользуемых компонентов, готовых к масштабированию:\n\n— Корзина: карточка товара, изменение количества, удаление, рекомендации.\n— Формы: текстовые поля, телефон, email, комментарий, адрес.\n— Доставка: переключатели, карта, список пунктов выдачи.\n— Оплата: банковская карта, наличные, рассрочка.\n— UI-компоненты: радиокнопки, чекбоксы, кнопки, аккордеоны, модальные окна, уведомления, информационные блоки.\n— Состояния: hover, focus, disabled, loading, success, error.',
     uikitImage: '',
 
-    prototype: 'В результате были спроектированы: корзина, оформление заказа, выбор способа доставки, попап курьерской доставки, попап самовывоза, карта выбора магазина, оформление рассрочки и страница успешного оформления заказа.',
+    prototype: 'В результате были спроектированы: корзина, оформление заказа, выбор способа доставки, попап курьерской доставки, попап самовывоза, карта выбора магазина, оформление рассрочки и страница успешного оформления заказа.\n\nНиже — ключевые экраны сценария в том порядке, в котором пользователь проходит путь от корзины до подтверждения заказа.',
     prototypeImage: '',
+
+    processScreens: [
+      { img: 'assets/Beyosa_Process_01_Cart.jpg', caption: 'Корзина — товары, рекомендации и итоговая стоимость заказа на одном экране.' },
+      { img: 'assets/Beyosa_Process_02_Cart_Product_Modal.jpg', caption: 'Изменение параметров товара прямо из корзины — без перехода на страницу товара.' },
+      { img: 'assets/Beyosa_Process_03_Checkout_Default.jpg', caption: 'Оформление заказа: контактные данные заполнены, способ получения и оплаты ещё предстоит выбрать.' },
+      { img: 'assets/Beyosa_Process_04_Popup_Delivery.jpg', caption: 'Попап «Способ получения», сценарий курьерской доставки: адрес, подъезд, этаж, квартира, примечание.' },
+      { img: 'assets/Beyosa_Process_05_Popup_Pickup_Map.jpg', caption: 'Сценарий самовывоза — карта с ближайшими магазинами и условиями получения.' },
+      { img: 'assets/Beyosa_Process_06_Popup_Pickup_List.jpg', caption: 'Список магазинов как альтернатива карте — для тех, кому удобнее текстовый формат.' },
+      { img: 'assets/Beyosa_Process_07_Checkout_Delivery_Selected.jpg', caption: 'Выбранный способ получения — доставка — сразу отображается в форме заказа.' },
+      { img: 'assets/Beyosa_Process_08_Checkout_Pickup_Selected.jpg', caption: 'Выбранный способ получения — самовывоз — с адресом и режимом работы магазина.' },
+      { img: 'assets/Beyosa_Process_09_Checkout_3Plus_Items.jpg', caption: 'Если в заказе больше 3 товаров, список сворачивается в компактную карточку «Ещё N товаров на сумму».' },
+      { img: 'assets/Beyosa_Process_10_Thank_You.jpg', caption: 'Финальный экран — подтверждение заказа с номером, датой доставки и картой.' }
+    ],
 
     results: 'В результате был создан единый сценарий оформления заказа, который сделал процесс покупки более последовательным, сократил количество лишних действий пользователя, упростил выбор доставки и объединил оформление рассрочки с основным процессом покупки.\n\nПрозрачность стоимости заказа выросла на всех этапах, а интерфейс подготовлен к дальнейшему масштабированию и добавлению новых способов оплаты и доставки.',
     resultsImage: '',
@@ -1169,6 +1196,15 @@ function trGroups(p) {
   return p.jtbdGroups || [];
 }
 
+// p.processScreens — массив {img, caption}
+function trProcessScreens(p) {
+  if (currentLang === 'en') {
+    const en = TRANSLATIONS_EN[p.id];
+    if (en && en.processScreens) return en.processScreens;
+  }
+  return p.processScreens || [];
+}
+
 // p.references — массив {title, url, group?, groupIntro?}; переводим только title/group/groupIntro, url общий
 function trReferences(p) {
   if (currentLang === 'en' && p.references) {
@@ -1449,7 +1485,25 @@ function openProject(id) {
   html += section(st('prototype'), tr(p, 'prototype'), p.prototypeLink);
   html += image(p.prototypeImage);
 
-  if (p.images) {
+  const processScreens = trProcessScreens(p);
+  if (processScreens.length) {
+    html += `
+      <div class="proj-section">
+        <div class="proj-section-head"><h3>${st('process')}</h3></div>
+        <div class="proj-section-body">
+          <div class="proj-process-list">
+            ${processScreens.map((s, i) => `
+              <figure class="proj-process-item">
+                <div class="proj-process-num">${String(i + 1).padStart(2, '0')}</div>
+                <img src="${s.img}" alt="">
+                <figcaption>${s.caption}</figcaption>
+              </figure>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (p.images) {
     p.images.forEach(src => {
       html += image(src);
     });
