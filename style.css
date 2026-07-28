@@ -1522,6 +1522,19 @@ footer a:hover {
   line-height: 1.75;
 }
 
+.proj-results-list {
+  padding-left: 18px;
+  margin: 0 0 14px;
+}
+
+.proj-results-list li {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.75;
+  margin-bottom: 4px;
+}
+
 /* Конкретно для страницы контактов на всю ширину */
 .contact-full-width {
   width: 100%;

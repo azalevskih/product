@@ -401,7 +401,10 @@ const TRANSLATIONS_EN = {
       { img: 'assets/Beyosa_Process_10_Thank_You.jpg', caption: 'The final screen — order confirmation with the order number, delivery date, and a map.' }
     ],
 
-    results: 'The result is a single, consistent checkout flow that made the purchase process more coherent, reduced unnecessary user actions, simplified delivery selection, and merged installment setup into the main purchase flow.\n\nOrder-cost transparency improved at every step, and the interface is now prepared to scale as new payment and delivery methods are added.',
+    results: '<p>The result is a single, consistent checkout flow that made the purchase process more coherent, reduced unnecessary user actions, simplified delivery selection, and merged installment setup into the main purchase flow.</p>' +
+      '<p>Order-cost transparency improved at every step, and the interface is now prepared to scale as new payment and delivery methods are added.</p>' +
+      '<p>After launch:</p>' +
+      '<ul class="proj-results-list"><li>checkout conversion grew by 8%;</li><li>form-filling errors dropped by 20%;</li><li>checkout time shrank from 7 to 4 minutes.</li></ul>',
   },
 
   // ── 7 ── Доброград Ипотека / Dobrograd Mortgage ──────────
@@ -518,7 +521,10 @@ const PROJECTS = [
       { img: 'assets/Beyosa_Process_10_Thank_You.jpg', caption: 'Финальный экран — подтверждение заказа с номером, датой доставки и картой.' }
     ],
 
-    results: 'В результате был создан единый сценарий оформления заказа, который сделал процесс покупки более последовательным, сократил количество лишних действий пользователя, упростил выбор доставки и объединил оформление рассрочки с основным процессом покупки.\n\nПрозрачность стоимости заказа выросла на всех этапах, а интерфейс подготовлен к дальнейшему масштабированию и добавлению новых способов оплаты и доставки.',
+    results: '<p>В результате был создан единый сценарий оформления заказа, который сделал процесс покупки более последовательным, сократил количество лишних действий пользователя, упростил выбор доставки и объединил оформление рассрочки с основным процессом покупки.</p>' +
+      '<p>Прозрачность стоимости заказа выросла на всех этапах, а интерфейс подготовлен к дальнейшему масштабированию и добавлению новых способов оплаты и доставки.</p>' +
+      '<p>После релиза:</p>' +
+      '<ul class="proj-results-list"><li>конверсия checkout выросла на 8%;</li><li>количество ошибок заполнения формы снизилось на 20%;</li><li>время оформления заказа сократилось с 7 до 4 минут.</li></ul>',
     resultsImage: '',
 
     tags: 'UX, Product Design, E-commerce, Оформление заказа, Design System, Figma'
@@ -1393,7 +1399,7 @@ function openProject(id) {
       : "";
     // Если текст уже содержит готовую разметку (таблица, цитата и т.д.),
     // выводим его как есть — иначе оборачиваем в <p>, как раньше.
-    const isRichHtml = /<(table|blockquote|div)[\s>]/.test(text);
+    const isRichHtml = /<(table|blockquote|div|ul)[\s>]/.test(text);
     const bodyHtml = isRichHtml ? text : `<p>${text}</p>`;
 
     return `
