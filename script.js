@@ -468,8 +468,8 @@ const PROJECTS = [
     competitorAnalysis: '<p>Изучила оформление заказа у ведущих интернет-магазинов: Askona, Hoff, IKEA, Ozon, Wildberries, DNS — сравнивала не отдельные экраны, а конкретные решения, которые влияют на доверие к дорогостоящей покупке.</p>' +
       '<div class="proj-table-wrap"><table class="proj-comparison-table"><thead><tr><th>Решение</th><th>Ozon</th><th>Askona</th><th>Hoff</th><th>IKEA</th><th>Wildberries</th><th>DNS</th><th>Beyosa</th></tr></thead><tbody>' +
       '<tr><td>Итоговая стоимость видна на каждом шаге</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td><td>–</td></tr>' +
-      '<tr><td>Самовывоз через карту с ближайшими магазинами</td><td>+</td><td>–</td><td></td><td></td><td></td><td></td><td>–</td></tr>' +
-      '<tr><td>Рассрочка встроена в основной checkout</td><td>–</td><td>+</td><td></td><td></td><td></td><td></td><td>–</td></tr>' +
+      '<tr><td>Самовывоз через карту с ближайшими магазинами</td><td>+</td><td>–</td><td>+</td><td>–</td><td>–</td><td>+</td><td>–</td></tr>' +
+      '<tr><td>Рассрочка встроена в основной checkout</td><td>–</td><td>+</td><td>–</td><td>+</td><td>–</td><td>+</td><td>–</td></tr>' +
       '</tbody></table></div>' +
       '<blockquote class="proj-quote">Обнаружила, что в оформлении заказа Beyosa уступала конкурентам по прозрачности итоговой стоимости и гибкости выбора способа получения — это и стало ключевым продуктовым выводом для редизайна.</blockquote>' +
       '<p>Параллельно провела UX-аудит текущего сценария Beyosa и выявила основные точки трения: длинные формы, отсутствие визуальной иерархии, перегруженные экраны, слабая обратная связь системы и большое количество второстепенной информации.</p>',
