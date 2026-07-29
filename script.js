@@ -467,7 +467,7 @@ const PROJECTS = [
 
     competitorAnalysis: '<p>Изучила оформление заказа у ведущих интернет-магазинов: Askona, Hoff, IKEA, Ozon, Wildberries, DNS — сравнивала не отдельные экраны, а конкретные решения, которые влияют на доверие к дорогостоящей покупке.</p>' +
       '<div class="proj-table-wrap"><table class="proj-comparison-table"><thead><tr><th>Решение</th><th>Ozon</th><th>Askona</th><th>Hoff</th><th>IKEA</th><th>Wildberries</th><th>DNS</th><th>Beyosa</th></tr></thead><tbody>' +
-      '<tr><td>Итоговая стоимость видна на каждом шаге</td><td>+</td><td>+</td><td></td><td></td><td></td><td></td><td>–</td></tr>' +
+      '<tr><td>Итоговая стоимость видна на каждом шаге</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td><td>+</td><td>–</td></tr>' +
       '<tr><td>Самовывоз через карту с ближайшими магазинами</td><td>+</td><td>–</td><td></td><td></td><td></td><td></td><td>–</td></tr>' +
       '<tr><td>Рассрочка встроена в основной checkout</td><td>–</td><td>+</td><td></td><td></td><td></td><td></td><td>–</td></tr>' +
       '</tbody></table></div>' +
