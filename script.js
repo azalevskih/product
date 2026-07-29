@@ -1805,7 +1805,7 @@ function renderProjectCards() {
     const bg = (p.cardImg || p.bannerImg) ? `background-image: url('${p.cardImg || p.bannerImg}');` : 'background: #f0f0f0;';
 
     return `
-      <div class="project-card" data-id="${p.id}" onclick="openProject(${p.id})">
+      <div class="project-card" data-id="${p.id}" onclick="ym(110418530,'reachGoal','click_project');openProject(${p.id})">
         <div class="card-bg" style="${bg}">
           <div class="card-overlay"></div>
         </div>
